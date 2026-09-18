@@ -1,0 +1,504 @@
+{
+  "cache_version": "v1",
+  "filename": "12.pdf",
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text": "This Master SAAS Agreement (the \"Agreement\") is by and between ArmorBlox, Inc., a Delaware corporation with its principal place of business at 100 S. Murphy Ave STE 200 Sunnyvale, CA 94086 (\"Armorblox\"), and the company subscribing to the Services (as defined below) through an Order Form, and incorporates all Order Forms (submitted in written or electronic form) (\"Customer\") (each, a \"Party,' and together, the \"Parties\").\nThis Agreement consists of this Master SaaS Agreement, all exhibits attached hereto, if any, and all Order Forms signed by the Parties hereunder, which are incorporated by reference. BY USING THE SERVICES, CUT E  O ARMORBLOX REPRESENTATIVE OR RESELLER HAS AUTHORITY TO BIND ARMORBLOX TO REP  S  T  T   S HIS AGREEMENT.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/0",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 43.666666666666664,
+                  "t": 717.3333333333334,
+                  "r": 548.0,
+                  "b": 649.0,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  425
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/1",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 43.666666666666664,
+                  "t": 639.3333333333333,
+                  "r": 547.6666666666667,
+                  "b": 558.3333333333334,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  318
+                ]
+              }
+            ]
+          }
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 565437941532170023,
+          "filename": "tmpobn7u_mv.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 1,
+      "text": "1. Definitions.\nCapitalized terms used in this Agreement shall be defined as set forth below or otherwise in the context in which they are used.\n1.1 \"Applicable Laws\" means all applicable laws, statutes, ordinances, regulations and government directives.\n1.2 \"Armorblox Platform\" means Armorblox's proprietary software and technology provided or made available by Armorblox to Customer under this Agreement as identified in the applicable Order Form, including any updates, patches, bug fixes, or improvements made generally available by Armorblox from time to time.\n1.3 \"Customer Data\" means all electronic information provided or made available by or on behalf of Customer to Armorblox for use in connection with Armorblox's provision of the Services to Customer. Customer Data does not include Analytics.\n1.4 \"Documentation\" means Armorblox's release notes or other similar instructions supplied or made available online by Armorblox and as revised from time to time.\n1.5 \"Installed Software\" means software provided by Armorblox to be installed by Customer solely for use with other Armorblox Services.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/3",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.333333333333336,
+                  "t": 516.3333333333334,
+                  "r": 541.0,
+                  "b": 491.66666666666663,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/4",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.333333333333336,
+                  "t": 481.33333333333337,
+                  "r": 548.3333333333334,
+                  "b": 456.0,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  109
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/5",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 43.666666666666664,
+                  "t": 447.0,
+                  "r": 548.0,
+                  "b": 393.0,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  311
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/6",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.333333333333336,
+                  "t": 384.0,
+                  "r": 549.0,
+                  "b": 343.6666666666667,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  240
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/7",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.0,
+                  "t": 335.0,
+                  "r": 548.0,
+                  "b": 309.3333333333333,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  162
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/8",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.333333333333336,
+                  "t": 299.6666666666667,
+                  "r": 547.6666666666667,
+                  "b": 274.33333333333326,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  135
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "1. Definitions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 565437941532170023,
+          "filename": "tmpobn7u_mv.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 2,
+      "text": "1. Definitions.\n1.6 \"Order Form\" shall mean an ordering document, specifying price, term length, and other business terms and limitations, submitted in writing or online and agreed to by the Parties, or if Customer is pu m  u mn g  ns n   n may      o  lo\nu         s   tn including the Armorblox Platform, Installed Software, and the Support.\n1.8 \"Users\" includes both the \"Users\" as defined on an applicable Order Form and those individual natural persons who are Customer employees, agents, or contractors and who Customer authorizes to use the Services as administrators of Customer's implementation of the Services.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/9",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 43.333333333333336,
+                  "t": 264.33333333333326,
+                  "r": 548.3333333333334,
+                  "b": 210.33333333333337,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  239
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/10",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.0,
+                  "t": 200.66666666666663,
+                  "r": 548.3333333333334,
+                  "b": 175.0,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  87
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/11",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.333333333333336,
+                  "t": 165.33333333333337,
+                  "r": 548.0,
+                  "b": 126.33333333333337,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  276
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "1. Definitions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 565437941532170023,
+          "filename": "tmpobn7u_mv.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 3,
+      "text": "2. Use of the Services; Restrictions.\n2.1 Authorized Use. Subject to the terms and conditions of this Agreement, Armorblox grants Customer and its Users a limited, nonexclusive, nontransferable, worldwide (i) right during the Term to access and use the Services, and (ii) if applicable, license to install and use the Installed Software, in each case, as set forth in the applicable Order Form and solely for Customer's internal business purposes. Customer is responsible for all use of the Services by its Users and agrees that it will not provide or permit access to the Armorblox Platform to anyone other than Users who require such access for the purpose of performing their assigned work for Customer. Customer agrees and acknowledges that its use of the Services may be i   n       n     ons tmm t   m  um un  l m s u mer represents and warrants that Customer has the right, including all consents required by Applicable Laws, to provide or make available to Armorblox the Customer Data, in connection with the use of the Services.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/15",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 43.666666666666664,
+                  "t": 693.0,
+                  "r": 548.3333333333334,
+                  "b": 541.3333333333334,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  999
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 565437941532170023,
+          "filename": "tmpobn7u_mv.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 4,
+      "text": "2. Use of the Services; Restrictions.\n2.2 Beta and Evaluation Services. Services provided by Armorblox to Customer as part of a trial or evaluation and beta functionality, shall not be subject to any representations, warranties, or indemnification obligations, shall not include Support or be subject to any service level agreements or obligations, and shall bpar ren   r on r r r  r   n  ren   y Notwithstanding anything to the contrary herein, Armorblox's entire liability with respect to trial, evaluation, and beta Services, whether based upon contract, warranty, tort (including negligence), product liability or o ss   s   o ts     h e   e st limited to $500.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/16",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 43.666666666666664,
+                  "t": 531.6666666666666,
+                  "r": 548.3333333333334,
+                  "b": 422.6666666666667,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  627
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 565437941532170023,
+          "filename": "tmpobn7u_mv.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 5,
+      "text": "2. Use of the Services; Restrictions.\n2.3 Restrictions. Customer shall not, and shall not allow its Users or others to: (i) copy, reverse engineer, modify, decompile or attempt to derive the source code for any aspect of the Services or any data related thereto or attempt to or do anything that could interfere with their functionality; (ii) resell, rent, distribute, sublicense or share the Services with or for the benefit of any third party or for any purpose other than its own use as expressly permitted in this Agreement; (iii) attempt to probe, scan, penetrate, breach or test the vulnerability of the Services or disable or circumvent any security or authentication measures; (iv) access the Services for the purpose of building a competitive product or service; or (v) use the Services in violation of this Agreement, any Applicable Laws, or the rights of any third parties.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/17",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 43.333333333333336,
+                  "t": 413.0,
+                  "r": 549.0,
+                  "b": 302.6666666666667,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  846
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 565437941532170023,
+          "filename": "tmpobn7u_mv.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 6,
+      "text": "2. Use of the Services; Restrictions.\n2.4 Proprietary Rights. Armorblox may use Customer Data in order to provide and improve the Services. This includes the right for Armorblox to retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services (\"Analytics\") that it may use for its business purposes; provided that such Analytics do not identify Customer, any of its Users or any third party entities or individuals. Analytics are not Customer Confidential Information. As between the parties, Customer owns all right, title and interest (including all intellectual property rights) in and to Customer Data. As between the parties, Armorblox owns all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements mni  k    ss  i       ne learning developed over time. Further, Armorblox owns all suggestions, requests, edits, corrections or other feedback relating to the Services or other Armorblox materials (\"Feedback\") and may use all Feedback for any purpose, perpetually, without any obligations, monetary or other compensation owed, or restrictions. For clarity, Feedback does not include Customer Confidential Information.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/18",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 43.333333333333336,
+                  "t": 292.6666666666667,
+                  "r": 548.6666666666666,
+                  "b": 113.66666666666663,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1276
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 565437941532170023,
+          "filename": "tmpobn7u_mv.pdf"
+        }
+      }
+    }
+  ]
+}

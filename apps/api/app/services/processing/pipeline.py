@@ -1,168 +1,438 @@
 from __future__ import annotations
 
-import shutil
+import hashlib
+import json
+import logging
 import tempfile
+import time
 from pathlib import Path
 from typing import Any
 
-from docling_graph import PipelineConfig, run_pipeline
+from docling.chunking import HybridChunker
+from docling.document_converter import DocumentConverter
 
-from app.config import get_settings
-from app.services.contract.schema import Contract
+from app.services.extraction.extractor import ContractExtractor
+from app.services.extraction.models import (
+    DefinedTerm,
+    Party,
+)
+from app.services.extraction.models import (
+    ContractChunkSemanticExtraction,
+    ContractSemantics,
+)
+from app.services.structure.builder import build_document_structure
+from app.services.structure.models import DocumentStructure
 
+from app.services.validation.semantic_validator import (
+    ContractSemanticValidator,
+)
 
-def _make_json_safe(value: Any) -> Any:
-    """
-    Convert values returned by NetworkX / Pydantic into JSON-safe data.
-    """
-
-    if hasattr(value, "model_dump"):
-        return value.model_dump()
-
-    if isinstance(value, dict):
-        return {
-            str(key): _make_json_safe(item)
-            for key, item in value.items()
-        }
-
-    if isinstance(value, (list, tuple, set)):
-        return [_make_json_safe(item) for item in value]
-
-    if isinstance(value, (str, int, float, bool)) or value is None:
-        return value
-
-    return str(value)
+logger = logging.getLogger(__name__)
 
 
-def process_contract(
-    file_bytes: bytes,
-    filename: str,
-) -> dict[str, Any]:
-    """
-    Run one document through:
+class ContractProcessingPipeline:
+    # Change this whenever the Docling/chunking logic changes
+    CACHE_VERSION = "v1"
 
-        PDF/DOCX
-            ↓
-        Docling
-            ↓
-        Contract schema extraction
-            ↓
-        Knowledge graph
-    """
+    def __init__(self) -> None:
+        self.converter = DocumentConverter()
+        self.chunker = HybridChunker()
+        self.extractor = ContractExtractor()
+        self.validator = ContractSemanticValidator()
 
-    if not file_bytes:
-        raise ValueError("Document is empty.")
+        self.cache_dir = Path(".cache") / "docling"
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
 
-    settings = get_settings()
+    def _cache_key(
+        self,
+        file_bytes: bytes,
+        filename: str,
+    ) -> str:
+        extension = Path(filename).suffix.lower()
 
-    # Keep the uploaded filename, but remove any path components.
-    safe_filename = Path(filename).name or "contract.pdf"
+        hasher = hashlib.sha256()
+        hasher.update(self.CACHE_VERSION.encode("utf-8"))
+        hasher.update(extension.encode("utf-8"))
+        hasher.update(file_bytes)
 
-    temp_dir = Path(
-        tempfile.mkdtemp(prefix="contract_graph_")
-    )
+        return hasher.hexdigest()
 
-    source_path = temp_dir / safe_filename
+    def _cache_path(
+        self,
+        file_bytes: bytes,
+        filename: str,
+    ) -> Path:
+        return self.cache_dir / f"{self._cache_key(file_bytes, filename)}.json"
 
-    source_path.write_bytes(file_bytes)
-
-    try:
-        config = PipelineConfig(
-            source=str(source_path),
-
-            # Our legal ontology.
-            template=Contract,
-
-            # Use an LLM for semantic extraction.
-            backend="llm",
-
-            # Local Ollama — no paid API.
-            inference="local",
-            provider_override="ollama",
-            model_override=settings.graph_model,
-
-            # A contract is a multi-page connected document.
-            processing_mode="many-to-one",
-
-            # Rich contracts benefit from chunked extraction.
-            use_chunking=False,
-
-            # Dense extraction:
-            # discover entities first, then populate them.
-            # extraction_contract="dense",
-            extraction_contract="direct",
-
-            # Preserve source grounding.
-            provenance="standard",
-
-            # Keep everything inspectable while developing.
-            debug=True,
-            dump_to_disk=True,
-
-            # CSV is easy to inspect during development.
-            export_format="csv",
-
-            # We can later switch this to a permanent output location.
-            output_dir="outputs/contracts",
+    def _load_cached_chunks(
+        self,
+        file_bytes: bytes,
+        filename: str,
+    ) -> list[dict[str, Any]] | None:
+        cache_path = self._cache_path(
+            file_bytes=file_bytes,
+            filename=filename,
         )
 
-        context = run_pipeline(config)
+        if not cache_path.exists():
+            return None
 
-        graph = context.knowledge_graph
+        try:
+            with cache_path.open(
+                "r",
+                encoding="utf-8",
+            ) as cache_file:
+                payload = json.load(cache_file)
 
-        if graph is None:
-            raise RuntimeError(
-                "Docling Graph did not produce a knowledge graph."
+            chunks = payload.get("chunks")
+
+            if not isinstance(chunks, list):
+                raise ValueError("Invalid cache format.")
+
+            logger.info(
+                "[ContractPipeline] Docling cache HIT: %s",
+                cache_path.name,
             )
 
-        models = context.extracted_models or []
+            return chunks
 
-        nodes = []
-
-        for node_id, node_data in graph.nodes(data=True):
-            nodes.append(
-                {
-                    "id": str(node_id),
-                    "data": _make_json_safe(node_data),
-                }
+        except Exception as exc:
+            logger.warning(
+                "[ContractPipeline] Failed to load cache %s: %s",
+                cache_path,
+                exc,
             )
 
-        edges = []
+            # Corrupt cache should not break processing
+            cache_path.unlink(missing_ok=True)
+            return None
 
-        for source, target, edge_data in graph.edges(data=True):
-            edges.append(
-                {
-                    "source": str(source),
-                    "target": str(target),
-                    "data": _make_json_safe(edge_data),
-                }
-            )
+    def _save_cached_chunks(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        chunks: list[dict[str, Any]],
+    ) -> None:
+        cache_path = self._cache_path(
+            file_bytes=file_bytes,
+            filename=filename,
+        )
 
-        return {
-            "status": "success",
-            "filename": safe_filename,
-
-            "graph": {
-                "node_count": graph.number_of_nodes(),
-                "edge_count": graph.number_of_edges(),
-                "nodes": nodes,
-                "edges": edges,
-            },
-
-            "extracted_models": [
-                {
-                    "type": type(model).__name__,
-                    "data": _make_json_safe(model),
-                }
-                for model in models
-            ],
-
-            "output_dir": str(context.output_dir)
-            if context.output_dir
-            else None,
+        payload = {
+            "cache_version": self.CACHE_VERSION,
+            "filename": filename,
+            "chunks": chunks,
         }
 
-    finally:
-        # The source PDF itself is temporary. Docling Graph's debug/export
-        # artifacts remain in the configured output directory.
-        shutil.rmtree(temp_dir, ignore_errors=True)
+        with cache_path.open(
+            "w",
+            encoding="utf-8",
+        ) as cache_file:
+            json.dump(
+                payload,
+                cache_file,
+                ensure_ascii=False,
+                indent=2,
+            )
+
+        logger.info(
+            "[ContractPipeline] Docling cache SAVED: %s",
+            cache_path.name,
+        )
+
+    def get_chunks(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        force_refresh: bool = False,
+    ) -> list[dict[str, Any]]:
+        if not file_bytes:
+            raise ValueError("Document is empty.")
+
+        if not force_refresh:
+            cached_chunks = self._load_cached_chunks(
+                file_bytes=file_bytes,
+                filename=filename,
+            )
+
+            if cached_chunks is not None:
+                return cached_chunks
+
+        logger.info(
+            "[ContractPipeline] Docling cache MISS for %s",
+            filename,
+        )
+
+        suffix = Path(filename).suffix or ".pdf"
+
+        with tempfile.NamedTemporaryFile(
+            suffix=suffix,
+            delete=False,
+        ) as temp_file:
+            temp_file.write(file_bytes)
+            temp_path = Path(temp_file.name)
+
+        try:
+            start = time.perf_counter()
+
+            document = self.converter.convert(
+                source=temp_path
+            ).document
+
+            docling_elapsed = time.perf_counter() - start
+
+            logger.info(
+                "[ContractPipeline] Docling conversion took %.2f seconds",
+                docling_elapsed,
+            )
+
+            start = time.perf_counter()
+
+            chunks: list[dict[str, Any]] = []
+
+            for index, chunk in enumerate(
+                self.chunker.chunk(dl_doc=document)
+            ):
+                contextualized_text = self.chunker.contextualize(chunk)
+
+                metadata = None
+
+                if getattr(chunk, "meta", None) is not None:
+                    metadata = chunk.meta.export_json_dict()
+
+                chunks.append(
+                    {
+                        "chunk_id": index,
+                        "text": contextualized_text,
+                        "metadata": metadata,
+                    }
+                )
+
+            chunking_elapsed = time.perf_counter() - start
+
+            logger.info(
+                "[ContractPipeline] Chunking took %.2f seconds (%d chunks)",
+                chunking_elapsed,
+                len(chunks),
+            )
+
+            self._save_cached_chunks(
+                file_bytes=file_bytes,
+                filename=filename,
+                chunks=chunks,
+            )
+
+            return chunks
+
+        finally:
+            temp_path.unlink(missing_ok=True)
+
+    def extract_contract(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        max_chunks: int | None = None,
+        force_refresh: bool = False,
+        validate: bool = True,
+    ):
+        chunks = self.get_chunks(
+            file_bytes=file_bytes,
+            filename=filename,
+            force_refresh=force_refresh,
+        )
+
+        if not chunks:
+            raise ValueError("Docling produced no chunks.")
+
+        # Build the structural representation from Docling output.
+        structure = build_document_structure(
+            filename=filename,
+            chunks=chunks,
+        )
+
+        # Limit how many chunks are sent to Qwen.
+        if max_chunks is not None:
+            if max_chunks <= 0:
+                raise ValueError("max_chunks must be greater than 0.")
+
+            chunks_to_process = chunks[:max_chunks]
+        else:
+            chunks_to_process = chunks
+
+        logger.info(
+            "[ContractPipeline] Processing %d semantic chunks from %s",
+            len(chunks_to_process),
+            filename,
+        )
+
+        all_parties = []
+        all_defined_terms = []
+        all_obligations = []
+        all_rights = []
+        all_references = []
+
+        validation_issues = []
+
+        for position, chunk in enumerate(
+            chunks_to_process,
+            start=1,
+        ):
+            chunk_id = chunk["chunk_id"]
+
+            logger.info(
+                "[ContractPipeline] Extracting semantic chunk %d/%d (id=%d)",
+                position,
+                len(chunks_to_process),
+                chunk_id,
+            )
+
+            # 1. Ask Qwen for semantic candidates.
+            extraction = self.extractor.extract(
+                chunk_text=chunk["text"]
+            )
+
+            # 2. Optionally validate Qwen's output.
+            if validate:
+                validation = self.validator.validate(
+                    extraction=extraction,
+                    chunk_text=chunk["text"],
+                )
+
+                accepted = validation.accepted
+
+                validation_issues.extend(
+                    validation.issues
+                )
+
+                logger.info(
+                    "[ContractPipeline] Chunk %d validation: "
+                    "accepted parties=%d definitions=%d obligations=%d "
+                    "rights=%d references=%d issues=%d",
+                    chunk_id,
+                    len(accepted.parties),
+                    len(accepted.defined_terms),
+                    len(accepted.obligations),
+                    len(accepted.rights),
+                    len(accepted.references),
+                    len(validation.issues),
+                )
+
+            else:
+                # Validation disabled: use raw Qwen output.
+                accepted = extraction
+
+                logger.info(
+                    "[ContractPipeline] Chunk %d validation skipped",
+                    chunk_id,
+                )
+
+            # 3. Attach chunk provenance to semantic items.
+            for party in accepted.parties:
+                party.source_chunk_id = chunk_id
+
+            for term in accepted.defined_terms:
+                term.source_chunk_id = chunk_id
+
+            for obligation in accepted.obligations:
+                obligation.source_chunk_id = chunk_id
+
+            for right in accepted.rights:
+                right.source_chunk_id = chunk_id
+
+            for reference in accepted.references:
+                reference.source_chunk_id = chunk_id
+
+            # 4. Add accepted/raw facts to contract-level semantics.
+            all_parties.extend(accepted.parties)
+            all_defined_terms.extend(accepted.defined_terms)
+            all_obligations.extend(accepted.obligations)
+            all_rights.extend(accepted.rights)
+            all_references.extend(accepted.references)
+
+        # 5. Assemble contract-level semantics.
+        semantics = ContractSemantics(
+            parties=self._dedupe_parties(all_parties),
+            defined_terms=self._dedupe_defined_terms(
+                all_defined_terms
+            ),
+            obligations=all_obligations,
+            rights=all_rights,
+            references=all_references,
+        )
+
+        from app.services.processing.models import ContractRepresentation
+        from app.services.validation.models import ContractValidationReport
+
+        # 6. Build validation report.
+        validation_report = ContractValidationReport(
+            chunks_validated=(
+                len(chunks_to_process)
+                if validate
+                else 0
+            ),
+            issues=validation_issues,
+        )
+
+        # 7. Combine structure + semantics + validation.
+        return ContractRepresentation(
+            structure=structure,
+            semantics=semantics,
+            validation=validation_report,
+        )
+
+    @staticmethod
+    def _attach_chunk_id(
+        extraction,
+        chunk_id: int,
+    ) -> None:
+        for party in extraction.parties:
+            party.source_chunk_id = chunk_id
+
+        for term in extraction.defined_terms:
+            term.source_chunk_id = chunk_id
+
+        for obligation in extraction.obligations:
+            obligation.source_chunk_id = chunk_id
+
+        for right in extraction.rights:
+            right.source_chunk_id = chunk_id
+
+        for reference in extraction.references:
+            reference.source_chunk_id = chunk_id
+
+    @staticmethod
+    def _dedupe_parties(
+        parties: list[Party],
+    ) -> list[Party]:
+        seen: dict[str, Party] = {}
+
+        for party in parties:
+            key = party.name.strip().lower()
+
+            if key not in seen:
+                seen[key] = party
+                continue
+
+            existing = seen[key]
+
+            if existing.role is None and party.role is not None:
+                existing.role = party.role
+
+        return list(seen.values())
+
+    @staticmethod
+    def _dedupe_defined_terms(
+        terms: list[DefinedTerm],
+    ) -> list[DefinedTerm]:
+        seen: dict[tuple[str, str], DefinedTerm] = {}
+
+        for term in terms:
+            key = (
+                term.term.strip().lower(),
+                term.definition.strip(),
+            )
+
+            if key not in seen:
+                seen[key] = term
+
+        return list(seen.values())

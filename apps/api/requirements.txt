@@ -4,4 +4,4 @@ pydantic-settings
 pymupdf
 python-multipart
 docling
-docling-graph
+instructor

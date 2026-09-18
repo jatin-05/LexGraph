@@ -1,0 +1,1834 @@
+{
+  "version": 2,
+  "document": null,
+  "resolution": "chunk",
+  "node_level": true,
+  "chunks": {
+    "0": {
+      "chunk_id": 0,
+      "batch_index": 0,
+      "page_numbers": [
+        1
+      ],
+      "doc_item_refs": [
+        "#/pictures/0"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/pictures/0",
+          "page_no": 1,
+          "bbox": [
+            494,
+            73,
+            569,
+            105
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            413,
+            47,
+            476,
+            68
+          ]
+        }
+      ],
+      "headings": [],
+      "token_count": 19,
+      "text_hash": "253bd5d3533aa649",
+      "char_length": 72,
+      "text": "<picture><text>CISCO</text><text>The bridge to possible</text></picture>",
+      "resplit_of": null
+    },
+    "1": {
+      "chunk_id": 1,
+      "batch_index": 0,
+      "page_numbers": [
+        1
+      ],
+      "doc_item_refs": [
+        "#/texts/3",
+        "#/texts/4",
+        "#/texts/5",
+        "#/texts/6"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/3",
+          "page_no": 1,
+          "bbox": [
+            267,
+            426,
+            355,
+            442
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            224,
+            276,
+            297,
+            286
+          ]
+        },
+        {
+          "ref": "#/texts/4",
+          "page_no": 1,
+          "bbox": [
+            198,
+            459,
+            425,
+            474
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            165,
+            297,
+            355,
+            307
+          ]
+        },
+        {
+          "ref": "#/texts/5",
+          "page_no": 1,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/6",
+          "page_no": 1,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        }
+      ],
+      "headings": [
+        "Master SaaS Agreement"
+      ],
+      "token_count": 78,
+      "text_hash": "f620502371497147",
+      "char_length": 263,
+      "text": "Master SaaS Agreement\n<text>Version 1.0</text>\n<text>Last Updated: March 21, 2022</text>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 1 of 9</page_footer>",
+      "resplit_of": null
+    },
+    "2": {
+      "chunk_id": 2,
+      "batch_index": 0,
+      "page_numbers": [
+        2,
+        3
+      ],
+      "doc_item_refs": [
+        "#/tables/0",
+        "#/texts/8",
+        "#/texts/9",
+        "#/texts/10",
+        "#/texts/11"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/tables/0",
+          "page_no": 2,
+          "bbox": [
+            44,
+            112,
+            567,
+            313
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            72,
+            474,
+            202
+          ]
+        },
+        {
+          "ref": "#/texts/8",
+          "page_no": 2,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/9",
+          "page_no": 2,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/10",
+          "page_no": 3,
+          "bbox": [
+            45,
+            77,
+            548,
+            142
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            50,
+            459,
+            92
+          ]
+        },
+        {
+          "ref": "#/texts/11",
+          "page_no": 3,
+          "bbox": [
+            45,
+            154,
+            548,
+            233
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            99,
+            459,
+            151
+          ]
+        }
+      ],
+      "headings": [
+        "Contents"
+      ],
+      "token_count": 469,
+      "text_hash": "e0214116a3a65e19",
+      "char_length": 1614,
+      "text": "Contents\n<index><rhed/>1. Definitions.<fcel/>3<nl/><rhed/>2. Use of the Services; Restrictions.<fcel/>4<nl/><rhed/>3. Service Level Agreement and Support.<fcel/>5<nl/><rhed/>4. Payments.<fcel/>5<nl/><rhed/>5. Confidentiality.<fcel/>5<nl/><rhed/>6. Limited Warranty and Disclaimer.<fcel/>6<nl/><rhed/>7. Indemnification.<fcel/>6<nl/><rhed/>8. Limitations and Exclusions.<fcel/>7<nl/><rhed/>9. Term and Termination.<fcel/>7<nl/><rhed/>10. Miscellaneous.<fcel/>8<nl/></index>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 2 of 9</page_footer>\n<text><![CDATA[This  Master  SAAS  Agreement (the  \" Agreement \")  is  by  and  between  ArmorBlox,  Inc.,  a  Delaware corporation  with  its  principal  place  of  business  at  100  S.  Murphy  Ave  STE  200  Sunnyvale,  CA  94086 (\" Armorblox \"),  and the company subscribing to the Services (as defined below) through an Order Form, and incorporates all Order Forms (submitted in written or electronic form) (\" Customer \") (each, a \" Party ,\" and together, the \" Parties \").]]></text>\n<text>This Agreement consists of this Master SaaS Agreement, all exhibits attached hereto, if any, and all Order Forms signed by the Parties hereunder, which are incorporated by reference.  BY USING THE SERVICES, CUSTOMER  AGREES  TO  BE  BOUND  BY  THIS  AGREEMENT.  CUSTOMER  IS  ADVISED  THAT  NO ARMORBLOX REPRESENTATIVE OR RESELLER HAS AUTHORITY TO BIND ARMORBLOX TO REPRESENTATIONS, WARRANTIES, TERMS OR CONDITIONS THAT ARE NOT EXPRESSLY STATED IN THIS AGREEMENT.</text>",
+      "resplit_of": null
+    },
+    "3": {
+      "chunk_id": 3,
+      "batch_index": 0,
+      "page_numbers": [
+        3
+      ],
+      "doc_item_refs": [
+        "#/texts/13",
+        "#/texts/14",
+        "#/texts/15",
+        "#/texts/16",
+        "#/texts/17",
+        "#/texts/18",
+        "#/texts/19",
+        "#/texts/20"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/13",
+          "page_no": 3,
+          "bbox": [
+            45,
+            276,
+            541,
+            300
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            179,
+            453,
+            194
+          ]
+        },
+        {
+          "ref": "#/texts/14",
+          "page_no": 3,
+          "bbox": [
+            45,
+            311,
+            548,
+            335
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            201,
+            459,
+            217
+          ]
+        },
+        {
+          "ref": "#/texts/15",
+          "page_no": 3,
+          "bbox": [
+            45,
+            346,
+            548,
+            398
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            224,
+            459,
+            257
+          ]
+        },
+        {
+          "ref": "#/texts/16",
+          "page_no": 3,
+          "bbox": [
+            45,
+            409,
+            548,
+            447
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            265,
+            459,
+            289
+          ]
+        },
+        {
+          "ref": "#/texts/17",
+          "page_no": 3,
+          "bbox": [
+            45,
+            458,
+            548,
+            482
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            296,
+            459,
+            312
+          ]
+        },
+        {
+          "ref": "#/texts/18",
+          "page_no": 3,
+          "bbox": [
+            45,
+            493,
+            548,
+            517
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            319,
+            458,
+            334
+          ]
+        },
+        {
+          "ref": "#/texts/19",
+          "page_no": 3,
+          "bbox": [
+            45,
+            528,
+            548,
+            580
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            342,
+            459,
+            375
+          ]
+        },
+        {
+          "ref": "#/texts/20",
+          "page_no": 3,
+          "bbox": [
+            45,
+            591,
+            548,
+            615
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            382,
+            459,
+            398
+          ]
+        }
+      ],
+      "headings": [
+        "1. Definitions."
+      ],
+      "token_count": 503,
+      "text_hash": "c5a51cdb56a6cb5d",
+      "char_length": 1944,
+      "text": "1. Definitions.\n<text>Capitalized terms used in this Agreement shall be defined as set forth below or otherwise in the context in which they are used.</text>\n<text><![CDATA[1.1  \"Applicable  Laws\" means  all  applicable  laws,  statutes,  ordinances,  regulations  and  government directives.]]></text>\n<text><![CDATA[1.2  \"Armorblox  Platform\" means  Armorblox's  proprietary  software  and  technology  provided  or  made available  by  Armorblox  to  Customer  under  this  Agreement  as  identified  in  the  applicable  Order  Form, including any updates, patches, bug fixes, or improvements made generally available by Armorblox from time to time.]]></text>\n<text><![CDATA[1.3  \"Customer  Data\" means  all  electronic  information  provided  or  made  available  by  or  on  behalf  of Customer  to  Armorblox  for  use  in  connection  with  Armorblox's  provision  of  the  Services  to  Customer. Customer Data does not include Analytics.]]></text>\n<text><![CDATA[1.4  \"Documentation\" means  Armorblox's  release  notes  or  other  similar  instructions  supplied  or  made available online by Armorblox and as revised from time to time.]]></text>\n<text><![CDATA[1.5 \"Installed Software\" means software provided by Armorblox to be installed by Customer solely for use with other Armorblox Services.]]></text>\n<text><![CDATA[1.6  \"Order  Form\" shall  mean  an  ordering  document,  specifying  price,  term  length,  and  other  business terms  and  limitations,  submitted  in  writing  or  online  and  agreed  to  by  the  Parties,  or  if  Customer  is purchasing through a marketplace, such marketplace's applicable ordering document, but excluding any marketplace terms not expressly approved in advance by Armorblox.]]></text>\n<text><![CDATA[1.7  \"Services\" means  the  services  made  available  by  Armorblox  to  Customer  under  this  Agreement including the Armorblox Platform, Installed Software, and the Support.]]></text>",
+      "resplit_of": null
+    },
+    "4": {
+      "chunk_id": 4,
+      "batch_index": 0,
+      "page_numbers": [
+        3
+      ],
+      "doc_item_refs": [
+        "#/texts/21",
+        "#/texts/22",
+        "#/texts/23"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/21",
+          "page_no": 3,
+          "bbox": [
+            45,
+            626,
+            548,
+            664
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            405,
+            459,
+            429
+          ]
+        },
+        {
+          "ref": "#/texts/22",
+          "page_no": 3,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/23",
+          "page_no": 3,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        }
+      ],
+      "headings": [
+        "1. Definitions."
+      ],
+      "token_count": 111,
+      "text_hash": "f91cd6b3d9764706",
+      "char_length": 492,
+      "text": "1. Definitions.\n<text><![CDATA[1.8 \"Users\" includes both the \"Users\" as defined on an applicable Order Form and those individual natural persons who are Customer employees, agents, or contractors and who Customer authorizes to use the Services as administrators of Customer's implementation of the Services.]]></text>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 3 of 9</page_footer>",
+      "resplit_of": null
+    },
+    "5": {
+      "chunk_id": 5,
+      "batch_index": 0,
+      "page_numbers": [
+        4
+      ],
+      "doc_item_refs": [
+        "#/texts/25",
+        "#/texts/26"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/25",
+          "page_no": 4,
+          "bbox": [
+            45,
+            100,
+            548,
+            250
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            65,
+            459,
+            162
+          ]
+        },
+        {
+          "ref": "#/texts/26",
+          "page_no": 4,
+          "bbox": [
+            45,
+            261,
+            548,
+            369
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            169,
+            459,
+            239
+          ]
+        }
+      ],
+      "headings": [
+        "2. Use of the Services; Restrictions."
+      ],
+      "token_count": 470,
+      "text_hash": "6e1004316b07516b",
+      "char_length": 2073,
+      "text": "2. Use of the Services; Restrictions.\n<text><![CDATA[2.1 Authorized Use. Subject to the terms and conditions of this Agreement, Armorblox grants Customer and its Users a limited, nonexclusive, nontransferable, worldwide (i) right during the Term to access and use the Services, and (ii) if applicable, license to install and use the Installed Software, in each case, as set forth  in  the  applicable  Order  Form  and  solely  for  Customer's  internal  business  purposes.  Customer  is responsible for all use of the Services by its Users and agrees that it will not provide or permit access to the Armorblox Platform to anyone other than Users who require such access for the purpose of performing their assigned work for Customer. Customer agrees and acknowledges that its use of the Services may be subject to certain volume and other limits and restrictions as specified herein and on an Order Form and that  exceeding  such  usage  limits  shall  subject  Customer  to  additional  charges  and  fees.  Customer represents and warrants that Customer has the right, including all consents required by Applicable Laws, to provide or make available  to Armorblox the Customer Data, in connection with the use of the Services.]]></text>\n<text><![CDATA[2.2  Beta  and  Evaluation  Services. Services  provided  by  Armorblox  to  Customer  as  part  of  a  trial  or evaluation and beta functionality, shall not be subject to any representations, warranties, or indemnification obligations, shall not include Support or be subject to any service level agreements or obligations, and shall be  terminable  by  either  Party  at  any  time  for  any  or  no  reason  upon  notice  to  the  other  Party. Notwithstanding anything to the contrary herein, Armorblox's entire liability with respect to trial, evaluation, and beta Services, whether based upon contract, warranty, tort (including negligence), product liability or otherwise,  even  if  advised  in  advance  or  aware  of  the  possibility  of  any  such  loss  or  damage,  shall  be limited to $500.]]></text>",
+      "resplit_of": null
+    },
+    "6": {
+      "chunk_id": 6,
+      "batch_index": 1,
+      "page_numbers": [
+        4
+      ],
+      "doc_item_refs": [
+        "#/texts/27",
+        "#/texts/28"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/27",
+          "page_no": 4,
+          "bbox": [
+            45,
+            380,
+            548,
+            488
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            246,
+            459,
+            316
+          ]
+        },
+        {
+          "ref": "#/texts/28",
+          "page_no": 4,
+          "bbox": [
+            45,
+            499,
+            548,
+            677
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            323,
+            459,
+            438
+          ]
+        }
+      ],
+      "headings": [
+        "2. Use of the Services; Restrictions."
+      ],
+      "token_count": 508,
+      "text_hash": "959ba17668d5a0ef",
+      "char_length": 2333,
+      "text": "2. Use of the Services; Restrictions.\n<text>2.3 Restrictions. Customer shall not, and shall not allow its Users or others to: (i) copy, reverse engineer, modify, decompile or attempt to derive the source code for any aspect of the Services or any data related thereto or attempt to or do anything that could interfere with their functionality; (ii) resell, rent, distribute, sublicense or share the Services with or for the benefit of any third party or for any purpose other than its own use as expressly permitted in this Agreement; (iii) attempt to probe, scan, penetrate, breach or test the  vulnerability  of  the  Services  or  disable  or  circumvent  any  security  or  authentication  measures;  (iv) access the Services for the purpose of building a competitive product or service; or (v) use the Services in violation of this Agreement, any Applicable Laws, or the rights of any third parties.</text>\n<text><![CDATA[2.4 Proprietary Rights. Armorblox may use Customer Data in order to provide and improve the Services. This includes the right for Armorblox to retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services (\"Analytics\") that it may use for its business purposes; provided  that  such  Analytics  do  not  identify  Customer,  any  of  its  Users  or  any  third  party  entities  or individuals. Analytics are not Customer Confidential Information. As between the parties, Customer owns all right, title and interest (including all intellectual property rights) in and to Customer Data. As between the parties, Armorblox owns all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements and all derivative works of or included with the Services, including the general know-how and machine learning  developed  over  time.  Further,  Armorblox  owns  all  suggestions,  requests,  edits,  corrections  or other  feedback  relating  to  the  Services  or  other  Armorblox  materials  (\"Feedback\")  and  may  use  all Feedback for any purpose, perpetually, without any obligations, monetary or other compensation owed, or restrictions. For clarity, Feedback does not include Customer Confidential Information.]]></text>",
+      "resplit_of": null
+    },
+    "7": {
+      "chunk_id": 7,
+      "batch_index": 1,
+      "page_numbers": [
+        4
+      ],
+      "doc_item_refs": [
+        "#/texts/29",
+        "#/texts/30"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/29",
+          "page_no": 4,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/30",
+          "page_no": 4,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        }
+      ],
+      "headings": [
+        "2. Use of the Services; Restrictions."
+      ],
+      "token_count": 56,
+      "text_hash": "24a8957a699ad54e",
+      "char_length": 212,
+      "text": "2. Use of the Services; Restrictions.\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 4 of 9</page_footer>",
+      "resplit_of": null
+    },
+    "8": {
+      "chunk_id": 8,
+      "batch_index": 1,
+      "page_numbers": [
+        5
+      ],
+      "doc_item_refs": [
+        "#/texts/32"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/32",
+          "page_no": 5,
+          "bbox": [
+            45,
+            100,
+            548,
+            124
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            65,
+            459,
+            80
+          ]
+        }
+      ],
+      "headings": [
+        "3. Service Level Agreement and Support."
+      ],
+      "token_count": 65,
+      "text_hash": "bf12ea305c137b20",
+      "char_length": 244,
+      "text": "3. Service Level Agreement and Support.\n<text><![CDATA[Support  information  is  available  at  https://www.armorblox.com/support/  (the  \"Support\").  Armorblox's service level agreement is set forth at https://www.armorblox.com/SLA .]]></text>",
+      "resplit_of": null
+    },
+    "9": {
+      "chunk_id": 9,
+      "batch_index": 1,
+      "page_numbers": [
+        5
+      ],
+      "doc_item_refs": [
+        "#/texts/34"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/34",
+          "page_no": 5,
+          "bbox": [
+            45,
+            167,
+            548,
+            317
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            108,
+            459,
+            205
+          ]
+        }
+      ],
+      "headings": [
+        "4. Payments."
+      ],
+      "token_count": 320,
+      "text_hash": "38f86703b727afd2",
+      "char_length": 1212,
+      "text": "4. Payments.\n<text><![CDATA[Customer  agrees  to  pay  amounts  invoiced  by  Armorblox  under  this  Agreement  as  specified  in  the applicable  Order  Form(s)  in  U.S.  dollars  (\"Fees\").    Order  Forms  are  non-cancellable  and  Fees  are nonrefundable.  If  any  authority  imposes  a  sales  tax,  VAT,  or  similar  levy  (other  than  taxes  based  on Armorblox's  income)  on  the  provision  of  products  or  services  under  this  Agreement  as  ordered  by Customer, Customer agrees to pay and shall indemnify and hold harmless Armorblox for all such amounts that  Armorblox  is  required  to  pay  or  collect,  including  all  associated  fees  and  penalties.  Payment  from Customer  is  due  thirty  (30)  days  after  Customer's  receipt  of  each  invoice.  Customer  may  choose  to subscribe to the Services through an authorized reseller of Armorblox's Services, in which event, all Fees shall be paid to the applicable reseller by Customer subject to payment terms agreed to by such reseller and Customer, and all refunds, service credits and similar amounts that may be payable to Customer shall be paid by the applicable reseller to Customer directly and not by Armorblox.]]></text>",
+      "resplit_of": null
+    },
+    "10": {
+      "chunk_id": 10,
+      "batch_index": 1,
+      "page_numbers": [
+        5
+      ],
+      "doc_item_refs": [
+        "#/texts/36"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/36",
+          "page_no": 5,
+          "bbox": [
+            45,
+            360,
+            551,
+            677
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            233,
+            461,
+            438
+          ]
+        }
+      ],
+      "headings": [
+        "5. Confidentiality."
+      ],
+      "token_count": 275,
+      "text_hash": "ecb64e02e899a696",
+      "char_length": 1184,
+      "text": "5. Confidentiality.\n<text><![CDATA[5.1  Confidential  Information. A  party  (\" Receiving  Party \")  may,  during  the  course  of  this  Agreement, acquire  information  or  knowledge  of  the  other  party  (\" Disclosing  Party \")  that  such  Disclosing  Party designates  in  writing  is  confidential  or  that  a  reasonable  person  would  understand  to  be  confidential, including, without limitation, business, financial, and product information, the Services, and the terms of this  Agreement  (\" Confidential  Information \").  The  Receiving  Party  will  treat  the  Disclosing  Party's Confidential Information as confidential and will not disclose any such Confidential Information to any third party  nor  use  such  Confidential  Information  other  than  in  connection  with  this  Agreement.  \"Confidential Information\"  shall  not  include  information  that  the  Receiving  Party  can  document  was  independently developed by the Receiving Party, is or becomes publicly available without breach of this Agreement, is known prior to disclosure by the Receiving Party, or is acquired by the Receiving Party from a third party free  of  disclosure  obligations.",
+      "resplit_of": null
+    },
+    "11": {
+      "chunk_id": 11,
+      "batch_index": 1,
+      "page_numbers": [
+        5
+      ],
+      "doc_item_refs": [
+        "#/texts/36",
+        "#/texts/37",
+        "#/texts/38"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/36",
+          "page_no": 5,
+          "bbox": [
+            45,
+            360,
+            551,
+            677
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            233,
+            461,
+            438
+          ]
+        },
+        {
+          "ref": "#/texts/37",
+          "page_no": 5,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/38",
+          "page_no": 5,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        }
+      ],
+      "headings": [
+        "5. Confidentiality."
+      ],
+      "token_count": 345,
+      "text_hash": "3ebf7f4c386ff670",
+      "char_length": 1578,
+      "text": "5. Confidentiality.\nIn  addition,  the  Receiving  Party  may  disclose  the  Disclosing  Party's Confidential Information if required by applicable law, rule or court order, provided that the Receiving Party gives the Disclosing Party prompt notice thereof and cooperates, at the Disclosing Party's expense, in any attempt to obtain a protective order or other confidential treatment of such disclosure. A violation or breach of  this  Section  may  cause  severe  and  irreparable  injury  to  the  non-breaching  party  with  no  adequate remedy at law. Accordingly, in the event  of  any  actual  or  threatened  violation  or  breach,  the  breaching party agrees that the non-breaching party shall be entitled to seek immediate injunctive relief to prevent or stop such violation or breach, as well as other equitable and legal remedies against the breaching party. The obligations set forth in this Section will survive the termination of this Agreement. For the avoidance of doubt, Customer acknowledges that Armorblox utilizes the services of certain third parties in connection with the provision of the Services (such as data hosting providers) and such third parties, along with any other  third  party  service  providers  that  Customer  may  choose  to  integrate  with  the  Services,  may  have access to Customers' Confidential Information, in accordance with this Agreement.]]></text>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 5 of 9</page_footer>",
+      "resplit_of": null
+    },
+    "12": {
+      "chunk_id": 12,
+      "batch_index": 1,
+      "page_numbers": [
+        6
+      ],
+      "doc_item_refs": [
+        "#/texts/39"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/39",
+          "page_no": 6,
+          "bbox": [
+            45,
+            77,
+            548,
+            198
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            50,
+            459,
+            128
+          ]
+        }
+      ],
+      "headings": [
+        "5. Confidentiality."
+      ],
+      "token_count": 201,
+      "text_hash": "e43ff2225b0c13ce",
+      "char_length": 940,
+      "text": "5. Confidentiality.\n<text><![CDATA[5.2  Data  Protection. Armorblox  will  use  commercially  reasonable  efforts  to  maintain  administrative, physical and technical safeguards consistent with applicable industry standards designed to protect the security, confidentiality and integrity of Customer Data. Customer shall not knowingly utilize the Services in a way that is intended to distribute PHI as it is defined in the Health Insurance Portability and Accountability Act  to  Armorblox  without  entering  into  a  Business  Associate  Agreement  with  Armorblox.  Any  data processing  and  protection  agreement  (\" Data  Protection  Agreement \")  entered  into  by  the  parties  in connection with the Services and this Agreement is hereby incorporated into this Agreement and all terms of  this  Agreement,  including  any  limitations  of  liability  herein,  shall  fully  apply  to  such  Data  Protection Agreement.]]></text>",
+      "resplit_of": null
+    },
+    "13": {
+      "chunk_id": 13,
+      "batch_index": 2,
+      "page_numbers": [
+        6
+      ],
+      "doc_item_refs": [
+        "#/texts/41",
+        "#/texts/42",
+        "#/texts/43"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/41",
+          "page_no": 6,
+          "bbox": [
+            45,
+            241,
+            548,
+            279
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            156,
+            458,
+            180
+          ]
+        },
+        {
+          "ref": "#/texts/42",
+          "page_no": 6,
+          "bbox": [
+            45,
+            290,
+            548,
+            370
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            188,
+            459,
+            239
+          ]
+        },
+        {
+          "ref": "#/texts/43",
+          "page_no": 6,
+          "bbox": [
+            45,
+            381,
+            548,
+            461
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            247,
+            459,
+            298
+          ]
+        }
+      ],
+      "headings": [
+        "6. Limited Warranty and Disclaimer."
+      ],
+      "token_count": 355,
+      "text_hash": "40173a2141c112d2",
+      "char_length": 1422,
+      "text": "6. Limited Warranty and Disclaimer.\n<text>6.1 Warranty. Armorblox warrants that the Armorblox Platform will, under normal and authorized use in full compliance with this Agreement, conform in all material respects to the technical specifications described in its Documentation.</text>\n<text>6.2 Disclaimer. EXCEPT FOR THE FOREGOING WARRANTY, TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PARTIES HEREBY DISCLAIM ALL OTHER WARRANTIES OR CONDITIONS, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY,  FITNESS  FOR  A  PARTICULAR  PURPOSE,  OR  NON-INFRINGEMENT.  ARMORBLOX MAKES NO WARRANTY THAT THE ARMORBLOX PLATFORM OR SERVICES WILL OPERATE ERROR-FREE, BE FREE OF SECURITY DEFECTS OR OMISSIONS, OR OPERATE IN AN UNINTERRUPTED MANNER.</text>\n<text><![CDATA[6.3  Exclusive  Remedy. Armorblox's  sole  obligation  and  liability,  and  Customer's  sole  and  exclusive remedy, under the warranty set forth in this Section 6 (\" Limited Warranty and Disclaimer \")  shall  be  for Armorblox to, at its sole option, either (i) use commercially reasonable efforts to remedy the problem or correct  any  errors  in  the  Armorblox  Platform  or  Services,  or  (ii)  refund  the  applicable  Fees  paid  for  the period  the  Services  did  not  comply;  provided  that  in  each  case  Armorblox  is  notified  in  writing  of  all warranty claims during Term.]]></text>",
+      "resplit_of": null
+    },
+    "14": {
+      "chunk_id": 14,
+      "batch_index": 2,
+      "page_numbers": [
+        6
+      ],
+      "doc_item_refs": [
+        "#/texts/45",
+        "#/texts/46",
+        "#/texts/47",
+        "#/texts/48"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/45",
+          "page_no": 6,
+          "bbox": [
+            45,
+            504,
+            548,
+            682
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            326,
+            459,
+            441
+          ]
+        },
+        {
+          "ref": "#/texts/46",
+          "page_no": 6,
+          "bbox": [
+            45,
+            693,
+            548,
+            731
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            448,
+            459,
+            472
+          ]
+        },
+        {
+          "ref": "#/texts/47",
+          "page_no": 6,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/48",
+          "page_no": 6,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        }
+      ],
+      "headings": [
+        "7. Indemnification."
+      ],
+      "token_count": 445,
+      "text_hash": "d395eb9691dff83d",
+      "char_length": 1904,
+      "text": "7. Indemnification.\n<text><![CDATA[7.1 Indemnification. Armorblox will defend Customer from any unaffiliated third party claim to the extent the claim alleges that Customer's use of the Armorblox Platform as provided by Armorblox to Customer under this Agreement, when used as permitted by this Agreement, infringes or misappropriates such third party's U.S. patent or copyright. Armorblox shall have no obligation or liability for any claim of infringement or misappropriation that arises out of or relates to: (i) a combination of the Armorblox Platform with a nonArmorblox application, product,  data  or  business  process;  (ii)  damages  attributable  to  a  non-Armorblox application, product, data or business process; (iii) modifications made other than expressly permitted by Armorblox; or (iv) continued use of any product or service for which Armorblox has provided Customer notice  to  discontinue  use  due  to  such  a  claim  and  /  or  modifications  or  substitutes  if  use  of  such modifications  or  substitutes  would  have  prevented  the  claim.  This  Section  states  Customer's  sole  and exclusive remedy and the entire liability of Armorblox for infringement claims and actions. Customer will defend Armorblox from any unaffiliated third  party  claim  to  the  extent  such  claim  alleges  a  violation  by Customer of the third party's rights.]]></text>\n<text><![CDATA[7.2 Procedure. The indemnified party shall give prompt written notice to the indemnifying party of any such claim, allow the indemnifying party's exclusive control of the defense and any related settlement of any such claim; and furnish the indemnifying party with reasonable assistance in connection with the claim.]]></text>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 6 of 9</page_footer>",
+      "resplit_of": null
+    },
+    "15": {
+      "chunk_id": 15,
+      "batch_index": 2,
+      "page_numbers": [
+        7
+      ],
+      "doc_item_refs": [
+        "#/texts/49"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/49",
+          "page_no": 7,
+          "bbox": [
+            45,
+            77,
+            551,
+            170
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            50,
+            461,
+            110
+          ]
+        }
+      ],
+      "headings": [
+        "7. Indemnification."
+      ],
+      "token_count": 180,
+      "text_hash": "e79a03d2019132a8",
+      "char_length": 774,
+      "text": "7. Indemnification.\n<text><![CDATA[7.3 Assurance of Use. If Customer's use of the Armorblox Platform is, or in Armorblox's opinion is likely to be, enjoined due to the type of claim specified in Section 7.1, then Armorblox may, at its sole option and expense choose to procure for Customer the right to continue to use the Armorblox Platform under the terms of this Agreement or replace or modify the Armorblox Platform so that it becomes non-infringing and substantially equivalent in function to the enjoined Armorblox Platform. If none of the foregoing are commercially  reasonable  in  Armorblox's  sole  discretion,  Armorblox  may  terminate  this  Agreement  and provide a refund to Customer of prepaid unused Fees with respect to the remainder of the Term.]]></text>",
+      "resplit_of": null
+    },
+    "16": {
+      "chunk_id": 16,
+      "batch_index": 2,
+      "page_numbers": [
+        7
+      ],
+      "doc_item_refs": [
+        "#/texts/51",
+        "#/texts/52",
+        "#/texts/53"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/51",
+          "page_no": 7,
+          "bbox": [
+            45,
+            213,
+            548,
+            293
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            138,
+            459,
+            189
+          ]
+        },
+        {
+          "ref": "#/texts/52",
+          "page_no": 7,
+          "bbox": [
+            45,
+            304,
+            548,
+            398
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            197,
+            459,
+            257
+          ]
+        },
+        {
+          "ref": "#/texts/53",
+          "page_no": 7,
+          "bbox": [
+            45,
+            409,
+            548,
+            489
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            265,
+            459,
+            316
+          ]
+        }
+      ],
+      "headings": [
+        "8. Limitations and Exclusions."
+      ],
+      "token_count": 425,
+      "text_hash": "7446190254ebb200",
+      "char_length": 1617,
+      "text": "8. Limitations and Exclusions.\n<text><![CDATA[8.1 NOTHING IN THIS AGREEMENT SHALL LIMIT OR EXCLUDE EITHER PARTY'S LIABILITY FOR (I)  DEATH OR PERSONAL INJURY CAUSED BY ITS NEGLIGENCE, OR THE NEGLIGENCE OF ITS EMPLOYEES, AGENTS OR SUBCONTRACTORS; (II) GROSS NEGLIGENCE, FRAUD OR FRAUDULENT MISREPRESENTATION, OR WILLFUL  MISCONDUCT; OR (III)  ANY  OTHER  LIABILITY  THAT  CANNOT  BE  EXCLUDED  OR  LIMITED  BY LAW. NOTHING IN THIS AGREEMENT SHALL LIMIT LIABILITY ARISING FROM CUSTOMER'S BREACH OF SECTION 2 (\"USE OF THE SERVICES; RESTRICTIONS\") AND CUSTOMER'S FAILURE TO PAY ANY FEES.]]></text>\n<text>8.2 SUBJECT TO SECTION 8.1, IN NO EVENT WILL EITHER PARTY BE LIABLE TO THE OTHER PARTY FOR ANY INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION, LIABILITIES RELATED TO A LOSS OF USE, PROFITS, GOODWILL OR SAVINGS) OR A LOSS OR DAMAGE TO ANY SYSTEMS, RECORDS OR DATA, WHETHER SUCH LIABILITY ARISES FROM ANY CLAIM BASED UPON CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, EVEN IF ADVISED IN ADVANCE OR AWARE OF THE POSSIBILITY OF ANY SUCH LOSS OR DAMAGE.</text>\n<text><![CDATA[8.3 SUBJECT TO SECTION 8.1, IN NO EVENT WILL EITHER PARTY'S AGGREGATE LIABILITY (INCLUDING, BUT  NOT  LIMITED  TO,  LIABILITY  FOR  NEGLIGENCE,  STRICT  LIABILITY,  BREACH  OF  CONTRACT, MISREPRESENTATION AND OTHER CONTRACT OR TORT CLAIMS) ARISING FROM OR RELATED TO THIS AGREEMENT, EXCEED THE AMOUNT OF FEES PAID AND PAYABLE TO ARMORBLOX UNDER THE ORDER FORM UNDER WHICH LIABILITY ARISES IN THE TWELVE (12) MONTHS PRIOR TO THE EVENT GIVING RISE TO THE LIABILITY.]]></text>",
+      "resplit_of": null
+    },
+    "17": {
+      "chunk_id": 17,
+      "batch_index": 2,
+      "page_numbers": [
+        7
+      ],
+      "doc_item_refs": [
+        "#/texts/54"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/54",
+          "page_no": 7,
+          "bbox": [
+            45,
+            500,
+            548,
+            566
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            323,
+            459,
+            366
+          ]
+        }
+      ],
+      "headings": [
+        "8. Limitations and Exclusions."
+      ],
+      "token_count": 148,
+      "text_hash": "051c81b7bf11e0d6",
+      "char_length": 476,
+      "text": "8. Limitations and Exclusions.\n<text><![CDATA[NOTWITHSTANDING THE FOREGOING OR ANYTHING TO THE CONTRARY HEREIN, LIABILITIES ARISING UNDER AND RELATED TO A PARTY'S BREACH OF SECTION 7 (\"INDEMNIFICATION\") SHALL BE LIMITED, IN  THE  AGGREGATE,  TO  THE  GREATER  OF  (A)  $500,000  OR  (B)  TWO  TIMES  THE  FEES  PAID  AND PAYABLE TO ARMORBLOX UNDER THE ORDER FORM UNDER WHICH LIABILITY ARISES IN THE TWELVE (12) MONTHS PRIOR TO THE EVENT GIVING RISE TO THE LIABILITY.]]></text>",
+      "resplit_of": null
+    },
+    "18": {
+      "chunk_id": 18,
+      "batch_index": 2,
+      "page_numbers": [
+        7,
+        8
+      ],
+      "doc_item_refs": [
+        "#/texts/56",
+        "#/texts/57",
+        "#/texts/58",
+        "#/texts/59",
+        "#/texts/60"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/56",
+          "page_no": 7,
+          "bbox": [
+            45,
+            609,
+            548,
+            689
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            394,
+            459,
+            445
+          ]
+        },
+        {
+          "ref": "#/texts/57",
+          "page_no": 7,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/58",
+          "page_no": 7,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/59",
+          "page_no": 8,
+          "bbox": [
+            45,
+            77,
+            548,
+            170
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            50,
+            459,
+            110
+          ]
+        },
+        {
+          "ref": "#/texts/60",
+          "page_no": 8,
+          "bbox": [
+            45,
+            182,
+            548,
+            233
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            117,
+            459,
+            151
+          ]
+        }
+      ],
+      "headings": [
+        "9. Term and Termination."
+      ],
+      "token_count": 491,
+      "text_hash": "e947d3ad50dc836f",
+      "char_length": 2062,
+      "text": "9. Term and Termination.\n<text><![CDATA[9.1 Term. The term of this Agreement shall commence on the earlier of the Effective Date of an applicable Order Form, or the Effective Date set forth herein, and shall expire on the termination date set forth in such Order Form (the \"Initial Term\"). This Agreement and each Order Form executed under this Agreement shall automatically renew for successive one (1) year periods (each, a \"Renewal Term,\" and together with the Initial  Term, the \"Term\") unless either Party provides the other Party with notice of non-renewal at least thirty (30) calendar days prior to the expiration of the then-current term.]]></text>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 7 of 9</page_footer>\n<text><![CDATA[9.2 Termination. Either Party may terminate this Agreement upon thirty (30) days' prior written notice if the other  Party  materially  breaches  this  Agreement  and  does  not  cure  such  breach  within  thirty  (30)  days following receipt of notice specifying the breach.  Either Party shall also have the right to terminate this Agreement  immediately  upon  written  notice  in  the  event  the  other  Party:  (i)  becomes  insolvent;  (ii) becomes subject to a petition in bankruptcy filed by or against it that is not dismissed within thirty days of the filing of such petition; (iii) is placed under the control of a receiver, liquidator or committee of creditors; or (iv) dissolves, ceases to function as a going concern or to conduct its business in the normal course.]]></text>\n<text><![CDATA[9.3 Suspension of Services. Notwithstanding anything to the contrary herein, Armorblox may suspend the Services  at  any  time  if  necessary  to  protect  itself,  the  Services  and  /  or  other  customers  and  users  in connection  with  a  reasonable  security  concern  and  also  upon  reasonable  belief  that  there  has  been  a breach of Section 2.3 of this Agreement (\"Restrictions\").]]></text>",
+      "resplit_of": null
+    },
+    "19": {
+      "chunk_id": 19,
+      "batch_index": 3,
+      "page_numbers": [
+        8
+      ],
+      "doc_item_refs": [
+        "#/texts/61",
+        "#/texts/62"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/61",
+          "page_no": 8,
+          "bbox": [
+            45,
+            245,
+            548,
+            338
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            158,
+            459,
+            219
+          ]
+        },
+        {
+          "ref": "#/texts/62",
+          "page_no": 8,
+          "bbox": [
+            45,
+            350,
+            548,
+            415
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            226,
+            459,
+            269
+          ]
+        }
+      ],
+      "headings": [
+        "9. Term and Termination."
+      ],
+      "token_count": 284,
+      "text_hash": "e2b9fa654202a926",
+      "char_length": 1302,
+      "text": "9. Term and Termination.\n<text><![CDATA[9.4  Material  Diminishment. The  Services  including  all  service  level  agreements  and  the  Support  are subject  to  modification  from  time  to  time  in  Armorblox's  sole  discretion.  Notwithstanding  the  foregoing, Customer shall have the right to terminate the Agreement pursuant to Section 9.2 without any penalty if (i) a material modification to the Services or an applicable service level agreement is made which materially diminishes  the  functionality  of  the  Services  or  materially  diminishes  such  service  level  agreement,  (ii) Armorblox has not obtained Customer's written consent for such modifications, and (iii) Armorblox does not provide a remedy in the cure period stated in Section 9.2.]]></text>\n<text>9.5 Effect of Termination. Upon the termination of this Agreement for any reason, Customer will pay all amounts accrued or otherwise owing to Armorblox on the date of termination and all Order Forms under this Agreement shall also terminate. Termination in accordance with this section shall be without prejudice to any other rights or remedies of the Parties. Those provisions of this Agreement that expressly or by their nature survive termination shall survive any expiration or termination of this Agreement.</text>",
+      "resplit_of": null
+    },
+    "20": {
+      "chunk_id": 20,
+      "batch_index": 3,
+      "page_numbers": [
+        8
+      ],
+      "doc_item_refs": [
+        "#/texts/64",
+        "#/texts/65",
+        "#/texts/66"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/64",
+          "page_no": 8,
+          "bbox": [
+            45,
+            458,
+            551,
+            678
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            296,
+            461,
+            438
+          ]
+        },
+        {
+          "ref": "#/texts/65",
+          "page_no": 8,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/66",
+          "page_no": 8,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        }
+      ],
+      "headings": [
+        "10. Miscellaneous."
+      ],
+      "token_count": 455,
+      "text_hash": "0fb622e598c313cc",
+      "char_length": 1888,
+      "text": "10. Miscellaneous.\n<text><![CDATA[10.1  Legal  Compliance;  Restricted  Rights. Each  Party  agrees  to  comply  with  all  Applicable  Laws. Without  limiting  the  foregoing,  Customer  acknowledges  and  agrees  that  the  Armorblox  Platform  and Services are of U.S. origin for U.S. export control purposes and subject to the U.S. Export Administration Regulation.    Diversion  of  the  Services  contrary  to  U.S.  Law  and  regulation  is  prohibited;  for  additional information  on  U.S.  export  controls  see  www.bis.doc.gov.  Customer  represents  that  neither  the  U.S. Bureau of Industry and Security nor any other governmental agency has issued sanctions against Customer or otherwise suspended, revoked or denied Customer's status under applicable export control regulations. The Services and Documentation are deemed \"commercial computer software\" and \"commercial computer software documentation\", respectively pursuant to DFARS  227.7202  and  FAR  12.212,  and  their successors, as applicable, and are provided with RESTRICTED  RIGHTS. Any use, modification, reproduction,  release,  performance,  display  or  disclosure  of  the  Services  or  Documentation  by  the  U.S. Government shall be governed by the terms of this Agreement and shall otherwise be prohibited except to the extent expressly permitted by the terms of this Agreement. Customer agrees that it has not received or been  offered  any  illegal  or  improper  bribe,  kickback,  payment,  gift,  or  thing  of  value  from  any  party  in connection  with  this  Agreement.  If  Customer  learns  of  any  actual  or  suspected  violation  of  the  above restriction, Customer will promptly notify Armorblox.]]></text>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 8 of 9</page_footer>",
+      "resplit_of": null
+    },
+    "21": {
+      "chunk_id": 21,
+      "batch_index": 3,
+      "page_numbers": [
+        9
+      ],
+      "doc_item_refs": [
+        "#/texts/67",
+        "#/texts/68",
+        "#/texts/69",
+        "#/texts/70",
+        "#/texts/71"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/67",
+          "page_no": 9,
+          "bbox": [
+            45,
+            77,
+            548,
+            170
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            50,
+            459,
+            110
+          ]
+        },
+        {
+          "ref": "#/texts/68",
+          "page_no": 9,
+          "bbox": [
+            45,
+            182,
+            548,
+            205
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            117,
+            458,
+            133
+          ]
+        },
+        {
+          "ref": "#/texts/69",
+          "page_no": 9,
+          "bbox": [
+            45,
+            217,
+            548,
+            254
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            140,
+            458,
+            165
+          ]
+        },
+        {
+          "ref": "#/texts/70",
+          "page_no": 9,
+          "bbox": [
+            45,
+            266,
+            548,
+            289
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            172,
+            459,
+            187
+          ]
+        },
+        {
+          "ref": "#/texts/71",
+          "page_no": 9,
+          "bbox": [
+            45,
+            301,
+            548,
+            366
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            194,
+            459,
+            237
+          ]
+        }
+      ],
+      "headings": [
+        "10. Miscellaneous."
+      ],
+      "token_count": 483,
+      "text_hash": "d82cd67bc4e2c7b8",
+      "char_length": 2015,
+      "text": "10. Miscellaneous.\n<text>10.2  Notices. Any  notices  required  or  permitted  to  be  given  under  this  Agreement  will  be  sent  to Armorblox at orders@armorblox.com and to Customer at the email address provided on an Order Form or otherwise. Notwithstanding the foregoing, legal notices required under this Agreement will be personally delivered  or  sent  by  certified  or  registered  mail,  return  receipt  requested,  or  by  nationally  recognized overnight express courier, to the address specified herein or such other address as a Party may specify in writing.    Such  notices  will  be  effective  upon  receipt,  which  may  be  shown  by  confirmation  of  delivery. Notices to Armorblox shall be sent Attn: Legal (unless otherwise specified by Armorblox).</text>\n<ldiv><marker>10.3</marker></ldiv><![CDATA[Assignment. Customer may not assign or transfer this Agreement without Armorblox's prior written consent.]]>\n<ldiv><marker>10.4</marker></ldiv><![CDATA[Force Majeure. Neither Party shall be liable for any delay or failure due to a force majeure event and other causes beyond its reasonable control.  This provision shall not apply to any of Customer's payment obligations.]]>\n<ldiv><marker>10.5</marker></ldiv>Counterparts. This Agreement may be executed in counterparts, each of which will be deemed an original, but all of which together will constitute one and the same instrument.\n<ldiv><marker>10.6</marker></ldiv><content><![CDATA[ Governing  Law  and  Venue. This  Agreement  is  governed  by  the  laws  of  the  State  of  California, without regard to conflicts of laws principles. Any litigation arising out of or related to this Agreement shall be submitted to and resolved by a court of competent jurisdiction in San Francisco, California. In any action brought  to  enforce  this  Agreement,  the  prevailing  party  shall  be  entitled  to  receive  its  costs,  attorneys' fees, and other expenses of collection in addition to any other relief it may receive.]]></content>",
+      "resplit_of": null
+    },
+    "22": {
+      "chunk_id": 22,
+      "batch_index": 3,
+      "page_numbers": [
+        9
+      ],
+      "doc_item_refs": [
+        "#/texts/72",
+        "#/texts/73",
+        "#/texts/74",
+        "#/texts/75",
+        "#/texts/76",
+        "#/texts/77"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/72",
+          "page_no": 9,
+          "bbox": [
+            45,
+            378,
+            551,
+            569
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            244,
+            461,
+            368
+          ]
+        },
+        {
+          "ref": "#/texts/73",
+          "page_no": 9,
+          "bbox": [
+            363,
+            655,
+            506,
+            672
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            304,
+            423,
+            423,
+            434
+          ]
+        },
+        {
+          "ref": "#/texts/74",
+          "page_no": 9,
+          "bbox": [
+            363,
+            673,
+            418,
+            680
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            304,
+            435,
+            349,
+            440
+          ]
+        },
+        {
+          "ref": "#/texts/75",
+          "page_no": 9,
+          "bbox": [
+            46,
+            687,
+            562,
+            695
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            444,
+            470,
+            449
+          ]
+        },
+        {
+          "ref": "#/texts/76",
+          "page_no": 9,
+          "bbox": [
+            45,
+            703,
+            562,
+            728
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            454,
+            470,
+            470
+          ]
+        },
+        {
+          "ref": "#/texts/77",
+          "page_no": 9,
+          "bbox": [
+            46,
+            655,
+            126,
+            681
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            423,
+            105,
+            440
+          ]
+        }
+      ],
+      "headings": [
+        "10. Miscellaneous."
+      ],
+      "token_count": 485,
+      "text_hash": "7e19cc647346b86d",
+      "char_length": 2279,
+      "text": "10. Miscellaneous.\n<text><![CDATA[10.7 General. This Agreement, including its exhibits (all of which are incorporated herein), represents the Parties' complete  agreement  regarding  its subject matter, superseding  any  prior oral or written communications, including any customer documents, terms, vendor forms, reseller or marketplace terms, and  purchase  orders,  including  all  terms  therein,  all  which  are  rejected  and  of  no  force  or  effect. Amendments or changes to this Agreement must be in mutually executed writings to be effective. The parties each acknowledge and agree that the individual executing this Agreement on behalf of each such Party  has  the  requisite  power  and  authority  to  sign  this  Agreement  on  behalf  of  such  Party.  Unless otherwise expressly set forth in an exhibit that is executed by the Parties, this Agreement shall control in the event of any conflict with an exhibit. If any provision of this Agreement is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that this Agreement will otherwise remain enforceable and in full force and effect. The Parties are independent contractors for all purposes under this Agreement; nothing in this Agreement shall be construed to create a partnership, joint  venture  or  agency  relationship  between  the  Parties.  This  Agreement  does  not  grant  any  rights  or remedies to any third parties.]]></text>\n<text>Europe Headquarters Cisco Systems International BV Amsterdam,</text>\n<text>The Netherlands</text>\n<text>Cisco has more than 200 offices worldwide. Addresses, phone numbers, and fax numbers are listed on the Cisco Website at https://www.cisco.com/go/offices.</text>\n<text>Cisco and the Cisco logo are trademarks or registered trademarks of Cisco and/or its affiliates in the U.S. and other countries. To view a list of Cisco trademarks, go to this URL: https://www.cisco.com/go/trademarks. Third-party trademarks mentioned are the property of their respective owners. The use of the word partner does not imply a partnership relationship between Cisco and any other company. (1110R)</text>\n<page_footer><layer value=\"furniture\"/>Americas Headquarters Cisco Systems, Inc. San Jose, CA</page_footer>",
+      "resplit_of": null
+    },
+    "23": {
+      "chunk_id": 23,
+      "batch_index": 3,
+      "page_numbers": [
+        9
+      ],
+      "doc_item_refs": [
+        "#/texts/78",
+        "#/texts/79",
+        "#/texts/80",
+        "#/texts/81",
+        "#/texts/82"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/78",
+          "page_no": 9,
+          "bbox": [
+            196,
+            654,
+            295,
+            681
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            164,
+            423,
+            247,
+            440
+          ]
+        },
+        {
+          "ref": "#/texts/79",
+          "page_no": 9,
+          "bbox": [
+            48,
+            740,
+            90,
+            746
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            40,
+            479,
+            75,
+            482
+          ]
+        },
+        {
+          "ref": "#/texts/80",
+          "page_no": 9,
+          "bbox": [
+            543,
+            740,
+            561,
+            746
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            454,
+            479,
+            470,
+            482
+          ]
+        },
+        {
+          "ref": "#/texts/81",
+          "page_no": 9,
+          "bbox": [
+            45,
+            764,
+            220,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            494,
+            184,
+            498
+          ]
+        },
+        {
+          "ref": "#/texts/82",
+          "page_no": 9,
+          "bbox": [
+            529,
+            764,
+            569,
+            771
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            443,
+            494,
+            476,
+            498
+          ]
+        }
+      ],
+      "headings": [
+        "10. Miscellaneous."
+      ],
+      "token_count": 114,
+      "text_hash": "de83b3eeed6d818e",
+      "char_length": 439,
+      "text": "10. Miscellaneous.\n<page_footer><layer value=\"furniture\"/>Asia Pacific Headquarters Cisco Systems (USA) Pte. Ltd. Singapore</page_footer>\n<page_footer><layer value=\"furniture\"/>Printed in USA</page_footer>\n<page_footer><layer value=\"furniture\"/>09/23</page_footer>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 9 of 9</page_footer>",
+      "resplit_of": null
+    }
+  },
+  "nodes": {},
+  "bind_stats": {}
+}

@@ -5,7 +5,32 @@ from app.db.supabase import supabase
 from app.services.parsing.document_parser import parse_pdf
 from app.services.structure.clause_segmenter import build_sections
 from app.services.document.converter import DocumentConverterService
-from app.services.processing.pipeline import process_contract
+from app.services.processing.pipeline import ContractProcessingPipeline
+
+import logging
+from colorlog import ColoredFormatter
+
+formatter = ColoredFormatter(
+    "%(log_color)s%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+    log_colors={
+        "DEBUG": "cyan",
+        "INFO": "green",
+        "WARNING": "yellow",
+        "ERROR": "red",
+        "CRITICAL": "bold_red",
+    },
+)
+
+handler = logging.StreamHandler()
+handler.setFormatter(formatter)
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+logger.handlers.clear()
+logger.addHandler(handler)
+
+
+processing_pipeline = ContractProcessingPipeline()
 settings = get_settings()
 
 app = FastAPI(
@@ -113,16 +138,21 @@ async def docling_debug(file: UploadFile = File(...)):
             detail=str(exc),
         ) from exc
 
-@app.post("/debug/contract-graph")
-async def contract_graph_debug(
+
+@app.post("/debug/extract-chunk")
+async def extract_chunk_debug(
     file: UploadFile = File(...),
+    chunk_index: int = 0,
+    force_refresh: bool = False,
 ):
     file_bytes = await file.read()
 
     try:
-        return process_contract(
+        return processing_pipeline.extract_chunk(
             file_bytes=file_bytes,
             filename=file.filename or "contract.pdf",
+            chunk_index=chunk_index,
+            force_refresh=force_refresh,
         )
 
     except ValueError as exc:
@@ -134,5 +164,35 @@ async def contract_graph_debug(
     except Exception as exc:
         raise HTTPException(
             status_code=500,
-            detail=f"Contract processing failed: {exc}",
+            detail=f"Extraction failed: {exc}",
+        ) from exc
+
+@app.post("/debug/extract-contract")
+async def extract_contract_debug(
+    file: UploadFile = File(...),
+    max_chunks: int | None = None,
+    force_refresh: bool = False,
+    validate: bool = True,
+):
+    file_bytes = await file.read()
+
+    try:
+        return processing_pipeline.extract_contract(
+            file_bytes=file_bytes,
+            filename=file.filename or "contract.pdf",
+            max_chunks=max_chunks,
+            force_refresh=force_refresh,
+            validate=validate,
+        )
+
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        ) from exc
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Contract extraction failed: {exc}",
         ) from exc

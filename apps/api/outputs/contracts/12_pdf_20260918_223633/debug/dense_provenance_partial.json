@@ -1,0 +1,445 @@
+{
+  "version": 2,
+  "document": null,
+  "resolution": "chunk",
+  "node_level": true,
+  "chunks": {
+    "0": {
+      "chunk_id": 0,
+      "batch_index": 0,
+      "page_numbers": [
+        1
+      ],
+      "doc_item_refs": [
+        "#/texts/0",
+        "#/texts/1"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/0",
+          "page_no": 1,
+          "bbox": [
+            44,
+            75,
+            548,
+            143
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            48,
+            458,
+            92
+          ]
+        },
+        {
+          "ref": "#/texts/1",
+          "page_no": 1,
+          "bbox": [
+            44,
+            153,
+            548,
+            234
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            99,
+            458,
+            151
+          ]
+        }
+      ],
+      "headings": [],
+      "token_count": 190,
+      "text_hash": "b7407c8e22dd5932",
+      "char_length": 782,
+      "text": "<text><![CDATA[This Master SAAS Agreement (the \"Agreement\") is by and between ArmorBlox, Inc., a Delaware corporation with its principal place of business at 100 S. Murphy Ave STE 200 Sunnyvale, CA 94086 (\"Armorblox\"), and the company subscribing to the Services (as defined below) through an Order Form, and incorporates all Order Forms (submitted in written or electronic form) (\"Customer\") (each, a \"Party,' and together, the \"Parties\").]]></text>\n<text>This Agreement consists of this Master SaaS Agreement, all exhibits attached hereto, if any, and all Order Forms signed by the Parties hereunder, which are incorporated by reference. BY USING THE SERVICES, CUT E  O ARMORBLOX REPRESENTATIVE OR RESELLER HAS AUTHORITY TO BIND ARMORBLOX TO REP  S  T  T   S HIS AGREEMENT.</text>",
+      "resplit_of": null
+    },
+    "1": {
+      "chunk_id": 1,
+      "batch_index": 0,
+      "page_numbers": [
+        1
+      ],
+      "doc_item_refs": [
+        "#/texts/3",
+        "#/texts/4",
+        "#/texts/5",
+        "#/texts/6",
+        "#/texts/7",
+        "#/texts/8",
+        "#/texts/9",
+        "#/texts/10",
+        "#/texts/11",
+        "#/texts/12",
+        "#/texts/13"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/3",
+          "page_no": 1,
+          "bbox": [
+            44,
+            276,
+            541,
+            300
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            178,
+            453,
+            194
+          ]
+        },
+        {
+          "ref": "#/texts/4",
+          "page_no": 1,
+          "bbox": [
+            44,
+            311,
+            548,
+            336
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            201,
+            459,
+            217
+          ]
+        },
+        {
+          "ref": "#/texts/5",
+          "page_no": 1,
+          "bbox": [
+            44,
+            345,
+            548,
+            399
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            223,
+            458,
+            258
+          ]
+        },
+        {
+          "ref": "#/texts/6",
+          "page_no": 1,
+          "bbox": [
+            44,
+            408,
+            549,
+            448
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            264,
+            459,
+            290
+          ]
+        },
+        {
+          "ref": "#/texts/7",
+          "page_no": 1,
+          "bbox": [
+            44,
+            457,
+            548,
+            483
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            295,
+            458,
+            312
+          ]
+        },
+        {
+          "ref": "#/texts/8",
+          "page_no": 1,
+          "bbox": [
+            44,
+            492,
+            548,
+            518
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            318,
+            458,
+            335
+          ]
+        },
+        {
+          "ref": "#/texts/9",
+          "page_no": 1,
+          "bbox": [
+            43,
+            528,
+            548,
+            582
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            36,
+            341,
+            459,
+            376
+          ]
+        },
+        {
+          "ref": "#/texts/10",
+          "page_no": 1,
+          "bbox": [
+            44,
+            591,
+            548,
+            617
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            382,
+            459,
+            399
+          ]
+        },
+        {
+          "ref": "#/texts/11",
+          "page_no": 1,
+          "bbox": [
+            44,
+            627,
+            548,
+            666
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            405,
+            458,
+            430
+          ]
+        },
+        {
+          "ref": "#/texts/12",
+          "page_no": 1,
+          "bbox": [
+            45,
+            762,
+            221,
+            775
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            38,
+            492,
+            185,
+            501
+          ]
+        },
+        {
+          "ref": "#/texts/13",
+          "page_no": 1,
+          "bbox": [
+            529,
+            763,
+            571,
+            774
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            442,
+            493,
+            478,
+            500
+          ]
+        }
+      ],
+      "headings": [
+        "1. Definitions."
+      ],
+      "token_count": 466,
+      "text_hash": "cd1e543c52438c56",
+      "char_length": 2087,
+      "text": "1. Definitions.\n<text>Capitalized terms used in this Agreement shall be defined as set forth below or otherwise in the context in which they are used.</text>\n<text><![CDATA[1.1 \"Applicable Laws\" means all applicable laws, statutes, ordinances, regulations and government directives.]]></text>\n<text><![CDATA[1.2 \"Armorblox Platform\" means Armorblox's proprietary software and technology provided or made available by Armorblox to Customer under this Agreement as identified in the applicable Order Form, including any updates, patches, bug fixes, or improvements made generally available by Armorblox from time to time.]]></text>\n<text><![CDATA[1.3 \"Customer Data\" means all electronic information provided or made available by or on behalf of Customer to Armorblox for use in connection with Armorblox's provision of the Services to Customer. Customer Data does not include Analytics.]]></text>\n<text><![CDATA[1.4 \"Documentation\" means Armorblox's release notes or other similar instructions supplied or made available online by Armorblox and as revised from time to time.]]></text>\n<text><![CDATA[1.5 \"Installed Software\" means software provided by Armorblox to be installed by Customer solely for use with other Armorblox Services.]]></text>\n<text><![CDATA[1.6 \"Order Form\" shall mean an ordering document, specifying price, term length, and other business terms and limitations, submitted in writing or online and agreed to by the Parties, or if Customer is pu m  u mn g  ns n   n may      o  lo]]></text>\n<text>u         s   tn including the Armorblox Platform, Installed Software, and the Support.</text>\n<text><![CDATA[1.8 \"Users\" includes both the \"Users\" as defined on an applicable Order Form and those individual natural persons who are Customer employees, agents, or contractors and who Customer authorizes to use the Services as administrators of Customer's implementation of the Services.]]></text>\n<page_footer><layer value=\"furniture\"/>\u00a9 2023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 3 of 9</page_footer>",
+      "resplit_of": null
+    },
+    "2": {
+      "chunk_id": 2,
+      "batch_index": 0,
+      "page_numbers": [
+        2
+      ],
+      "doc_item_refs": [
+        "#/texts/15",
+        "#/texts/16"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/15",
+          "page_no": 2,
+          "bbox": [
+            44,
+            99,
+            548,
+            251
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            64,
+            459,
+            162
+          ]
+        },
+        {
+          "ref": "#/texts/16",
+          "page_no": 2,
+          "bbox": [
+            44,
+            260,
+            548,
+            369
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            37,
+            168,
+            459,
+            239
+          ]
+        }
+      ],
+      "headings": [
+        "2. Use of the Services; Restrictions."
+      ],
+      "token_count": 367,
+      "text_hash": "86abdfc619799695",
+      "char_length": 1715,
+      "text": "2. Use of the Services; Restrictions.\n<text><![CDATA[2.1 Authorized Use. Subject to the terms and conditions of this Agreement, Armorblox grants Customer and its Users a limited, nonexclusive, nontransferable, worldwide (i) right during the Term to access and use the Services, and (ii) if applicable, license to install and use the Installed Software, in each case, as set forth in the applicable Order Form and solely for Customer's internal business purposes. Customer is responsible for all use of the Services by its Users and agrees that it will not provide or permit access to the Armorblox Platform to anyone other than Users who require such access for the purpose of performing their assigned work for Customer. Customer agrees and acknowledges that its use of the Services may be i   n       n     ons tmm t   m  um un  l m s u mer represents and warrants that Customer has the right, including all consents required by Applicable Laws, to provide or make available to Armorblox the Customer Data, in connection with the use of the Services.]]></text>\n<text><![CDATA[2.2 Beta and Evaluation Services. Services provided by Armorblox to Customer as part of a trial or evaluation and beta functionality, shall not be subject to any representations, warranties, or indemnification obligations, shall not include Support or be subject to any service level agreements or obligations, and shall bpar ren   r on r r r  r   n  ren   y Notwithstanding anything to the contrary herein, Armorblox's entire liability with respect to trial, evaluation, and beta Services, whether based upon contract, warranty, tort (including negligence), product liability or o ss   s   o ts     h e   e st limited to $500.]]></text>",
+      "resplit_of": null
+    },
+    "3": {
+      "chunk_id": 3,
+      "batch_index": 0,
+      "page_numbers": [
+        2
+      ],
+      "doc_item_refs": [
+        "#/texts/17",
+        "#/texts/18",
+        "#/texts/19",
+        "#/texts/20"
+      ],
+      "item_geometry": [
+        {
+          "ref": "#/texts/17",
+          "page_no": 2,
+          "bbox": [
+            43,
+            379,
+            549,
+            489
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            36,
+            245,
+            459,
+            316
+          ]
+        },
+        {
+          "ref": "#/texts/18",
+          "page_no": 2,
+          "bbox": [
+            43,
+            499,
+            549,
+            678
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            36,
+            323,
+            459,
+            439
+          ]
+        },
+        {
+          "ref": "#/texts/19",
+          "page_no": 2,
+          "bbox": [
+            47,
+            761,
+            220,
+            774
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            39,
+            492,
+            184,
+            501
+          ]
+        },
+        {
+          "ref": "#/texts/20",
+          "page_no": 2,
+          "bbox": [
+            529,
+            763,
+            571,
+            774
+          ],
+          "page_width": 612,
+          "page_height": 792,
+          "dclg_location": [
+            442,
+            493,
+            478,
+            500
+          ]
+        }
+      ],
+      "headings": [
+        "2. Use of the Services; Restrictions."
+      ],
+      "token_count": 489,
+      "text_hash": "654d894be9273283",
+      "char_length": 2373,
+      "text": "2. Use of the Services; Restrictions.\n<text>2.3 Restrictions. Customer shall not, and shall not allow its Users or others to: (i) copy, reverse engineer, modify, decompile or attempt to derive the source code for any aspect of the Services or any data related thereto or attempt to or do anything that could interfere with their functionality; (ii) resell, rent, distribute, sublicense or share the Services with or for the benefit of any third party or for any purpose other than its own use as expressly permitted in this Agreement; (iii) attempt to probe, scan, penetrate, breach or test the vulnerability of the Services or disable or circumvent any security or authentication measures; (iv) access the Services for the purpose of building a competitive product or service; or (v) use the Services in violation of this Agreement, any Applicable Laws, or the rights of any third parties.</text>\n<text><![CDATA[2.4 Proprietary Rights. Armorblox may use Customer Data in order to provide and improve the Services. This includes the right for Armorblox to retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services (\"Analytics\") that it may use for its business purposes; provided that such Analytics do not identify Customer, any of its Users or any third party entities or individuals. Analytics are not Customer Confidential Information. As between the parties, Customer owns all right, title and interest (including all intellectual property rights) in and to Customer Data. As between the parties, Armorblox owns all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements mni  k    ss  i       ne learning developed over time. Further, Armorblox owns all suggestions, requests, edits, corrections or other feedback relating to the Services or other Armorblox materials (\"Feedback\") and may use all Feedback for any purpose, perpetually, without any obligations, monetary or other compensation owed, or restrictions. For clarity, Feedback does not include Customer Confidential Information.]]></text>\n<page_footer><layer value=\"furniture\"/>\u00a92023 Cisco and/or its affiliates. All rights reserved.</page_footer>\n<page_footer><layer value=\"furniture\"/>Page 4 of 9</page_footer>",
+      "resplit_of": null
+    }
+  },
+  "nodes": {},
+  "bind_stats": {}
+}
