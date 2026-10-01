@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class ContractExtractor:
-    EXTRACTION_VERSION = "v1"
+    EXTRACTION_VERSION = "v2"
 
     def __init__(self) -> None:
         settings = get_settings()

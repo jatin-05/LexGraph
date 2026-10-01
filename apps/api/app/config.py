@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -12,6 +13,7 @@ class Settings(BaseSettings):
 
     graph_model: str = "qwen2.5:3b-instruct"
     extraction_model: str = "qwen2.5:3b"
+    extraction_max_concurrency: int = Field(default=2, ge=1)
     ollama_base_url: str = "http://localhost:11434/v1"
 
     model_config = SettingsConfigDict(

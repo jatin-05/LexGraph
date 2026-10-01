@@ -1,0 +1,32 @@
+{
+  "cache_version": "v1",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 2,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [],
+    "defined_terms": [
+      {
+        "term": "Order Form",
+        "definition": "an ordering document, specifying price, term length, and other business terms and limitations, submitted in writing or online and agreed to by the Parties, or if Customer is purchasing through a marketplace, such marketplace's applicable ordering document, but excluding any marketplace terms not expressly approved in advance by Armorblox",
+        "source_text": "1.6  \"Order  Form\" shall  mean  an  ordering  document,  specifying  price,  term  length,  and  other  business terms and limitations, submitted in writing or online and agreed to by the Parties, or if Customer is purchasing through a marketplace, such marketplace's applicable ordering document, but excluding any marketplace terms not expressly approved in advance by Armorblox.",
+        "source_chunk_id": null
+      },
+      {
+        "term": "Services",
+        "definition": "the services made available by Armorblox to Customer under this Agreement including the Armorblox Platform, Installed Software, and the Support",
+        "source_text": "1.7  \"Services\" means  the  services  made  available  by  Armorblox  to  Customer  under  this  Agreement including the Armorblox Platform, Installed Software, and the Support.",
+        "source_chunk_id": null
+      },
+      {
+        "term": "Users",
+        "definition": "both the \"Users\" as defined on an applicable Order Form and those individual natural persons who are Customer employees, agents, or contractors and who Customer authorizes to use the Services as administrators of Customer's implementation of the Services",
+        "source_text": "1.8 \"Users\" includes both the \"Users\" as defined on an applicable Order Form and those individual natural persons who are Customer employees, agents, or contractors and who Customer authorizes to use the Services as administrators of Customer's implementation of the Services.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [],
+    "rights": [],
+    "references": []
+  }
+}

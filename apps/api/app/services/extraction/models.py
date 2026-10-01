@@ -30,8 +30,12 @@ class DefinedTerm(BaseModel):
     term: str = Field(
         description="Exact defined term."
     )
-    definition: str = Field(
-        description="Definition explicitly assigned to the term."
+    definition: str | None = Field(
+        default=None,
+        description=(
+            "Definition explicitly assigned to the term. Null when the model "
+            "cannot provide a definition supported by the chunk."
+        ),
     )
     source_text: str = Field(
         description="Text containing the actual definition."

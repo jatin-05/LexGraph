@@ -5,6 +5,7 @@ import json
 import logging
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +23,8 @@ from app.services.extraction.models import (
 )
 from app.services.structure.builder import build_document_structure
 from app.services.structure.models import DocumentStructure
+from app.services.relationships.resolver import ContractReferenceResolver
+from app.config import get_settings
 
 from app.services.validation.semantic_validator import (
     ContractSemanticValidator,
@@ -39,6 +42,10 @@ class ContractProcessingPipeline:
         self.chunker = HybridChunker()
         self.extractor = ContractExtractor()
         self.validator = ContractSemanticValidator()
+        self.reference_resolver = ContractReferenceResolver()
+        self.extraction_max_concurrency = (
+            get_settings().extraction_max_concurrency
+        )
 
         self.cache_dir = Path(".cache") / "docling"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -103,14 +110,18 @@ class ContractProcessingPipeline:
             file_bytes=file_bytes,
             filename=filename,
         )
-
         document_dir = self.semantic_cache_dir / document_key
         document_dir.mkdir(
             parents=True,
             exist_ok=True,
         )
 
-        return document_dir / f"chunk_{chunk_id}.json"
+        semantic_key = self._semantic_cache_key(
+            file_bytes=file_bytes,
+            filename=filename,
+            chunk_id=chunk_id,
+        )
+        return document_dir / f"chunk_{chunk_id}_{semantic_key}.json"
 
 
     def _load_cached_semantic_extraction(
@@ -134,6 +145,21 @@ class ContractProcessingPipeline:
                 encoding="utf-8",
             ) as cache_file:
                 payload = json.load(cache_file)
+
+            expected_metadata = {
+                "cache_version": self.extractor.EXTRACTION_VERSION,
+                "document_cache_key": self._cache_key(
+                    file_bytes=file_bytes,
+                    filename=filename,
+                ),
+                "chunk_id": chunk_id,
+                "model": self.extractor.model,
+            }
+            if any(
+                payload.get(key) != value
+                for key, value in expected_metadata.items()
+            ):
+                raise ValueError("Semantic cache metadata does not match request.")
 
             extraction_data = payload.get(
                 "extraction"
@@ -252,6 +278,37 @@ class ContractProcessingPipeline:
             extraction=extraction,
         )
 
+        return extraction
+
+    def _extract_semantics_for_chunk(
+        self,
+        *,
+        file_bytes: bytes,
+        filename: str,
+        chunk: dict[str, Any],
+        force_refresh: bool,
+        position: int,
+        total: int,
+    ) -> ContractChunkSemanticExtraction:
+        chunk_id = chunk["chunk_id"]
+        logger.info(
+            "[ContractPipeline] Starting semantic chunk %d/%d (id=%d)",
+            position,
+            total,
+            chunk_id,
+        )
+        started_at = time.perf_counter()
+        extraction = self._extract_semantics(
+            file_bytes=file_bytes,
+            filename=filename,
+            chunk=chunk,
+            force_refresh=force_refresh,
+        )
+        logger.info(
+            "[ContractPipeline] Semantic chunk %d completed in %.2f seconds",
+            chunk_id,
+            time.perf_counter() - started_at,
+        )
         return extraction
 
     def _load_cached_chunks(
@@ -463,29 +520,48 @@ class ContractProcessingPipeline:
 
         validation_issues = []
 
-        for position, chunk in enumerate(
-            chunks_to_process,
-            start=1,
-        ):
+        logger.info(
+            "[ContractPipeline] Extracting with up to %d concurrent workers",
+            self.extraction_max_concurrency,
+        )
+
+        extraction_by_chunk_id: dict[int, ContractChunkSemanticExtraction] = {}
+        with ThreadPoolExecutor(
+            max_workers=self.extraction_max_concurrency
+        ) as executor:
+            future_to_chunk = {
+                executor.submit(
+                    self._extract_semantics_for_chunk,
+                    file_bytes=file_bytes,
+                    filename=filename,
+                    chunk=chunk,
+                    force_refresh=force_refresh,
+                    position=position,
+                    total=len(chunks_to_process),
+                ): chunk
+                for position, chunk in enumerate(chunks_to_process, start=1)
+            }
+
+            try:
+                for future in as_completed(future_to_chunk):
+                    chunk = future_to_chunk[future]
+                    extraction_by_chunk_id[chunk["chunk_id"]] = future.result()
+            except Exception:
+                for future in future_to_chunk:
+                    future.cancel()
+                raise
+
+        for position, chunk in enumerate(chunks_to_process, start=1):
             chunk_id = chunk["chunk_id"]
 
             logger.info(
-                "[ContractPipeline] Extracting semantic chunk %d/%d (id=%d)",
+                "[ContractPipeline] Validating semantic chunk %d/%d (id=%d)",
                 position,
                 len(chunks_to_process),
                 chunk_id,
             )
 
-            # 1. Ask Qwen for semantic candidates.
-            # extraction = self.extractor.extract(
-            #     chunk_text=chunk["text"]
-            # )
-            extraction = self._extract_semantics(
-                file_bytes=file_bytes,
-                filename=filename,
-                chunk=chunk,
-                force_refresh=force_refresh,
-            )
+            extraction = extraction_by_chunk_id[chunk_id]
             # 2. Optionally validate Qwen's output.
             if validate:
                 validation = self.validator.validate(
@@ -573,6 +649,10 @@ class ContractProcessingPipeline:
             structure=structure,
             semantics=semantics,
             validation=validation_report,
+            reference_resolutions=self.reference_resolver.resolve(
+                semantics=semantics,
+                structure=structure,
+            ),
         )
 
     @staticmethod
@@ -624,7 +704,7 @@ class ContractProcessingPipeline:
         for term in terms:
             key = (
                 term.term.strip().lower(),
-                term.definition.strip(),
+                (term.definition or "").strip(),
             )
 
             if key not in seen:

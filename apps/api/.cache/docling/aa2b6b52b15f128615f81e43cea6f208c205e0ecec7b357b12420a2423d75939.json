@@ -1,0 +1,1775 @@
+{
+  "cache_version": "v1",
+  "filename": "saas document.pdf",
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text": "This  Master  SAAS  Agreement (the  \" Agreement \")  is  by  and  between  ArmorBlox,  Inc.,  a  Delaware corporation  with  its  principal  place  of  business  at  100  S.  Murphy  Ave  STE  200  Sunnyvale,  CA  94086 (\" Armorblox \"),  and the company subscribing to the Services (as defined below) through an Order Form, and incorporates all Order Forms (submitted in written or electronic form) (\" Customer \") (each, a \" Party ,\" and together, the \" Parties \").\nThis Agreement consists of this Master SaaS Agreement, all exhibits attached hereto, if any, and all Order Forms signed by the Parties hereunder, which are incorporated by reference.  BY USING THE SERVICES, CUSTOMER  AGREES  TO  BE  BOUND  BY  THIS  AGREEMENT.  CUSTOMER  IS  ADVISED  THAT  NO ARMORBLOX REPRESENTATIVE OR RESELLER HAS AUTHORITY TO BIND ARMORBLOX TO REPRESENTATIONS, WARRANTIES, TERMS OR CONDITIONS THAT ARE NOT EXPRESSLY STATED IN THIS AGREEMENT.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/0",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.989980000000116,
+                  "t": 715.3344,
+                  "r": 548.1432779999997,
+                  "b": 649.5366672000001,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  464
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/1",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.98998000000013,
+                  "t": 638.36076,
+                  "r": 548.1021959999997,
+                  "b": 558.5250072000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  463
+                ]
+              }
+            ]
+          }
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 1,
+      "text": "1. Definitions.\nCapitalized terms used in this Agreement shall be defined as set forth below or otherwise in the context in which they are used.\n1.1  \"Applicable  Laws\" means  all  applicable  laws,  statutes,  ordinances,  regulations  and  government directives.\n1.2  \"Armorblox  Platform\" means  Armorblox's  proprietary  software  and  technology  provided  or  made available  by  Armorblox  to  Customer  under  this  Agreement  as  identified  in  the  applicable  Order  Form, including any updates, patches, bug fixes, or improvements made generally available by Armorblox from time to time.\n1.3  \"Customer  Data\" means  all  electronic  information  provided  or  made  available  by  or  on  behalf  of Customer  to  Armorblox  for  use  in  connection  with  Armorblox's  provision  of  the  Services  to  Customer. Customer Data does not include Analytics.\n1.4  \"Documentation\" means  Armorblox's  release  notes  or  other  similar  instructions  supplied  or  made available online by Armorblox and as revised from time to time.\n1.5 \"Installed Software\" means software provided by Armorblox to be installed by Customer solely for use with other Armorblox Services.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/3",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 515.6544,
+                  "r": 541.4899979999991,
+                  "b": 491.85048720000003,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/4",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 480.67458000000005,
+                  "r": 548.0911739999993,
+                  "b": 456.87066720000007,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  119
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/5",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 44.99999999999999,
+                  "t": 445.6947600000001,
+                  "r": 548.105201999999,
+                  "b": 393.8749272000001,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  335
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/6",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.010020000000054,
+                  "t": 382.69902000000013,
+                  "r": 548.0911739999991,
+                  "b": 344.85708720000014,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  268
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/7",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.00000000000003,
+                  "t": 333.68118000000015,
+                  "r": 548.0591099999998,
+                  "b": 309.8772672000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  173
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/8",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.00000000000006,
+                  "t": 298.7013600000002,
+                  "r": 548.0330580000001,
+                  "b": 274.8373272000001,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  135
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "1. Definitions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 2,
+      "text": "1. Definitions.\n1.6  \"Order  Form\" shall  mean  an  ordering  document,  specifying  price,  term  length,  and  other  business terms  and  limitations,  submitted  in  writing  or  online  and  agreed  to  by  the  Parties,  or  if  Customer  is purchasing through a marketplace, such marketplace's applicable ordering document, but excluding any marketplace terms not expressly approved in advance by Armorblox.\n1.7  \"Services\" means  the  services  made  available  by  Armorblox  to  Customer  under  this  Agreement including the Armorblox Platform, Installed Software, and the Support.\n1.8 \"Users\" includes both the \"Users\" as defined on an applicable Order Form and those individual natural persons who are Customer employees, agents, or contractors and who Customer authorizes to use the Services as administrators of Customer's implementation of the Services.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/9",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.00000000000006,
+                  "t": 263.66142000000013,
+                  "r": 548.1052019999994,
+                  "b": 211.84158720000016,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  398
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/10",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.00000000000006,
+                  "t": 200.66568000000018,
+                  "r": 548.0541,
+                  "b": 176.86176720000014,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  177
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/11",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 1,
+                "bbox": {
+                  "l": 45.01001999999994,
+                  "t": 165.68586000000016,
+                  "r": 548.0551019999988,
+                  "b": 127.84392720000017,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  276
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "1. Definitions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 3,
+      "text": "2. Use of the Services; Restrictions.\n2.1 Authorized Use. Subject to the terms and conditions of this Agreement, Armorblox grants Customer and its Users a limited, nonexclusive, nontransferable, worldwide (i) right during the Term to access and use the Services, and (ii) if applicable, license to install and use the Installed Software, in each case, as set forth  in  the  applicable  Order  Form  and  solely  for  Customer's  internal  business  purposes.  Customer  is responsible for all use of the Services by its Users and agrees that it will not provide or permit access to the Armorblox Platform to anyone other than Users who require such access for the purpose of performing their assigned work for Customer. Customer agrees and acknowledges that its use of the Services may be subject to certain volume and other limits and restrictions as specified herein and on an Order Form and that  exceeding  such  usage  limits  shall  subject  Customer  to  additional  charges  and  fees.  Customer represents and warrants that Customer has the right, including all consents required by Applicable Laws, to provide or make available  to Armorblox the Customer Data, in connection with the use of the Services.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/15",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 44.99999999999994,
+                  "t": 691.6944,
+                  "r": 548.0851619999993,
+                  "b": 541.8489072000003,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1177
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 4,
+      "text": "2. Use of the Services; Restrictions.\n2.2  Beta  and  Evaluation  Services. Services  provided  by  Armorblox  to  Customer  as  part  of  a  trial  or evaluation and beta functionality, shall not be subject to any representations, warranties, or indemnification obligations, shall not include Support or be subject to any service level agreements or obligations, and shall be  terminable  by  either  Party  at  any  time  for  any  or  no  reason  upon  notice  to  the  other  Party. Notwithstanding anything to the contrary herein, Armorblox's entire liability with respect to trial, evaluation, and beta Services, whether based upon contract, warranty, tort (including negligence), product liability or otherwise,  even  if  advised  in  advance  or  aware  of  the  possibility  of  any  such  loss  or  damage,  shall  be limited to $500.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/16",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 530.6730000000002,
+                  "r": 548.1412739999994,
+                  "b": 422.88144720000037,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  807
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 5,
+      "text": "2. Use of the Services; Restrictions.\n2.3 Restrictions. Customer shall not, and shall not allow its Users or others to: (i) copy, reverse engineer, modify, decompile or attempt to derive the source code for any aspect of the Services or any data related thereto or attempt to or do anything that could interfere with their functionality; (ii) resell, rent, distribute, sublicense or share the Services with or for the benefit of any third party or for any purpose other than its own use as expressly permitted in this Agreement; (iii) attempt to probe, scan, penetrate, breach or test the  vulnerability  of  the  Services  or  disable  or  circumvent  any  security  or  authentication  measures;  (iv) access the Services for the purpose of building a competitive product or service; or (v) use the Services in violation of this Agreement, any Applicable Laws, or the rights of any third parties.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/17",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 44.999999999999886,
+                  "t": 411.7055400000004,
+                  "r": 548.0551019999997,
+                  "b": 303.91398720000046,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  860
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 6,
+      "text": "2. Use of the Services; Restrictions.\n2.4 Proprietary Rights. Armorblox may use Customer Data in order to provide and improve the Services. This includes the right for Armorblox to retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services (\"Analytics\") that it may use for its business purposes; provided  that  such  Analytics  do  not  identify  Customer,  any  of  its  Users  or  any  third  party  entities  or individuals. Analytics are not Customer Confidential Information. As between the parties, Customer owns all right, title and interest (including all intellectual property rights) in and to Customer Data. As between the parties, Armorblox owns all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements and all derivative works of or included with the Services, including the general know-how and machine learning  developed  over  time.  Further,  Armorblox  owns  all  suggestions,  requests,  edits,  corrections  or other  feedback  relating  to  the  Services  or  other  Armorblox  materials  (\"Feedback\")  and  may  use",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/18",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 44.99999999999986,
+                  "t": 292.7380800000005,
+                  "r": 548.0941799999994,
+                  "b": 114.93678720000048,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1396
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 7,
+      "text": "2. Use of the Services; Restrictions.\nall Feedback for any purpose, perpetually, without any obligations, monetary or other compensation owed, or restrictions. For clarity, Feedback does not include Customer Confidential Information.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/18",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 2,
+                "bbox": {
+                  "l": 44.99999999999986,
+                  "t": 292.7380800000005,
+                  "r": 548.0941799999994,
+                  "b": 114.93678720000048,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1396
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "2. Use of the Services; Restrictions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 8,
+      "text": "3. Service Level Agreement and Support.\nSupport  information  is  available  at  https://www.armorblox.com/support/  (the  \"Support\").  Armorblox's service level agreement is set forth at https://www.armorblox.com/SLA .",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/22",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 3,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 691.6944,
+                  "r": 548.062116,
+                  "b": 667.8283872000001,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  179
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "3. Service Level Agreement and Support."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 9,
+      "text": "4. Payments.\nCustomer  agrees  to  pay  amounts  invoiced  by  Armorblox  under  this  Agreement  as  specified  in  the applicable  Order  Form(s)  in  U.S.  dollars  (\"Fees\").    Order  Forms  are  non-cancellable  and  Fees  are nonrefundable.  If  any  authority  imposes  a  sales  tax,  VAT,  or  similar  levy  (other  than  taxes  based  on Armorblox's  income)  on  the  provision  of  products  or  services  under  this  Agreement  as  ordered  by Customer, Customer agrees to pay and shall indemnify and hold harmless Armorblox for all such amounts that  Armorblox  is  required  to  pay  or  collect,  including  all  associated  fees  and  penalties.  Payment  from Customer  is  due  thirty  (30)  days  after  Customer's  receipt  of  each  invoice.  Customer  may  choose  to subscribe to the Services through an authorized reseller of Armorblox's Services, in which event, all Fees shall be paid to the applicable reseller by Customer subject to payment terms agreed to by such reseller and Customer, and all refunds, service credits and similar amounts that may be payable to Customer shall be paid by the applicable reseller to Customer directly and not by Armorblox.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/24",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 3,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 624.9744,
+                  "r": 548.1122159999991,
+                  "b": 475.1890272000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1174
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "4. Payments."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 10,
+      "text": "5. Confidentiality.\n5.1  Confidential  Information. A  party  (\" Receiving  Party \")  may,  during  the  course  of  this  Agreement, acquire  information  or  knowledge  of  the  other  party  (\" Disclosing  Party \")  that  such  Disclosing  Party designates  in  writing  is  confidential  or  that  a  reasonable  person  would  understand  to  be  confidential, including, without limitation, business, financial, and product information, the Services, and the terms of this  Agreement  (\" Confidential  Information \").  The  Receiving  Party  will  treat  the  Disclosing  Party's Confidential Information as confidential and will not disclose any such Confidential Information to any third party  nor  use  such  Confidential  Information  other  than  in  connection  with  this  Agreement.  \"Confidential Information\"  shall  not  include  information  that  the  Receiving  Party  can  document  was  independently developed by the Receiving Party, is or becomes publicly available without breach of this Agreement, is known prior to disclosure by the Receiving Party, or is acquired by the Receiving Party from a third party free  of  disclosure  obligations.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/26",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 3,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 432.31440000000003,
+                  "r": 551.0530859999994,
+                  "b": 114.55374720000009,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  2526
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "5. Confidentiality."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 11,
+      "text": "5. Confidentiality.\nIn  addition,  the  Receiving  Party  may  disclose  the  Disclosing  Party's Confidential Information if required by applicable law, rule or court order, provided that the Receiving Party gives the Disclosing Party prompt notice thereof and cooperates, at the Disclosing Party's expense, in any attempt to obtain a protective order or other confidential treatment of such disclosure. A violation or breach of  this  Section  may  cause  severe  and  irreparable  injury  to  the  non-breaching  party  with  no  adequate remedy at law. Accordingly, in the event  of  any  actual  or  threatened  violation  or  breach,  the  breaching party agrees that the non-breaching party shall be entitled to seek immediate injunctive relief to prevent or stop such violation or breach, as well as other equitable and legal remedies against the breaching party. The obligations set forth in this Section will survive the termination of this Agreement. For the avoidance of doubt, Customer acknowledges that Armorblox utilizes the services of certain third parties in connection with the provision of the Services (such as data hosting providers) and such third parties, along with any other  third  party  service  providers  that  Customer  may  choose  to  integrate  with  the  Services,  may  have access to Customers' Confidential Information, in accordance with this Agreement.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/26",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 3,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 432.31440000000003,
+                  "r": 551.0530859999994,
+                  "b": 114.55374720000009,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  2526
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "5. Confidentiality."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 12,
+      "text": "5. Confidentiality.\n5.2  Data  Protection. Armorblox  will  use  commercially  reasonable  efforts  to  maintain  administrative, physical and technical safeguards consistent with applicable industry standards designed to protect the security, confidentiality and integrity of Customer Data. Customer shall not knowingly utilize the Services in a way that is intended to distribute PHI as it is defined in the Health Insurance Portability and Accountability Act  to  Armorblox  without  entering  into  a  Business  Associate  Agreement  with  Armorblox.  Any  data processing  and  protection  agreement  (\" Data  Protection  Agreement \")  entered  into  by  the  parties  in connection with the Services and this Agreement is hereby incorporated into this Agreement and all terms of  this  Agreement,  including  any  limitations  of  liability  herein,  shall  fully  apply  to  such  Data  Protection Agreement.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/29",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 4,
+                "bbox": {
+                  "l": 44.98998,
+                  "t": 715.3344,
+                  "r": 548.0821559999999,
+                  "b": 593.5048272000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  895
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "5. Confidentiality."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 13,
+      "text": "6. Limited Warranty and Disclaimer.\n6.1 Warranty. Armorblox warrants that the Armorblox Platform will, under normal and authorized use in full compliance with this Agreement, conform in all material respects to the technical specifications described in its Documentation.\n6.2 Disclaimer. EXCEPT FOR THE FOREGOING WARRANTY, TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PARTIES HEREBY DISCLAIM ALL OTHER WARRANTIES OR CONDITIONS, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY,  FITNESS  FOR  A  PARTICULAR  PURPOSE,  OR  NON-INFRINGEMENT.  ARMORBLOX MAKES NO WARRANTY THAT THE ARMORBLOX PLATFORM OR SERVICES WILL OPERATE ERROR-FREE, BE FREE OF SECURITY DEFECTS OR OMISSIONS, OR OPERATE IN AN UNINTERRUPTED MANNER.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/31",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 4,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 550.6944,
+                  "r": 548.0310540000003,
+                  "b": 512.8524672000001,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  235
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/32",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 4,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 501.6765600000001,
+                  "r": 548.0741399999997,
+                  "b": 421.84080720000014,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  502
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "6. Limited Warranty and Disclaimer."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 14,
+      "text": "6. Limited Warranty and Disclaimer.\n6.3  Exclusive  Remedy. Armorblox's  sole  obligation  and  liability,  and  Customer's  sole  and  exclusive remedy, under the warranty set forth in this Section 6 (\" Limited Warranty and Disclaimer \")  shall  be  for Armorblox to, at its sole option, either (i) use commercially reasonable efforts to remedy the problem or correct  any  errors  in  the  Armorblox  Platform  or  Services,  or  (ii)  refund  the  applicable  Fees  paid  for  the period  the  Services  did  not  comply;  provided  that  in  each  case  Armorblox  is  notified  in  writing  of  all warranty claims during Term.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/33",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 4,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 410.66490000000016,
+                  "r": 548.0881679999995,
+                  "b": 330.88926720000023,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  596
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "6. Limited Warranty and Disclaimer."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 15,
+      "text": "7. Indemnification.\n7.1 Indemnification. Armorblox will defend Customer from any unaffiliated third party claim to the extent the claim alleges that Customer's use of the Armorblox Platform as provided by Armorblox to Customer under this Agreement, when used as permitted by this Agreement, infringes or misappropriates such third party's U.S. patent or copyright. Armorblox shall have no obligation or liability for any claim of infringement or misappropriation that arises out of or relates to: (i) a combination of the Armorblox Platform with a nonArmorblox application, product,  data  or  business  process;  (ii)  damages  attributable  to  a  non-Armorblox application, product, data or business process; (iii) modifications made other than expressly permitted by Armorblox; or (iv) continued use of any product or service for which Armorblox has provided Customer notice  to  discontinue  use  due  to  such  a  claim  and  /  or  modifications  or  substitutes  if  use  of  such modifications  or  substitutes  would  have  prevented  the  claim.  This  Section  states  Customer's  sole",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/35",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 4,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 288.0144,
+                  "r": 548.0761439999998,
+                  "b": 110.21310719999997,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1342
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "7. Indemnification."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 16,
+      "text": "7. Indemnification.\nand exclusive remedy and the entire liability of Armorblox for infringement claims and actions. Customer will defend Armorblox from any unaffiliated third  party  claim  to  the  extent  such  claim  alleges  a  violation  by Customer of the third party's rights.\n7.2 Procedure. The indemnified party shall give prompt written notice to the indemnifying party of any such claim, allow the indemnifying party's exclusive control of the defense and any related settlement of any such claim; and furnish the indemnifying party with reasonable assistance in connection with the claim.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/35",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 4,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 288.0144,
+                  "r": 548.0761439999998,
+                  "b": 110.21310719999997,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1342
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/36",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 4,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 99.03719999999998,
+                  "r": 548.0741399999993,
+                  "b": 61.19526719999999,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  316
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "7. Indemnification."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 17,
+      "text": "7. Indemnification.\n7.3 Assurance of Use. If Customer's use of the Armorblox Platform is, or in Armorblox's opinion is likely to be, enjoined due to the type of claim specified in Section 7.1, then Armorblox may, at its sole option and expense choose to procure for Customer the right to continue to use the Armorblox Platform under the terms of this Agreement or replace or modify the Armorblox Platform so that it becomes non-infringing and substantially equivalent in function to the enjoined Armorblox Platform. If none of the foregoing are commercially  reasonable  in  Armorblox's  sole  discretion,  Armorblox  may  terminate  this  Agreement  and provide a refund to Customer of prepaid unused Fees with respect to the remainder of the Term.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/39",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 5,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 715.3344,
+                  "r": 551.0510819999997,
+                  "b": 621.5207472000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  729
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "7. Indemnification."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 18,
+      "text": "8. Limitations and Exclusions.\n8.1 NOTHING IN THIS AGREEMENT SHALL LIMIT OR EXCLUDE EITHER PARTY'S LIABILITY FOR (I)  DEATH OR PERSONAL INJURY CAUSED BY ITS NEGLIGENCE, OR THE NEGLIGENCE OF ITS EMPLOYEES, AGENTS OR SUBCONTRACTORS; (II) GROSS NEGLIGENCE, FRAUD OR FRAUDULENT MISREPRESENTATION, OR WILLFUL  MISCONDUCT; OR (III)  ANY  OTHER  LIABILITY  THAT  CANNOT  BE  EXCLUDED  OR  LIMITED  BY LAW. NOTHING IN THIS AGREEMENT SHALL LIMIT LIABILITY ARISING FROM CUSTOMER'S BREACH OF SECTION 2 (\"USE OF THE SERVICES; RESTRICTIONS\") AND CUSTOMER'S FAILURE TO PAY ANY FEES.\n8.2 SUBJECT TO SECTION 8.1, IN NO EVENT WILL EITHER PARTY BE LIABLE TO THE OTHER PARTY FOR ANY INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION, LIABILITIES RELATED TO A LOSS OF USE, PROFITS, GOODWILL OR SAVINGS) OR A LOSS OR DAMAGE TO ANY SYSTEMS, RECORDS OR DATA, WHETHER SUCH LIABILITY ARISES FROM ANY CLAIM BASED UPON CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, EVEN IF ADVISED IN ADVANCE OR AWARE OF THE POSSIBILITY OF ANY SUCH LOSS OR DAMAGE.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/41",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 5,
+                "bbox": {
+                  "l": 44.99999999999997,
+                  "t": 578.6544,
+                  "r": 548.0851619999993,
+                  "b": 498.8787672000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  537
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/42",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 5,
+                "bbox": {
+                  "l": 44.99999999999994,
+                  "t": 487.7028600000002,
+                  "r": 548.0841599999995,
+                  "b": 393.88920720000027,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  521
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "8. Limitations and Exclusions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 19,
+      "text": "8. Limitations and Exclusions.\n8.3 SUBJECT TO SECTION 8.1, IN NO EVENT WILL EITHER PARTY'S AGGREGATE LIABILITY (INCLUDING, BUT  NOT  LIMITED  TO,  LIABILITY  FOR  NEGLIGENCE,  STRICT  LIABILITY,  BREACH  OF  CONTRACT, MISREPRESENTATION AND OTHER CONTRACT OR TORT CLAIMS) ARISING FROM OR RELATED TO THIS AGREEMENT, EXCEED THE AMOUNT OF FEES PAID AND PAYABLE TO ARMORBLOX UNDER THE ORDER FORM UNDER WHICH LIABILITY ARISES IN THE TWELVE (12) MONTHS PRIOR TO THE EVENT GIVING RISE TO THE LIABILITY.\nNOTWITHSTANDING THE FOREGOING OR ANYTHING TO THE CONTRARY HEREIN, LIABILITIES ARISING UNDER AND RELATED TO A PARTY'S BREACH OF SECTION 7 (\"INDEMNIFICATION\") SHALL BE LIMITED, IN  THE  AGGREGATE,  TO  THE  GREATER  OF  (A)  $500,000  OR  (B)  TWO  TIMES  THE  FEES  PAID  AND PAYABLE TO ARMORBLOX UNDER THE ORDER FORM UNDER WHICH LIABILITY ARISES IN THE TWELVE (12) MONTHS PRIOR TO THE EVENT GIVING RISE TO THE LIABILITY.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/43",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 5,
+                "bbox": {
+                  "l": 44.99999999999998,
+                  "t": 382.7133000000003,
+                  "r": 548.0831579999995,
+                  "b": 302.8775472000003,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  463
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/44",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 5,
+                "bbox": {
+                  "l": 44.999999999999986,
+                  "t": 291.70164000000034,
+                  "r": 548.0841599999994,
+                  "b": 225.90390720000028,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  420
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "8. Limitations and Exclusions."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 20,
+      "text": "9. Term and Termination.\n9.1 Term. The term of this Agreement shall commence on the earlier of the Effective Date of an applicable Order Form, or the Effective Date set forth herein, and shall expire on the termination date set forth in such Order Form (the \"Initial Term\"). This Agreement and each Order Form executed under this Agreement shall automatically renew for successive one (1) year periods (each, a \"Renewal Term,\" and together with the Initial  Term, the \"Term\") unless either Party provides the other Party with notice of non-renewal at least thirty (30) calendar days prior to the expiration of the then-current term.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/46",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 5,
+                "bbox": {
+                  "l": 44.98997999999999,
+                  "t": 183.01440000000002,
+                  "r": 548.0581079999988,
+                  "b": 103.1786472,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  607
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "9. Term and Termination."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 21,
+      "text": "9. Term and Termination.\n9.2 Termination. Either Party may terminate this Agreement upon thirty (30) days' prior written notice if the other  Party  materially  breaches  this  Agreement  and  does  not  cure  such  breach  within  thirty  (30)  days following receipt of notice specifying the breach.  Either Party shall also have the right to terminate this Agreement  immediately  upon  written  notice  in  the  event  the  other  Party:  (i)  becomes  insolvent;  (ii) becomes subject to a petition in bankruptcy filed by or against it that is not dismissed within thirty days of the filing of such petition; (iii) is placed under the control of a receiver, liquidator or committee of creditors; or (iv) dissolves, ceases to function as a going concern or to conduct its business in the normal course.\n9.3 Suspension of Services. Notwithstanding anything to the contrary herein, Armorblox may suspend the Services  at  any  time  if  necessary  to  protect  itself,  the  Services  and  /  or  other  customers  and  users  in connection  with  a  reasonable  security  concern  and  also  upon  reasonable  belief  that  there  has  been  a breach of Section 2.3 of this Agreement (\"Restrictions\").",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/49",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 6,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 715.3344,
+                  "r": 548.119229999999,
+                  "b": 621.5207472000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  781
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/50",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 6,
+                "bbox": {
+                  "l": 45.01002,
+                  "t": 610.3448400000001,
+                  "r": 548.0931779999992,
+                  "b": 558.5250072000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  397
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "9. Term and Termination."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 22,
+      "text": "9. Term and Termination.\n9.4  Material  Diminishment. The  Services  including  all  service  level  agreements  and  the  Support  are subject  to  modification  from  time  to  time  in  Armorblox's  sole  discretion.  Notwithstanding  the  foregoing, Customer shall have the right to terminate the Agreement pursuant to Section 9.2 without any penalty if (i) a material modification to the Services or an applicable service level agreement is made which materially diminishes  the  functionality  of  the  Services  or  materially  diminishes  such  service  level  agreement,  (ii) Armorblox has not obtained Customer's written consent for such modifications, and (iii) Armorblox does not provide a remedy in the cure period stated in Section 9.2.\n9.5 Effect of Termination. Upon the termination of this Agreement for any reason, Customer will pay all amounts accrued or otherwise owing to Armorblox on the date of termination and all Order Forms under this Agreement shall also terminate. Termination in accordance with this section shall be without prejudice to any other rights or remedies of the Parties. Those provisions of this Agreement that expressly or by their nature survive termination shall survive any expiration or termination of this Agreement.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/51",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 6,
+                "bbox": {
+                  "l": 45.01002,
+                  "t": 547.3491000000001,
+                  "r": 548.0991899999993,
+                  "b": 453.5354472000003,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  726
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/52",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 6,
+                "bbox": {
+                  "l": 45.01002,
+                  "t": 442.3595400000003,
+                  "r": 548.0591099999992,
+                  "b": 376.5618072000004,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  512
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "9. Term and Termination."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 23,
+      "text": "10. Miscellaneous.\n10.1  Legal  Compliance;  Restricted  Rights. Each  Party  agrees  to  comply  with  all  Applicable  Laws. Without  limiting  the  foregoing,  Customer  acknowledges  and  agrees  that  the  Armorblox  Platform  and Services are of U.S. origin for U.S. export control purposes and subject to the U.S. Export Administration Regulation.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/54",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 6,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 333.6744,
+                  "r": 551.066112,
+                  "b": 113.87928720000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1669
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "10. Miscellaneous."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 24,
+      "text": "10. Miscellaneous.\nDiversion  of  the  Services  contrary  to  U.S.  Law  and  regulation  is  prohibited;  for  additional information  on  U.S.  export  controls  see  www.bis.doc.gov.  Customer  represents  that  neither  the  U.S. Bureau of Industry and Security nor any other governmental agency has issued sanctions against Customer or otherwise suspended, revoked or denied Customer's status under applicable export control regulations. The Services and Documentation are deemed \"commercial computer software\" and \"commercial computer software documentation\", respectively pursuant to DFARS  227.7202  and  FAR  12.212,  and  their successors, as applicable, and are provided with RESTRICTED  RIGHTS. Any use, modification, reproduction,  release,  performance,  display  or  disclosure  of  the  Services  or  Documentation  by  the  U.S. Government shall be governed by the terms of this Agreement and shall otherwise be prohibited except to the extent expressly permitted by the terms of this Agreement. Customer agrees that it has not received or been  offered  any  illegal  or  improper  bribe,  kickback,  payment,  gift,  or  thing  of  value  from  any  party  in connection  with  this  Agreement.  If  Customer  learns  of  any  actual  or  suspected  violation  of  the  above restriction, Customer will promptly notify Armorblox.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/54",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 6,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 333.6744,
+                  "r": 551.066112,
+                  "b": 113.87928720000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1669
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "10. Miscellaneous."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 25,
+      "text": "10. Miscellaneous.\n10.2  Notices. Any  notices  required  or  permitted  to  be  given  under  this  Agreement  will  be  sent  to Armorblox at orders@armorblox.com and to Customer at the email address provided on an Order Form or otherwise. Notwithstanding the foregoing, legal notices required under this Agreement will be personally delivered  or  sent  by  certified  or  registered  mail,  return  receipt  requested,  or  by  nationally  recognized overnight express courier, to the address specified herein or such other address as a Party may specify in writing.    Such  notices  will  be  effective  upon  receipt,  which  may  be  shown  by  confirmation  of  delivery. Notices to Armorblox shall be sent Attn: Legal (unless otherwise specified by Armorblox).",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/57",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 715.3344,
+                  "r": 548.1062039999989,
+                  "b": 621.5207472000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  751
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "10. Miscellaneous."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 26,
+      "text": "10. Miscellaneous.\n- 10.3 Assignment. Customer may not assign or transfer this Agreement without Armorblox's prior written consent.\n- 10.4 Force Majeure. Neither Party shall be liable for any delay or failure due to a force majeure event and other causes beyond its reasonable control.  This provision shall not apply to any of Customer's payment obligations.\n- 10.5 Counterparts. This Agreement may be executed in counterparts, each of which will be deemed an original, but all of which together will constitute one and the same instrument.\n- 10.6  Governing  Law  and  Venue. This  Agreement  is  governed  by  the  laws  of  the  State  of  California, without regard to conflicts of laws principles. Any litigation arising out of or related to this Agreement shall be submitted to and resolved by a court of competent jurisdiction in San Francisco, California. In any action brought  to  enforce  this  Agreement,  the  prevailing  party  shall  be  entitled  to  receive  its  costs,  attorneys' fees, and other expenses of collection in addition to any other relief it may receive.",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/58",
+            "parent": {
+              "$ref": "#/groups/0"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "list_item",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.0,
+                  "t": 610.3448400000001,
+                  "r": 548.0450820000002,
+                  "b": 586.5409272000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  110
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/59",
+            "parent": {
+              "$ref": "#/groups/0"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "list_item",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.00000000000006,
+                  "t": 575.3650200000001,
+                  "r": 548.0500919999993,
+                  "b": 537.5230872000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  225
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/60",
+            "parent": {
+              "$ref": "#/groups/0"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "list_item",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.00000000000005,
+                  "t": 526.3471800000001,
+                  "r": 548.0591099999992,
+                  "b": 502.5432672000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  179
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/61",
+            "parent": {
+              "$ref": "#/groups/0"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "list_item",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.00000000000006,
+                  "t": 491.3673600000002,
+                  "r": 548.0731379999994,
+                  "b": 425.5095072000002,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  543
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "10. Miscellaneous."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 27,
+      "text": "10. Miscellaneous.\n10.7 General. This Agreement, including its exhibits (all of which are incorporated herein), represents the Parties' complete  agreement  regarding  its subject matter, superseding  any  prior oral or written communications, including any customer documents, terms, vendor forms, reseller or marketplace terms, and  purchase  orders,  including  all  terms  therein,  all  which  are  rejected  and  of  no  force  or  effect. Amendments or changes to this Agreement must be in mutually executed writings to be effective. The parties each acknowledge and agree that the individual executing this Agreement on behalf of each such Party  has  the  requisite  power  and  authority  to  sign  this  Agreement  on  behalf  of  such  Party.  Unless otherwise expressly set forth in an exhibit that is executed by the Parties, this Agreement shall control in the event of any conflict with an exhibit. If any provision of this Agreement is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that this Agreement will otherwise remain enforceable and in full force and effect. The Parties are independent contractors for all purposes under this Agreement; nothing in this Agreement shall be construed to create a partnership, joint  venture  or  agency  relationship  between  the  Parties.  This  Agreement  does  not  grant  any  rights",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/62",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.00000000000006,
+                  "t": 414.3336000000002,
+                  "r": 551.1202199999987,
+                  "b": 222.55440720000036,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1432
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "10. Miscellaneous."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    },
+    {
+      "chunk_id": 28,
+      "text": "10. Miscellaneous.\nor remedies to any third parties.\nEurope Headquarters Cisco Systems International BV Amsterdam,\nThe Netherlands\nCisco has more than 200 offices worldwide. Addresses, phone numbers, and fax numbers are listed on the Cisco Website at https://www.cisco.com/go/offices.\nCisco and the Cisco logo are trademarks or registered trademarks of Cisco and/or its affiliates in the U.S. and other countries. To view a list of Cisco trademarks, go to this URL: https://www.cisco.com/go/trademarks. Third-party trademarks mentioned are the property of their respective owners. The use of the word partner does not imply a partnership relationship between Cisco and any other company. (1110R)",
+      "metadata": {
+        "schema_name": "docling_core.transforms.chunker.DocMeta",
+        "version": "1.0.0",
+        "doc_items": [
+          {
+            "self_ref": "#/texts/62",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.00000000000006,
+                  "t": 414.3336000000002,
+                  "r": 551.1202199999987,
+                  "b": 222.55440720000036,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  1432
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/63",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 363.3333333333333,
+                  "t": 137.0,
+                  "r": 505.6666666666667,
+                  "b": 120.0,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  61
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/64",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 363.3333333333333,
+                  "t": 119.33333333333337,
+                  "r": 417.6666666666667,
+                  "b": 111.66666666666663,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  15
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/65",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 46.0,
+                  "t": 105.33333333333337,
+                  "r": 562.0,
+                  "b": 97.0,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  153
+                ]
+              }
+            ]
+          },
+          {
+            "self_ref": "#/texts/66",
+            "parent": {
+              "$ref": "#/body"
+            },
+            "children": [],
+            "content_layer": "body",
+            "label": "text",
+            "prov": [
+              {
+                "page_no": 7,
+                "bbox": {
+                  "l": 45.333333333333336,
+                  "t": 89.0,
+                  "r": 562.3333333333334,
+                  "b": 64.33333333333337,
+                  "coord_origin": "BOTTOMLEFT"
+                },
+                "charspan": [
+                  0,
+                  410
+                ]
+              }
+            ]
+          }
+        ],
+        "headings": [
+          "10. Miscellaneous."
+        ],
+        "origin": {
+          "mimetype": "application/pdf",
+          "binary_hash": 10089807052604890073,
+          "filename": "tmpzwbz1asl.pdf"
+        }
+      }
+    }
+  ]
+}

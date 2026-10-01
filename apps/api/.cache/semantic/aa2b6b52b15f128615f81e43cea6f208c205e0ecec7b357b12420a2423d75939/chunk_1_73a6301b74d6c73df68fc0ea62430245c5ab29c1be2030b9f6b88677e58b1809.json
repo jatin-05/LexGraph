@@ -1,0 +1,44 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 1,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [],
+    "defined_terms": [
+      {
+        "term": "Applicable  Laws",
+        "definition": "all  applicable  laws,  statutes,  ordinances,  regulations and government directives",
+        "source_text": "Capitalized terms used in this Agreement shall be defined as set forth below or otherwise in the context in which they are used.\n1.1  \"Applicable  Laws\" means  all  applicable  laws,  statutes,  ordinances,  regulations and government directives.",
+        "source_chunk_id": 1
+      },
+      {
+        "term": "Armorblox  Platform",
+        "definition": "Armorblox's  proprietary  software  and  technology provided or made available by Armorblox to Customer under this Agreement as identified in the applicable Order Form, including any updates, patches, bug fixes, or improvements made generally available by Armorblox from time to time",
+        "source_text": "1.2  \"Armorblox  Platform\" means  Armorblox's  proprietary  software  and  technology provided  or  made available  by  Armorblox  to  Customer  under  this  Agreement  as  identified  in  the  applicable  Order  Form, including any updates, patches, bug fixes, or improvements made generally available by Armorblox from time to time.",
+        "source_chunk_id": 1
+      },
+      {
+        "term": "Customer  Data",
+        "definition": "all  electronic information provided or made available by or on behalf of Customer to Armorblox for use in connection with Armorblox's provision of the Services to Customer. Customer Data does not include Analytics",
+        "source_text": "1.3  \"Customer  Data\" means  all  electronic  information  provided  or  made  available  by  or  on  behalf  of Customer  to  Armorblox  for  use  in  connection  with  Armorblox's  provision  of  the  Services  to  Customer. Customer Data does not include Analytics.",
+        "source_chunk_id": 1
+      },
+      {
+        "term": "Documentation",
+        "definition": "Armorblox's  release  notes  or  other  similar  instructions supplied or made available online by Armorblox and as revised from time to time",
+        "source_text": "1.4  \"Documentation\" means  Armorblox's  release  notes  or  other  similar  instructions supplied  or  made available  online  by  Armorblox and as revised from time to time.",
+        "source_chunk_id": 1
+      },
+      {
+        "term": "Installed Software",
+        "definition": "software provided by Armorblox to be installed by Customer solely for use with other Armorblox Services",
+        "source_text": "1.5  \"Installed Software\" means software provided by Armorblox to be installed by Customer solely for use with other Armorblox Services.",
+        "source_chunk_id": 1
+      }
+    ],
+    "obligations": [],
+    "rights": [],
+    "references": []
+  }
+}

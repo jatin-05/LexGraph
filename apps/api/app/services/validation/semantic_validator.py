@@ -114,6 +114,20 @@ class ContractSemanticValidator:
                 )
                 continue
 
+            if not self._contains(party.source_text, party.name):
+                issues.append(
+                    ValidationIssue(
+                        item_type="party_evidence",
+                        item_index=index,
+                        reason=(
+                            "Party name appears in the chunk but not in its "
+                            "source_text. Party was retained for review."
+                        ),
+                        source_text=party.source_text,
+                        item=party.model_dump(),
+                    )
+                )
+
             if (
                 party.designation
                 and not self._contains(
@@ -155,6 +169,17 @@ class ContractSemanticValidator:
     ) -> None:
 
         for index, term in enumerate(extraction.defined_terms):
+            if not term.definition or not term.definition.strip():
+                self._reject(
+                    issues=issues,
+                    item_type="defined_term",
+                    item_index=index,
+                    reason="defined term has no extracted definition.",
+                    item=term.model_dump(),
+                    source_text=term.source_text,
+                )
+                continue
+
             if not self._source_supported(
                 term.source_text,
                 chunk_text,
@@ -200,6 +225,21 @@ class ContractSemanticValidator:
                     source_text=term.source_text,
                 )
                 continue
+
+            if not self._contains(term.source_text, term.definition):
+                issues.append(
+                    ValidationIssue(
+                        item_type="defined_term_definition_evidence",
+                        item_index=index,
+                        reason=(
+                            "The defined term is supported, but its extracted "
+                            "definition is not directly present in source_text. "
+                            "The term was retained for review."
+                        ),
+                        source_text=term.source_text,
+                        item=term.model_dump(),
+                    )
+                )
 
             accepted.defined_terms.append(term)
 

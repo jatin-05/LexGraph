@@ -62,8 +62,7 @@ PDF / DOCX
  Contract Representation
      |
      v
- [Next]
- Reference resolution
+ Deterministic reference resolution (explicit section and defined-term references)
      |
      v
  Relationships
@@ -267,6 +266,19 @@ The OpenAI-compatible base URL used by the project is:
 http://localhost:11434/v1
 ```
 
+For parallel semantic extraction, restart Ollama with `OLLAMA_NUM_PARALLEL=2`.
+On Windows, close the Ollama app from the system tray, then start it from a
+PowerShell window with:
+
+```powershell
+$env:OLLAMA_NUM_PARALLEL = "2"
+ollama serve
+```
+
+Keep that window open while the API is running. Parallel requests use additional
+memory; reduce this value to `1` if Ollama runs out of memory or performance
+gets worse.
+
 ---
 
 # 7. Environment Configuration
@@ -286,9 +298,14 @@ SUPABASE_SECRET_KEY=your_supabase_secret_key
 ENVIRONMENT=development
 
 EXTRACTION_MODEL=qwen2.5:3b-instruct
+EXTRACTION_MAX_CONCURRENCY=2
 
 OLLAMA_BASE_URL=http://localhost:11434/v1
 ```
+
+`EXTRACTION_MAX_CONCURRENCY` limits how many chunks the API submits at once. Keep
+it at or below Ollama's `OLLAMA_NUM_PARALLEL` setting to avoid building a queue
+inside Ollama.
 
 ## Important
 
@@ -599,12 +616,15 @@ ContractRepresentation
 |   └── chunks
 |       └── provenance
 |
-├── semantics
+     ├── semantics
 |   ├── parties
 |   ├── defined_terms
 |   ├── obligations
 |   ├── rights
 |   └── references
+|
+├── reference_resolutions
+|   └── resolved, ambiguous, unresolved, or external targets
 |
 └── validation
     └── issues
@@ -1007,6 +1027,7 @@ The following components are currently implemented:
 [completed] Pydantic structured output
 [completed] Structure / semantics separation
 [completed] Semantic Validator V1
+[in progress] Deterministic resolution of explicit section and defined-term references
 ```
 
 Current / upcoming:
@@ -1014,8 +1035,7 @@ Current / upcoming:
 ```text
 [in progress] Full-contract semantic processing
 [next]        Normalization
-[next]        Reference resolution
-[next]        Relationship representation
+[next]        Broader relationship representation
 [planned]     Structure-aware retrieval
 [planned]     Contract question answering
 [planned]     Evidence / PDF highlighting
