@@ -1,0 +1,77 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 9,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Customer",
+        "designation": null,
+        "source_text": "Customer agrees to pay amounts invoiced by Armorblox under this Agreement as specified in the applicable Order Form(s) in U.S. dollars ('Fees').",
+        "source_chunk_id": null
+      },
+      {
+        "name": "Armorblox",
+        "designation": "Armorblox",
+        "source_text": "Customer agrees to pay amounts invoiced by Armorblox under this Agreement as specified in the applicable Order Form(s) in U.S. dollars ('Fees').",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Order Forms",
+        "definition": "non-cancellable and Fees are nonrefundable",
+        "source_text": "Order Forms are non-cancellable and Fees are nonrefundable.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "pay amounts invoiced by Armorblox under this Agreement as specified in the applicable Order Form(s) in U.S. dollars ('Fees')",
+        "object": "Fees",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer agrees to pay amounts invoiced by Armorblox under this Agreement as specified in the applicable Order Form(s) in U.S. dollars ('Fees').",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Customer",
+        "action": "pay all such amounts that Armorblox is required to pay or collect, including all associated fees and penalties",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "If any authority imposes a sales tax, VAT, or similar levy (other than taxes based on Armorblox's income) on the provision of products or services under this Agreement as ordered by Customer, Customer agrees to pay and shall indemnify and hold harmless Armorblox for all such amounts that Armorblox is required to pay or collect, including all associated fees and penalties.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Customer",
+        "action": "pay all refunds, service credits and similar amounts that may be payable to Customer",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "If any authority imposes a sales tax, VAT, or similar levy (other than taxes based on Armorblox's income) on the provision of products or services under this Agreement as ordered by Customer, Customer agrees to pay and shall indemnify and hold harmless Armorblox for all such amounts that Armorblox is required to pay or collect, including all associated fees and penalties. Payment from Customer is due thirty (30) days after Customer's receipt of each invoice. Customer may choose to subscribe to the Services through an authorized reseller of Armorblox's Services, in which event, all Fees shall be paid to the applicable reseller by Customer subject to payment terms agreed to by such reseller and Customer, and all refunds, service credits and similar amounts that may be payable to Customer shall be paid by the applicable reseller to Customer directly and not by Armorblox.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "choose to subscribe to the Services through an authorized reseller of Armorblox's Services",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer may choose to subscribe to the Services through an authorized reseller of Armorblox's Services, in which event, all Fees shall be paid to the applicable reseller by Customer subject to payment terms agreed to by such reseller and Customer, and all refunds, service credits and similar amounts that may be payable to Customer shall be paid by the applicable reseller to Customer directly and not by Armorblox.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Order Forms",
+        "reference_type": "defined_term_reference",
+        "source_text": "Order Forms are non-cancellable and Fees are nonrefundable.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

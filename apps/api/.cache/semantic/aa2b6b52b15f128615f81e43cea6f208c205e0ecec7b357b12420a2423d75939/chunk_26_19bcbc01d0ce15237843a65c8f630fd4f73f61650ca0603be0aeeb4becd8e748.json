@@ -1,0 +1,52 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 26,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Customer",
+        "designation": null,
+        "source_text": "Customer may not assign or transfer this Agreement without Armorblox's prior written consent.",
+        "source_chunk_id": null
+      },
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "Customer may not assign or transfer this Agreement without Armorblox's prior written consent.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "may not assign or transfer this Agreement",
+        "object": "this Agreement",
+        "condition": "without Armorblox's prior written consent",
+        "deadline": null,
+        "source_text": "Customer may not assign or transfer this Agreement without Armorblox's prior written consent.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Customer",
+        "action": "shall not be liable for any delay or failure due to a force majeure event and other causes beyond its reasonable control",
+        "object": null,
+        "condition": "for any delay or failure due to a force majeure event and other causes beyond its reasonable control",
+        "deadline": null,
+        "source_text": "Neither Party shall be liable for any delay or failure due to a force majeure event and other causes beyond its reasonable control. This provision shall not apply to any of Customer's payment obligations.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [],
+    "references": [
+      {
+        "target": "Section 10.6",
+        "reference_type": "section_reference",
+        "source_text": "This Agreement is governed by the laws of the State of California, without regard to conflicts of laws principles. Any litigation arising out of or related to this Agreement shall be submitted to and resolved by a court of competent jurisdiction in San Francisco, California. In any action brought to enforce this Agreement, the prevailing party shall be entitled to receive its costs, attorneys' fees, and other expenses of collection in addition to any other relief it may receive.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 21,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "Armorblox may suspend the Services at any time if necessary to protect itself, the Services and / or other customers and users in connection with a reasonable security concern and also upon reasonable belief that there has been a breach of Section 2.3 of this Agreement (\"Restrictions\").",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Restrictions",
+        "definition": null,
+        "source_text": "Section 2.3 of this Agreement (\"Restrictions\").",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "suspend the Services",
+        "object": "the Services",
+        "condition": "upon reasonable belief that there has been a breach of Section 2.3 of this Agreement (\"Restrictions\")",
+        "deadline": null,
+        "source_text": "Armorblox may suspend the Services at any time if necessary to protect itself, the Services and / or other customers and users in connection with a reasonable security concern and also upon reasonable belief that there has been a breach of Section 2.3 of this Agreement (\"Restrictions\").",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Armorblox",
+        "action": "suspend the Services",
+        "condition": "upon reasonable belief that there has been a breach of Section 2.3 of this Agreement (\"Restrictions\")",
+        "deadline": null,
+        "source_text": "Armorblox may suspend the Services at any time if necessary to protect itself, the Services and / or other customers and users in connection with a reasonable security concern and also upon reasonable belief that there has been a breach of Section 2.3 of this Agreement (\"Restrictions\").",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Section 2.3",
+        "reference_type": "section_reference",
+        "source_text": "Section 2.3 of this Agreement (\"Restrictions\").",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

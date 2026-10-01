@@ -1,0 +1,62 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 27,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "the company subscribing to the Services",
+        "designation": "Customer",
+        "source_text": "the company subscribing to the Services",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "this Agreement",
+        "definition": "represents the Parties' complete agreement regarding its subject matter, superseding any prior oral or written communications, including any customer documents, terms, vendor forms, reseller or marketplace terms, and purchase orders, including all terms therein, all of which are rejected and of no force or effect",
+        "source_text": "This Agreement, including its exhibits (all of which are incorporated herein), represents the Parties' complete agreement regarding its subject matter, superseding any prior oral or written communications, including any customer documents, terms, vendor forms, reseller or marketplace terms, and purchase orders, including all terms therein, all of which are rejected and of no force or effect.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "the company subscribing to the Services",
+        "action": "execute mutually executed writings to be effective",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Amendments or changes to this Agreement must be in mutually executed writings to be effective.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "the company subscribing to the Services",
+        "action": "acknowledge and agree that the individual executing this Agreement on behalf of each such Party has the requisite power and authority to sign this Agreement on behalf of such Party",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "The parties each acknowledge and agree that the individual executing this Agreement on behalf of each such Party has the requisite power and authority to sign this Agreement on behalf of such Party.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "the company subscribing to the Services",
+        "action": "no rights granted",
+        "condition": null,
+        "deadline": null,
+        "source_text": "This Agreement does not grant any rights",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "this Agreement",
+        "reference_type": "agreement_reference",
+        "source_text": "This Agreement, including its exhibits (all of which are incorporated herein), represents the Parties' complete agreement regarding its subject matter, superseding any prior oral or written communications, including any customer documents, terms, vendor forms, reseller or marketplace terms, and purchase orders, including all terms therein, all of which are rejected and of no force or effect.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

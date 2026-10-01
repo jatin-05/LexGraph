@@ -12,7 +12,7 @@ from app.services.structure.models import (
 
 
 _HEADING_PATTERN = re.compile(
-    r"^\s*(\d+(?:\.\d+)*)\s+(.+?)\s*$"
+    r"^\s*(\d+(?:\.\d+)*)(?:\.)?\s+(.+?)\s*$"
 )
 
 

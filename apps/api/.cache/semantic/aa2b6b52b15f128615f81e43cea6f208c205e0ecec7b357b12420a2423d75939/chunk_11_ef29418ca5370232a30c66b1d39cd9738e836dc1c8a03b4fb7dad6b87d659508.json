@@ -1,0 +1,59 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 11,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Customer",
+        "designation": null,
+        "source_text": "the Receiving Party may disclose the Disclosing Party's Confidential Information if required by applicable law, rule or court order, provided that the Receiving Party gives the Disclosing Party prompt notice thereof and cooperates, at the Disclosing Party's expense, in any attempt to obtain a protective order or other confidential treatment of such disclosure.",
+        "source_chunk_id": null
+      },
+      {
+        "name": "Armorblox",
+        "designation": "Armorblox",
+        "source_text": "the Receiving Party may disclose the Disclosing Party's Confidential Information if required by applicable law, rule or court order, provided that the Receiving Party gives the Disclosing Party prompt notice thereof and cooperates, at the Disclosing Party's expense, in any attempt to obtain a protective order or other confidential treatment of such disclosure.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Confidential Information",
+        "definition": null,
+        "source_text": "the Receiving Party may disclose the Disclosing Party's Confidential Information if required by applicable law, rule or court order, provided that the Receiving Party gives the Disclosing Party prompt notice thereof and cooperates, at the Disclosing Party's expense, in any attempt to obtain a protective order or other confidential treatment of such disclosure.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "agrees that the non-breaching party shall be entitled to seek immediate injunctive relief to prevent or stop such violation or breach, as well as other equitable and legal remedies against the breaching party",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "A violation or breach of this Section may cause severe and irreparable injury to the non-breaching party with no adequate remedy at law. Accordingly, in the event of any actual or threatened violation or breach, the breaching party agrees that the non-breaching party shall be entitled to seek immediate injunctive relief to prevent or stop such violation or breach, as well as other equitable and legal remedies against the breaching party.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "agrees that the non-breaching party shall be entitled to seek immediate injunctive relief to prevent or stop such violation or breach, as well as other equitable and legal remedies against the breaching party",
+        "condition": null,
+        "deadline": null,
+        "source_text": "A violation or breach of this Section may cause severe and irreparable injury to the non-breaching party with no adequate remedy at law. Accordingly, in the event of any actual or threatened violation or breach, the breaching party agrees that the non-breaching party shall be entitled to seek immediate injunctive relief to prevent or stop such violation or breach, as well as other equitable and legal remedies against the breaching party.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Section 5",
+        "reference_type": "section_reference",
+        "source_text": "A violation or breach of this Section may cause severe and irreparable injury to the non-breaching party with no adequate remedy at law. Accordingly, in the event of any actual or threatened violation or breach, the breaching party agrees that the non-breaching party shall be entitled to seek immediate injunctive relief to prevent or stop such violation or breach, as well as other equitable and legal remedies against the breaching party.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

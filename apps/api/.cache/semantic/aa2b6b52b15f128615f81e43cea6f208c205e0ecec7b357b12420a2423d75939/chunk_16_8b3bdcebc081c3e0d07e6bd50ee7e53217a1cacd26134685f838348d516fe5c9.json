@@ -1,0 +1,39 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 16,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "and exclusive remedy and the entire liability of Armorblox for infringement claims and actions. Customer will defend Armorblox from any unaffiliated third  party  claim  to  the  extent  such  claim  alleges  a  violation  by Customer of the third party's rights.",
+        "source_chunk_id": 7
+      }
+    ],
+    "defined_terms": [],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "defend",
+        "object": "Armorblox",
+        "condition": "the extent such claim alleges a violation by Customer of the third party's rights",
+        "deadline": null,
+        "source_text": "and exclusive remedy and the entire liability of Armorblox for infringement claims and actions. Customer will defend Armorblox from any unaffiliated third  party  claim  to  the  extent  such  claim  alleges  a  violation  by Customer of the third party's rights.",
+        "source_chunk_id": 7
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "defend",
+        "condition": "the extent such claim alleges a violation by Customer of the third party's rights",
+        "deadline": null,
+        "source_text": "and exclusive remedy and the entire liability of Armorblox for infringement claims and actions. Customer will defend Armorblox from any unaffiliated third  party  claim  to  the  extent  such  claim  alleges  a  violation  by Customer of the third party's rights.",
+        "source_chunk_id": 7
+      }
+    ],
+    "references": []
+  }
+}

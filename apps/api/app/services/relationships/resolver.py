@@ -80,6 +80,54 @@ class ContractReferenceResolver:
         ]
         labels = [section.heading for section in matches]
 
+        # Docling may expose only top-level headings in chunk metadata while
+        # subsection headings (for example, "9.2 Termination.") remain in the
+        # chunk text. Resolve those exact numbered headings to their chunks.
+        if not matches and len(locators) == 1:
+            locator = locators[0]
+            heading_pattern = re.compile(
+                rf"^\s*{re.escape(locator)}(?:\.)?\s+(.+?)\s*$",
+                re.MULTILINE,
+            )
+            chunk_matches: list[tuple[int, str]] = []
+
+            for chunk in structure.chunks:
+                for line in chunk.text.splitlines():
+                    match = heading_pattern.match(line)
+                    if not match:
+                        continue
+
+                    title = re.split(r"[.!?]\s", match.group(1), maxsplit=1)[0]
+                    title = title.rstrip(". ")
+                    heading = (
+                        f"{locator} {title}"
+                        if title and len(title) <= 120
+                        else f"Section {locator}"
+                    )
+                    chunk_matches.append((chunk.chunk_id, heading))
+                    break
+
+            if chunk_matches:
+                target_chunk_ids = sorted(
+                    {chunk_id for chunk_id, _ in chunk_matches}
+                )
+                candidates = list(dict.fromkeys(
+                    heading for _, heading in chunk_matches
+                ))
+                is_unique_heading = len(candidates) == 1
+
+                return ReferenceResolution(
+                    reference_index=index,
+                    source_chunk_id=reference.source_chunk_id,
+                    target=reference.target,
+                    reference_type=reference.reference_type,
+                    status="resolved" if is_unique_heading else "ambiguous",
+                    target_kind="section",
+                    resolved_target=candidates[0] if is_unique_heading else None,
+                    target_chunk_ids=target_chunk_ids,
+                    candidates=candidates,
+                )
+
         if len(matches) == 1 and len(locators) <= 1:
             section = matches[0]
             return ReferenceResolution(

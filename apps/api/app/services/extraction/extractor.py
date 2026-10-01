@@ -195,7 +195,9 @@ DOCUMENT CHUNK
             ],
             response_model=ContractChunkSemanticExtraction,
             max_retries=2,
-            timeout=300.0,
+            # Some local Ollama generations take longer than five minutes.
+            # Let them finish instead of triggering a duplicate client retry.
+            timeout=900.0,
             temperature=0,
         )
 

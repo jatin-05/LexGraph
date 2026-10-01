@@ -1,0 +1,23 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 15,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [],
+    "defined_terms": [],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "defend Customer from any unaffiliated third party claim",
+        "object": "Customer's use of the Armorblox Platform",
+        "condition": "the claim alleges that Customer's use of the Armorblox Platform as provided by Armorblox to Customer under this Agreement, when used as permitted by this Agreement, infringes or misappropriates such third party's U.S. patent or copyright",
+        "deadline": null,
+        "source_text": "Armorblox will defend Customer from any unaffiliated third party claim to the extent the claim alleges that Customer's use of the Armorblox Platform as provided by Armorblox to Customer under this Agreement, when used as permitted by this Agreement, infringes or misappropriates such third party's U.S. patent or copyright.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [],
+    "references": []
+  }
+}

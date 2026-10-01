@@ -1,0 +1,68 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 12,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "Armorblox will use commercially reasonable efforts to maintain administrative, physical and technical safeguards consistent with applicable industry standards designed to protect the security, confidentiality and integrity of Customer Data.",
+        "source_chunk_id": null
+      },
+      {
+        "name": "Customer",
+        "designation": "Customer",
+        "source_text": "Customer shall not knowingly utilize the Services in a way that is intended to distribute PHI as it is defined in the Health Insurance Portability and Accountability Act to Armorblox without entering into a Business Associate Agreement with Armorblox.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "PHI",
+        "definition": "Health Insurance Portability and Accountability Act",
+        "source_text": "PHI as defined in the Health Insurance Portability and Accountability Act",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "use commercially reasonable efforts to maintain administrative, physical and technical safeguards",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Armorblox will use commercially reasonable efforts to maintain administrative, physical and technical safeguards consistent with applicable industry standards designed to protect the security, confidentiality and integrity of Customer Data.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Customer",
+        "action": "not knowingly utilize the Services in a way that is intended to distribute PHI",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer shall not knowingly utilize the Services in a way that is intended to distribute PHI as it is defined in the Health Insurance Portability and Accountability Act to Armorblox without entering into a Business Associate Agreement with Armorblox.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Armorblox",
+        "action": "enter into a Data Protection Agreement",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Any data processing and protection agreement (\"Data Protection Agreement\") entered into by the parties in connection with the Services and this Agreement is hereby incorporated into this Agreement and all terms of this Agreement, including any limitations of liability herein, shall fully apply to such Data Protection Agreement.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Data Protection Agreement",
+        "reference_type": "agreement_reference",
+        "source_text": "Any data processing and protection agreement (\"Data Protection Agreement\") entered into by the parties in connection with the Services and this Agreement is hereby incorporated into this Agreement and all terms of this Agreement, including any limitations of liability herein, shall fully apply to such Data Protection Agreement.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

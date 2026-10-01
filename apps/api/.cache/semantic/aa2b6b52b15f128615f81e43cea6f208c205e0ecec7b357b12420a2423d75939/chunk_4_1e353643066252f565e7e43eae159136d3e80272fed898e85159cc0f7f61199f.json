@@ -1,0 +1,53 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 4,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "Services provided by Armorblox to Customer as part of a trial or evaluation and beta functionality, shall not be subject to any representations, warranties, or indemnification obligations, shall not include Support or be subject to any service level agreements or obligations, and shall be terminable by either Party at any time for any or no reason upon notice to the other Party.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "trial or evaluation and beta functionality",
+        "definition": null,
+        "source_text": "Services provided by Armorblox to Customer as part of a trial or evaluation and beta functionality, shall not be subject to any representations, warranties, or indemnification obligations, shall not include Support or be subject to any service level agreements or obligations, and shall be terminable by either Party at any time for any or no reason upon notice to the other Party.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "limit its liability",
+        "object": null,
+        "condition": "Notwithstanding anything to the contrary herein",
+        "deadline": null,
+        "source_text": "Notwithstanding anything to the contrary herein, Armorblox's entire liability with respect to trial, evaluation, and beta Services, whether based upon contract, warranty, tort (including negligence), product liability or otherwise, even if advised in advance or aware of the possibility of any such loss or damage, shall be limited to $500.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Armorblox",
+        "action": "limit its liability",
+        "condition": "Notwithstanding anything to the contrary herein",
+        "deadline": null,
+        "source_text": "Notwithstanding anything to the contrary herein, Armorblox's entire liability with respect to trial, evaluation, and beta Services, whether based upon contract, warranty, tort (including negligence), product liability or otherwise, even if advised in advance or aware of the possibility of any such loss or damage, shall be limited to $500.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "trial, evaluation, and beta Services",
+        "reference_type": "other_contract_reference",
+        "source_text": "Notwithstanding anything to the contrary herein, Armorblox's entire liability with respect to trial, evaluation, and beta Services, whether based upon contract, warranty, tort (including negligence), product liability or otherwise, even if advised in advance or aware of the possibility of any such loss or damage, shall be limited to $500.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

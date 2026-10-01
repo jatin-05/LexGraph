@@ -1,0 +1,59 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 17,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Customer",
+        "designation": null,
+        "source_text": "the company subscribing to the Services",
+        "source_chunk_id": null
+      },
+      {
+        "name": "Armorblox",
+        "designation": "Armorblox",
+        "source_text": "Armorblox",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Armorblox Platform",
+        "definition": null,
+        "source_text": "the Armorblox Platform",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "choose to procure for Customer the right to continue to use the Armorblox Platform under the terms of this Agreement or replace or modify the Armorblox Platform so that it becomes non-infringing and substantially equivalent in function to the enjoined Armorblox Platform",
+        "object": "the Armorblox Platform",
+        "condition": "none of the foregoing are commercially reasonable in Armorblox's sole discretion",
+        "deadline": null,
+        "source_text": "If none of the foregoing are commercially reasonable in Armorblox's sole discretion, Armorblox may terminate this Agreement and provide a refund to Customer of prepaid unused Fees with respect to the remainder of the Term.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "use the Armorblox Platform",
+        "condition": null,
+        "deadline": null,
+        "source_text": "If Customer's use of the Armorblox Platform is, or in Armorblox's opinion is likely to be, enjoined due to the type of claim specified in Section 7.1",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Section 7.1",
+        "reference_type": "section_reference",
+        "source_text": "the type of claim specified in Section 7.1",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

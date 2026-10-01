@@ -1,0 +1,62 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 3,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "Armorblox grants Customer and its Users a limited, nonexclusive, nontransferable, worldwide (i) right during the Term to access and use the Services, and (ii) if applicable, license to install and use the Installed Software, in each case, as set forth in the applicable Order Form and solely for Customer's internal business purposes.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Armorblox",
+        "definition": null,
+        "source_text": "Armorblox grants Customer and its Users a limited, nonexclusive, nontransferable, worldwide (i) right during the Term to access and use the Services, and (ii) if applicable, license to install and use the Installed Software, in each case, as set forth in the applicable Order Form and solely for Customer's internal business purposes.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "Customer is responsible for all use of the Services by its Users",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer is responsible for all use of the Services by its Users and agrees that it will not provide or permit access to the Armorblox Platform to anyone other than Users who require such access for the purpose of performing their assigned work for Customer.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Customer",
+        "action": "Customer agrees and acknowledges that its use of the Services may be subject to certain volume and other limits and restrictions as specified herein and on an Order Form and that exceeding such usage limits shall subject Customer to additional charges and fees",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer agrees and acknowledges that its use of the Services may be subject to certain volume and other limits and restrictions as specified herein and on an Order Form and that exceeding such usage limits shall subject Customer to additional charges and fees.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "Customer represents and warrants that Customer has the right, including all consents required by Applicable Laws, to provide or make available to Armorblox the Customer Data, in connection with the use of the Services",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer represents and warrants that Customer has the right, including all consents required by Applicable Laws, to provide or make available to Armorblox the Customer Data, in connection with the use of the Services.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Order Form",
+        "reference_type": "order_form_reference",
+        "source_text": "Customer agrees and acknowledges that its use of the Services may be subject to certain volume and other limits and restrictions as specified herein and on an Order Form and that exceeding such usage limits shall subject Customer to additional charges and fees.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

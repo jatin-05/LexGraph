@@ -1,0 +1,30 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 25,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "Any notices required or permitted to be given under this Agreement will be sent to Armorblox at orders@armorblox.com and to Customer at the email address provided on an Order Form or otherwise. Notwithstanding the foregoing, legal notices required under this Agreement will be personally delivered or sent by certified or registered mail, return receipt requested, or by nationally recognized overnight express courier, to the address specified herein or such other address as a Party may specify in writing. Such notices will be effective upon receipt, which may be shown by confirmation of delivery. Notices to Armorblox shall be sent Attn: Legal (unless otherwise specified by Armorblox).",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "personal delivery, certified or registered mail, return receipt requested, or by nationally recognized overnight express courier",
+        "object": "legal notices required under this Agreement",
+        "condition": "address specified herein or such other address as a Party may specify in writing",
+        "deadline": "upon receipt",
+        "source_text": "Such notices will be effective upon receipt, which may be shown by confirmation of delivery. Notices to Armorblox shall be sent Attn: Legal (unless otherwise specified by Armorblox).",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [],
+    "references": []
+  }
+}

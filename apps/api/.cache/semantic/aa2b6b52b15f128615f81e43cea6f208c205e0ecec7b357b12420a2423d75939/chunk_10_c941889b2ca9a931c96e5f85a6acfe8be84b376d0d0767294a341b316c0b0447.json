@@ -1,0 +1,68 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 10,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "the Receiving Party",
+        "designation": null,
+        "source_text": "A party (\"Receiving Party\") may, during the course of this Agreement, acquire information or knowledge of the other party (\"Disclosing Party\") that such Disclosing Party designates in writing is confidential or that a reasonable person would understand to be confidential, including, without limitation, business, financial, and product information, the Services, and the terms of this Agreement (\"Confidential Information\"). The Receiving Party will treat the Disclosing Party's Confidential Information as confidential and will not disclose any such Confidential Information to any third party nor use such Confidential Information other than in connection with this Agreement.",
+        "source_chunk_id": null
+      },
+      {
+        "name": "the Disclosing Party",
+        "designation": "Disclosing Party",
+        "source_text": "A party (\"Receiving Party\") may, during the course of this Agreement, acquire information or knowledge of the other party (\"Disclosing Party\") that such Disclosing Party designates in writing is confidential or that a reasonable person would understand to be confidential, including, without limitation, business, financial, and product information, the Services, and the terms of this Agreement (\"Confidential Information\"). The Receiving Party will treat the Disclosing Party's Confidential Information as confidential and will not disclose any such Confidential Information to any third party nor use such Confidential Information other than in connection with this Agreement.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Confidential Information",
+        "definition": "information that the Receiving Party can document was independently developed by the Receiving Party, is or becomes publicly available without breach of this Agreement, is known prior to disclosure by the Receiving Party, or is acquired by the Receiving Party from a third party free of disclosure obligations",
+        "source_text": "Confidential Information shall not include information that the Receiving Party can document was independently developed by the Receiving Party, is or becomes publicly available without breach of this Agreement, is known prior to disclosure by the Receiving Party, or is acquired by the Receiving Party from a third party free of disclosure obligations.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "the Receiving Party",
+        "action": "treat the Disclosing Party's Confidential Information as confidential",
+        "object": "the Disclosing Party's Confidential Information",
+        "condition": null,
+        "deadline": null,
+        "source_text": "The Receiving Party will treat the Disclosing Party's Confidential Information as confidential and will not disclose any such Confidential Information to any third party nor use such Confidential Information other than in connection with this Agreement.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "the Receiving Party",
+        "action": "not disclose any such Confidential Information to any third party",
+        "object": "any such Confidential Information",
+        "condition": null,
+        "deadline": null,
+        "source_text": "The Receiving Party will treat the Disclosing Party's Confidential Information as confidential and will not disclose any such Confidential Information to any third party nor use such Confidential Information other than in connection with this Agreement.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "the Receiving Party",
+        "action": "use such Confidential Information other than in connection with this Agreement",
+        "condition": null,
+        "deadline": null,
+        "source_text": "The Receiving Party will treat the Disclosing Party's Confidential Information as confidential and will not disclose any such Confidential Information to any third party nor use such Confidential Information other than in connection with this Agreement.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Confidential Information",
+        "reference_type": "defined_term_reference",
+        "source_text": "Confidential Information shall not include information that the Receiving Party can document was independently developed by the Receiving Party, is or becomes publicly available without breach of this Agreement, is known prior to disclosure by the Receiving Party, or is acquired by the Receiving Party from a third party free of disclosure obligations.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

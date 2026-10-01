@@ -1,0 +1,60 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 6,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "Armorblox may use Customer Data in order to provide and improve the Services. This includes the right for Armorblox to retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services (\"Analytics\") that it may use for its business purposes;",
+        "source_chunk_id": null
+      },
+      {
+        "name": "Customer",
+        "designation": "Customer",
+        "source_text": "Armorblox may use Customer Data in order to provide and improve the Services. This includes the right for Armorblox to retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services (\"Analytics\") that it may use for its business purposes;",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Analytics",
+        "definition": "Analytics are not Customer Confidential Information. As between the parties, Armorblox owns all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements and all derivative works of or included with the Services, including the general know-how and machine learning developed over time.",
+        "source_text": "Analytics are not Customer Confidential Information. As between the parties, Armorblox owns all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements and all derivative works of or included with the Services, including the general know-how and machine learning developed over time.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services",
+        "object": "Analytics",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Armorblox may use Customer Data in order to provide and improve the Services. This includes the right for Armorblox to retain anonymous, aggregated data and information related to and derived as a result of Customer's use of the Services (\"Analytics\") that it may use for its business purposes;",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "own all right, title and interest (including all intellectual property rights) in and to Customer Data",
+        "condition": null,
+        "deadline": null,
+        "source_text": "As between the parties, Customer owns all right, title and interest (including all intellectual property rights) in and to Customer Data.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Armorblox",
+        "action": "own all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements and all derivative works of or included with the Services, including the general know-how and machine learning developed over time",
+        "condition": null,
+        "deadline": null,
+        "source_text": "As between the parties, Armorblox owns all right, title and interest (including all intellectual property rights) in and to the Services, including the Armorblox Platform, the Analytics, and improvements, modifications, enhancements and all derivative works of or included with the Services, including the general know-how and machine learning developed over time.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 23,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [],
+    "defined_terms": [],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "agrees to comply with all Applicable Laws",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Each Party agrees to comply with all Applicable Laws. Without limiting the foregoing, Customer acknowledges and agrees that the Armorblox Platform and Services are of U.S. origin for U.S. export control purposes and subject to the U.S. Export Administration Regulation.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [],
+    "references": []
+  }
+}

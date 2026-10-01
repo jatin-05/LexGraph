@@ -1,0 +1,74 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 22,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Customer",
+        "designation": null,
+        "source_text": "Customer shall have the right to terminate the Agreement pursuant to Section 9.2 without any penalty if (i) a material modification to the Services or an applicable service level agreement is made which materially diminishes the functionality of the Services or materially diminishes such service level agreement, (ii) Armorblox has not obtained Customer's written consent for such modifications, and (iii) Armorblox does not provide a remedy in the cure period stated in Section 9.2.",
+        "source_chunk_id": null
+      },
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "The Services including all service level agreements and the Support are subject to modification from time to time in Armorblox's sole discretion. Notwithstanding the foregoing, Customer shall have the right to terminate the Agreement pursuant to Section 9.2 without any penalty if (i) a material modification to the Services or an applicable service level agreement is made which materially diminishes the functionality of the Services or materially diminishes such service level agreement, (ii) Armorblox has not obtained Customer's written consent for such modifications, and (iii) Armorblox does not provide a remedy in the cure period stated in Section 9.2.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Order Forms",
+        "definition": null,
+        "source_text": "all Order Forms under this Agreement shall also terminate.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "pay all amounts accrued or otherwise owing to Armorblox on the date of termination",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer will pay all amounts accrued or otherwise owing to Armorblox on the date of termination",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Customer",
+        "action": "all Order Forms under this Agreement shall also terminate",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "all Order Forms under this Agreement shall also terminate",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "terminate the Agreement pursuant to Section 9.2 without any penalty",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer shall have the right to terminate the Agreement pursuant to Section 9.2 without any penalty if (i) a material modification to the Services or an applicable service level agreement is made which materially diminishes the functionality of the Services or materially diminishes such service level agreement, (ii) Armorblox has not obtained Customer's written consent for such modifications, and (iii) Armorblox does not provide a remedy in the cure period stated in Section 9.2.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Section 9.2",
+        "reference_type": "section_reference",
+        "source_text": "Customer shall have the right to terminate the Agreement pursuant to Section 9.2 without any penalty if (i) a material modification to the Services or an applicable service level agreement is made which materially diminishes the functionality of the Services or materially diminishes such service level agreement, (ii) Armorblox has not obtained Customer's written consent for such modifications, and (iii) Armorblox does not provide a remedy in the cure period stated in Section 9.2.",
+        "source_chunk_id": null
+      },
+      {
+        "target": "Section 9.2",
+        "reference_type": "section_reference",
+        "source_text": "Termination in accordance with this section shall be without prejudice to any other rights or remedies of the Parties. Those provisions of this Agreement that expressly or by their nature survive termination shall survive any expiration or termination of this Agreement.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 13,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Armorblox",
+        "designation": null,
+        "source_text": "6.1 Warranty. Armorblox warrants that the Armorblox Platform will, under normal and authorized use in full compliance with this Agreement, conform in all material respects to the technical specifications described in its Documentation.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Armorblox Platform",
+        "definition": null,
+        "source_text": "6.1 Warranty. Armorblox warrants that the Armorblox Platform will, under normal and authorized use in full compliance with this Agreement, conform in all material respects to the technical specifications described in its Documentation.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Armorblox",
+        "action": "warrant that the Armorblox Platform will, under normal and authorized use in full compliance with this Agreement, conform in all material respects to the technical specifications described in its Documentation",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "6.1 Warranty. Armorblox warrants that the Armorblox Platform will, under normal and authorized use in full compliance with this Agreement, conform in all material respects to the technical specifications described in its Documentation.",
+        "source_chunk_id": null
+      },
+      {
+        "party": "Armorblox",
+        "action": "make no warranty that the Armorblox Platform or Services will operate error-free, be free of security defects or omissions, or operate in an uninterrupted manner",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "6.2 Disclaimer. EXCEPT FOR THE FOREGOING WARRANTY, TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PARTIES HEREBY DISCLAIM ALL OTHER WARRANTIES OR CONDITIONS, WHETHER EXPRESS, IMPLIED OR STATUTARY, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS  FOR  A  PARTICULAR  PURPOSE,  OR  NON-INFRINGEMENT. ARMORBLOX MAKES NO WARRANTY THAT THE ARMORBLOX PLATFORM OR SERVICES WILL OPERATE ERROR-FREE, BE FREE OF SECURITY DEFECTS OR OMISSIONS, OR OPERATE IN AN UNINTERRUPTED MANNER.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Armorblox",
+        "action": "make no warranty that the Armorblox Platform or Services will operate error-free, be free of security defects or omissions, or operate in an uninterrupted manner",
+        "condition": null,
+        "deadline": null,
+        "source_text": "6.2 Disclaimer. EXCEPT FOR THE FOREGOING WARRANTY, TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PARTIES HEREBY DISCLAIM ALL OTHER WARRANTIES OR CONDITIONS, WHETHER EXPRESS, IMPLIED OR STATUTARY, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS  FOR  A  PARTICULAR  PURPOSE,  OR  NON-INFRINGEMENT. ARMORBLOX MAKES NO WARRANTY THAT THE ARMORBLOX PLATFORM OR SERVICES WILL OPERATE ERROR-FREE, BE FREE OF SECURITY DEFECTS OR OMISSIONS, OR OPERATE IN AN UNINTERRUPTED MANNER.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Documentation",
+        "reference_type": "other_contract_reference",
+        "source_text": "6.1 Warranty. Armorblox warrants that the Armorblox Platform will, under normal and authorized use in full compliance with this Agreement, conform in all material respects to the technical specifications described in its Documentation.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

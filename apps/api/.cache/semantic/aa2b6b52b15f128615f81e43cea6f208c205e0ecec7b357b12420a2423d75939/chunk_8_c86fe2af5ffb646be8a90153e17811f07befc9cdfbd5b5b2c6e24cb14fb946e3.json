@@ -1,0 +1,26 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 8,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [],
+    "defined_terms": [],
+    "obligations": [],
+    "rights": [],
+    "references": [
+      {
+        "target": "https://www.armorblox.com/support/",
+        "reference_type": "other_contract_reference",
+        "source_text": "Support information is available at https://www.armorblox.com/support/ (the \"Support\").",
+        "source_chunk_id": 1
+      },
+      {
+        "target": "https://www.armorblox.com/SLA",
+        "reference_type": "other_contract_reference",
+        "source_text": "Armorblox's service level agreement is set forth at https://www.armorblox.com/SLA .",
+        "source_chunk_id": 1
+      }
+    ]
+  }
+}

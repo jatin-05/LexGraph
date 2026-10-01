@@ -1,0 +1,53 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 24,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "Customer",
+        "designation": null,
+        "source_text": "Customer represents that neither the U.S. Bureau of Industry and Security nor any other governmental agency has issued sanctions against Customer or otherwise suspended, revoked or denied Customer's status under applicable export control regulations.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Services",
+        "definition": "deemed \"commercial computer software\" and \"commercial computer software documentation\"",
+        "source_text": "The Services and Documentation are deemed \"commercial computer software\" and \"commercial computer software documentation\", respectively pursuant to DFARS 227.7202 and FAR 12.212, and their successors, as applicable, and are provided with RESTRICTED RIGHTS.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "agrees that it has not received or been offered any illegal or improper bribe, kickback, payment, gift, or thing of value from any party in connection with this Agreement",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer agrees that it has not received or been offered any illegal or improper bribe, kickback, payment, gift, or thing of value from any party in connection with this Agreement.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "notifies Armorblox of any actual or suspected violation of the above restriction",
+        "condition": null,
+        "deadline": null,
+        "source_text": "If Customer learns of any actual or suspected violation of the above restriction, Customer will promptly notify Armorblox.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "DFARS 227.7202 and FAR 12.212",
+        "reference_type": "section_reference",
+        "source_text": "The Services and Documentation are deemed \"commercial computer software\" and \"commercial computer software documentation\", respectively pursuant to DFARS 227.7202 and FAR 12.212, and their successors, as applicable, and are provided with RESTRICTED RIGHTS.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

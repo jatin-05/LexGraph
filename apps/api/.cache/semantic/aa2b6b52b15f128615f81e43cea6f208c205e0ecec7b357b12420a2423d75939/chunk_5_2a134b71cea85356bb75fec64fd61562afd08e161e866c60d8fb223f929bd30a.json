@@ -1,0 +1,59 @@
+{
+  "cache_version": "v2",
+  "document_cache_key": "aa2b6b52b15f128615f81e43cea6f208c205e0ecec7b357b12420a2423d75939",
+  "chunk_id": 5,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [],
+    "defined_terms": [],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "shall not",
+        "object": "copy, reverse engineer, modify, decompile or attempt to derive the source code for any aspect of the Services or any data related thereto or attempt to or do anything that could interfere with their functionality",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer shall not, and shall not allow its Users or others to: (i) copy, reverse engineer, modify, decompile or attempt to derive the source code for any aspect of the Services or any data related thereto or attempt to or do anything that could interfere with their functionality",
+        "source_chunk_id": 2
+      },
+      {
+        "party": "Customer",
+        "action": "shall not",
+        "object": "resell, rent, distribute, sublicense or share the Services with or for the benefit of any third party or for any purpose other than its own use as expressly permitted in this Agreement",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer shall not, and shall not allow its Users or others to: (ii) resell, rent, distribute, sublicense or share the Services with or for the benefit of any third party or for any purpose other than its own use as expressly permitted in this Agreement",
+        "source_chunk_id": 2
+      },
+      {
+        "party": "Customer",
+        "action": "shall not",
+        "object": "attempt to probe, scan, penetrate, breach or test the vulnerability of the Services or disable or circumvent any security or authentication measures",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer shall not, and shall not allow its Users or others to: (iii) attempt to probe, scan, penetrate, breach or test the vulnerability of the Services or disable or circumvent any security or authentication measures",
+        "source_chunk_id": 2
+      },
+      {
+        "party": "Customer",
+        "action": "shall not",
+        "object": "access the Services for the purpose of building a competitive product or service",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer shall not, and shall not allow its Users or others to: (iv) access the Services for the purpose of building a competitive product or service",
+        "source_chunk_id": 2
+      },
+      {
+        "party": "Customer",
+        "action": "shall not",
+        "object": "use the Services in violation of this Agreement, any Applicable Laws, or the rights of any third parties",
+        "condition": null,
+        "deadline": null,
+        "source_text": "Customer shall not, and shall not allow its Users or others to: (v) use the Services in violation of this Agreement, any Applicable Laws, or the rights of any third parties",
+        "source_chunk_id": 2
+      }
+    ],
+    "rights": [],
+    "references": []
+  }
+}

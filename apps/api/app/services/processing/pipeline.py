@@ -29,6 +29,7 @@ from app.config import get_settings
 from app.services.validation.semantic_validator import (
     ContractSemanticValidator,
 )
+from app.services.validation.models import ValidationIssue
 
 logger = logging.getLogger(__name__)
 
@@ -526,6 +527,7 @@ class ContractProcessingPipeline:
         )
 
         extraction_by_chunk_id: dict[int, ContractChunkSemanticExtraction] = {}
+        extraction_failures: dict[int, str] = {}
         with ThreadPoolExecutor(
             max_workers=self.extraction_max_concurrency
         ) as executor:
@@ -542,14 +544,24 @@ class ContractProcessingPipeline:
                 for position, chunk in enumerate(chunks_to_process, start=1)
             }
 
-            try:
-                for future in as_completed(future_to_chunk):
-                    chunk = future_to_chunk[future]
+            for future in as_completed(future_to_chunk):
+                chunk = future_to_chunk[future]
+                chunk_id = chunk["chunk_id"]
+                try:
                     extraction_by_chunk_id[chunk["chunk_id"]] = future.result()
-            except Exception:
-                for future in future_to_chunk:
-                    future.cancel()
-                raise
+                except Exception as exc:
+                    # A malformed or timed-out model response should only lose
+                    # this chunk; successful chunks remain usable for the run.
+                    logger.exception(
+                        "[ContractPipeline] Semantic extraction failed for chunk=%d",
+                        chunk_id,
+                    )
+                    extraction_by_chunk_id[chunk_id] = (
+                        ContractChunkSemanticExtraction()
+                    )
+                    extraction_failures[chunk_id] = (
+                        f"{type(exc).__name__}: {exc}"
+                    )
 
         for position, chunk in enumerate(chunks_to_process, start=1):
             chunk_id = chunk["chunk_id"]
@@ -562,6 +574,20 @@ class ContractProcessingPipeline:
             )
 
             extraction = extraction_by_chunk_id[chunk_id]
+            if chunk_id in extraction_failures:
+                validation_issues.append(
+                    ValidationIssue(
+                        item_type="semantic_extraction",
+                        item_index=-1,
+                        reason=(
+                            "Extraction failed for this chunk; no semantic "
+                            f"facts were added. {extraction_failures[chunk_id]}"
+                        ),
+                        item={"chunk_id": chunk_id},
+                    )
+                )
+                continue
+
             # 2. Optionally validate Qwen's output.
             if validate:
                 validation = self.validator.validate(
@@ -637,7 +663,7 @@ class ContractProcessingPipeline:
         # 6. Build validation report.
         validation_report = ContractValidationReport(
             chunks_validated=(
-                len(chunks_to_process)
+                len(chunks_to_process) - len(extraction_failures)
                 if validate
                 else 0
             ),
@@ -690,8 +716,8 @@ class ContractProcessingPipeline:
 
             existing = seen[key]
 
-            if existing.role is None and party.role is not None:
-                existing.role = party.role
+            if existing.designation is None and party.designation is not None:
+                existing.designation = party.designation
 
         return list(seen.values())
 
