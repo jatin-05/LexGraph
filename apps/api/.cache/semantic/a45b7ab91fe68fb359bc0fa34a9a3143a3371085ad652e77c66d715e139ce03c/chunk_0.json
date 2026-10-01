@@ -1,0 +1,59 @@
+{
+  "cache_version": "v1",
+  "document_cache_key": "a45b7ab91fe68fb359bc0fa34a9a3143a3371085ad652e77c66d715e139ce03c",
+  "chunk_id": 0,
+  "model": "qwen2.5:3b",
+  "extraction": {
+    "parties": [
+      {
+        "name": "ArmorBlox, Inc.",
+        "designation": "Armorblox",
+        "source_text": "This  Master  SAAS  Agreement (the  \" Agreement \")  is  by  and between  ArmorBlox,  Inc.,  a  Delaware corporation  with  its  principal  place  of  business  at  100  S.  Murphy  Ave  STE  200  Sunnyvale,  CA  94086 (\" Armorblox \")",
+        "source_chunk_id": null
+      },
+      {
+        "name": "the company subscribing to the Services",
+        "designation": "Customer",
+        "source_text": "This Agreement consists of this Master SaaS Agreement, all exhibits attached hereto, if any, and all Order Forms signed by the Parties hereunder, which are incorporated by reference.",
+        "source_chunk_id": null
+      }
+    ],
+    "defined_terms": [
+      {
+        "term": "Order Form",
+        "definition": "submitted in written or electronic form",
+        "source_text": "BY USING THE SERVICES, CUSTOMER AGREES TO BE BOUND BY THIS AGREEMENT. CUSTOMER IS ADVISED THAT NO ARMORBLOX REPRESENTATIVE OR RESELLER HAS AUTHORITY TO BIND ARMORBLOX TO REPRESENTATIONS, WARRANTIES, TERMS OR CONDITIONS THAT ARE NOT EXPRESSLY STATED IN THIS AGREEMENT.",
+        "source_chunk_id": null
+      }
+    ],
+    "obligations": [
+      {
+        "party": "Customer",
+        "action": "agrees to be bound by this Agreement",
+        "object": null,
+        "condition": null,
+        "deadline": null,
+        "source_text": "BY USING THE SERVICES, CUSTOMER AGREES TO BE BOUND BY THIS AGREEMENT.",
+        "source_chunk_id": null
+      }
+    ],
+    "rights": [
+      {
+        "party": "Customer",
+        "action": "agrees to be bound by this Agreement",
+        "condition": null,
+        "deadline": null,
+        "source_text": "BY USING THE SERVICES, CUSTOMER AGREES TO BE BOUND BY THIS AGREEMENT.",
+        "source_chunk_id": null
+      }
+    ],
+    "references": [
+      {
+        "target": "Order Form",
+        "reference_type": "order_form_reference",
+        "source_text": "BY USING THE SERVICES, CUSTOMER AGREES TO BE BOUND BY THIS AGREEMENT. CUSTOMER IS ADVISED THAT NO ARMORBLOX REPRESENTATIVE OR RESELLER HAS AUTHORITY TO BIND ARMORBLOX TO REPRESENTATIONS, WARRANTIES, TERMS OR CONDITIONS THAT ARE NOT EXPRESSLY STATED IN THIS AGREEMENT.",
+        "source_chunk_id": null
+      }
+    ]
+  }
+}

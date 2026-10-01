@@ -43,6 +43,12 @@ class ContractProcessingPipeline:
         self.cache_dir = Path(".cache") / "docling"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
+        self.semantic_cache_dir = Path(".cache") / "semantic"
+        self.semantic_cache_dir.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
     def _cache_key(
         self,
         file_bytes: bytes,
@@ -63,6 +69,190 @@ class ContractProcessingPipeline:
         filename: str,
     ) -> Path:
         return self.cache_dir / f"{self._cache_key(file_bytes, filename)}.json"
+
+    def _semantic_cache_key(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        chunk_id: int,
+    ) -> str:
+        document_key = self._cache_key(
+            file_bytes=file_bytes,
+            filename=filename,
+        )
+
+        raw_key = (
+            f"{document_key}:"
+            f"chunk:{chunk_id}:"
+            f"model:{self.extractor.model}:"
+            f"extraction_version:{self.extractor.EXTRACTION_VERSION}"
+        )
+
+        return hashlib.sha256(
+            raw_key.encode("utf-8")
+        ).hexdigest()
+
+
+    def _semantic_cache_path(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        chunk_id: int,
+    ) -> Path:
+        document_key = self._cache_key(
+            file_bytes=file_bytes,
+            filename=filename,
+        )
+
+        document_dir = self.semantic_cache_dir / document_key
+        document_dir.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+        return document_dir / f"chunk_{chunk_id}.json"
+
+
+    def _load_cached_semantic_extraction(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        chunk_id: int,
+    ):
+        cache_path = self._semantic_cache_path(
+            file_bytes=file_bytes,
+            filename=filename,
+            chunk_id=chunk_id,
+        )
+
+        if not cache_path.exists():
+            return None
+
+        try:
+            with cache_path.open(
+                "r",
+                encoding="utf-8",
+            ) as cache_file:
+                payload = json.load(cache_file)
+
+            extraction_data = payload.get(
+                "extraction"
+            )
+
+            if not isinstance(
+                extraction_data,
+                dict,
+            ):
+                raise ValueError(
+                    "Invalid semantic cache format."
+                )
+
+            logger.info(
+                "[ContractPipeline] Semantic cache HIT: chunk=%d file=%s",
+                chunk_id,
+                filename,
+            )
+
+            return ContractChunkSemanticExtraction.model_validate(
+                extraction_data
+            )
+
+        except Exception as exc:
+            logger.warning(
+                "[ContractPipeline] Failed to load semantic cache "
+                "for chunk %d: %s",
+                chunk_id,
+                exc,
+            )
+
+            cache_path.unlink(
+                missing_ok=True
+            )
+
+            return None
+
+
+    def _save_cached_semantic_extraction(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        chunk_id: int,
+        extraction: ContractChunkSemanticExtraction,
+    ) -> None:
+        cache_path = self._semantic_cache_path(
+            file_bytes=file_bytes,
+            filename=filename,
+            chunk_id=chunk_id,
+        )
+
+        payload = {
+            "cache_version": self.extractor.EXTRACTION_VERSION,
+            "document_cache_key": self._cache_key(
+                file_bytes=file_bytes,
+                filename=filename,
+            ),
+            "chunk_id": chunk_id,
+            "model": self.extractor.model,
+            "extraction": extraction.model_dump(),
+        }
+
+        with cache_path.open(
+            "w",
+            encoding="utf-8",
+        ) as cache_file:
+            json.dump(
+                payload,
+                cache_file,
+                ensure_ascii=False,
+                indent=2,
+            )
+
+        logger.info(
+            "[ContractPipeline] Semantic cache SAVED: chunk=%d file=%s",
+            chunk_id,
+            filename,
+        )
+
+    def _extract_semantics(
+        self,
+        *,
+        file_bytes: bytes,
+        filename: str,
+        chunk: dict[str, Any],
+        force_refresh: bool = False,
+    ):
+        chunk_id = chunk["chunk_id"]
+
+        if not force_refresh:
+            cached_extraction = (
+                self._load_cached_semantic_extraction(
+                    file_bytes=file_bytes,
+                    filename=filename,
+                    chunk_id=chunk_id,
+                )
+            )
+
+            if cached_extraction is not None:
+                return cached_extraction
+
+        logger.info(
+            "[ContractPipeline] Semantic cache MISS: "
+            "running Qwen for chunk=%d",
+            chunk_id,
+        )
+
+        extraction = self.extractor.extract(
+            chunk_text=chunk["text"]
+        )
+
+        self._save_cached_semantic_extraction(
+            file_bytes=file_bytes,
+            filename=filename,
+            chunk_id=chunk_id,
+            extraction=extraction,
+        )
+
+        return extraction
 
     def _load_cached_chunks(
         self,
@@ -287,10 +477,15 @@ class ContractProcessingPipeline:
             )
 
             # 1. Ask Qwen for semantic candidates.
-            extraction = self.extractor.extract(
-                chunk_text=chunk["text"]
+            # extraction = self.extractor.extract(
+            #     chunk_text=chunk["text"]
+            # )
+            extraction = self._extract_semantics(
+                file_bytes=file_bytes,
+                filename=filename,
+                chunk=chunk,
+                force_refresh=force_refresh,
             )
-
             # 2. Optionally validate Qwen's output.
             if validate:
                 validation = self.validator.validate(
