@@ -1,8 +1,6 @@
 import logging
 
-import instructor
-
-from app.config import get_settings
+from app.services.llm import create_instructor_client
 # from app.services.extraction.models import ContractChunkExtraction
 from app.services.extraction.models import ContractChunkSemanticExtraction
 
@@ -12,15 +10,11 @@ logger = logging.getLogger(__name__)
 class ContractExtractor:
     EXTRACTION_VERSION = "v2"
 
-    def __init__(self) -> None:
-        settings = get_settings()
-
-        self.model = settings.extraction_model
-
-        self.client = instructor.from_provider(
-            "ollama/qwen2.5",
-            base_url=settings.ollama_base_url,
-            mode=instructor.Mode.JSON,
+    def __init__(self, model_choice: str = "local_qwen") -> None:
+        self.model_choice = model_choice
+        self.client, self.model = create_instructor_client(
+            model_choice,
+            task="semantic",
         )
 
     def extract(

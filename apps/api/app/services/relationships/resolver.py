@@ -9,6 +9,9 @@ from app.services.structure.models import DocumentStructure
 
 
 _SECTION_NUMBER = re.compile(r"(?<![\w.])(\d+(?:\.\d+)*)(?![\w.])")
+_LINE_SECTION_NUMBER = re.compile(
+    r"^\s*(\d+(?:\.\d+)*)(?:\.)?\s+(.+?)\s*$"
+)
 _EXTERNAL_REFERENCE_TYPES = {
     "agreement_reference",
     "document_reference",
@@ -22,6 +25,141 @@ def _normalize(value: str) -> str:
     value = unicodedata.normalize("NFKC", value).casefold()
     value = value.strip().strip("\"'“”‘’")
     return " ".join(re.sub(r"[^\w.]+", " ", value).split())
+
+
+def _normalize_term(value: str) -> str:
+    """Normalize a term, allowing a simple plural at the final word."""
+    normalized = _normalize(value)
+    words = normalized.split()
+    if not words:
+        return normalized
+
+    final_word = words[-1]
+    if len(final_word) > 3 and final_word.endswith("ies"):
+        words[-1] = f"{final_word[:-3]}y"
+    elif (
+        len(final_word) > 3
+        and final_word.endswith("s")
+        and not final_word.endswith("ss")
+    ):
+        words[-1] = final_word[:-1]
+
+    return " ".join(words)
+
+
+def _section_heading_events(structure: DocumentStructure):
+    """Find numbered subsection headings in chunk text, excluding Docling's
+    repeated parent-heading context lines.
+    """
+    events = []
+    for chunk_position, chunk in enumerate(structure.chunks):
+        contextual_headings = {
+            _normalize(heading) for heading in chunk.headings
+        }
+        for line_position, line in enumerate(chunk.text.splitlines()):
+            match = _LINE_SECTION_NUMBER.match(line)
+            if not match or _normalize(line) in contextual_headings:
+                continue
+
+            locator = match.group(1)
+            # A section label is the short text before the first sentence.
+            heading_text = match.group(2)
+            title = re.split(r"[.!?](?:\s|$)", heading_text, maxsplit=1)[0]
+            title = title.strip().rstrip(". ")
+            if (
+                not title
+                or len(title) > 120
+                or re.search(r"\bmeans\b", title, re.IGNORECASE)
+                or any(quote in title for quote in ('"', "“", "”"))
+            ):
+                continue
+
+            heading = f"{locator} {title}"
+            events.append(
+                (chunk_position, line_position, locator, heading)
+            )
+    return events
+
+
+def _section_span_chunk_ids(
+    *,
+    start_event,
+    events,
+    structure: DocumentStructure,
+) -> list[int]:
+    """Return chunks containing this numbered section, including its split
+    continuation, and stop at the next sibling/ancestor section.
+    """
+    start_position, _, locator, _ = start_event
+    target_depth = locator.count(".") + 1
+    parent_locator = locator.rpartition(".")[0] or None
+    result: list[int] = []
+
+    for chunk_position in range(start_position, len(structure.chunks)):
+        chunk = structure.chunks[chunk_position]
+        chunk_events = [
+            event for event in events if event[0] == chunk_position
+        ]
+        start_line = (
+            start_event[1]
+            if chunk_position == start_position
+            else -1
+        )
+
+        # A new Docling parent heading ends this subsection only when it
+        # changes the subsection's parent. The same parent is repeated as
+        # context at the top of every chunk.
+        parent_changed = False
+        for heading in chunk.headings:
+            heading_match = _LINE_SECTION_NUMBER.match(heading)
+            if not heading_match:
+                continue
+            heading_locator = heading_match.group(1)
+            heading_depth = heading_locator.count(".") + 1
+            if (
+                heading_depth <= target_depth
+                and heading_locator != parent_locator
+                and heading_locator != locator
+            ):
+                parent_changed = True
+                break
+
+        if parent_changed:
+            break
+
+        boundary = next(
+            (
+                event
+                for event in chunk_events
+                if event[1] > start_line
+                and event[2] != locator
+                and event[2].count(".") + 1 <= target_depth
+                and (
+                    parent_locator is None
+                    or event[2].rpartition(".")[0] == parent_locator
+                    or event[2].count(".") + 1 < target_depth
+                )
+            ),
+            None,
+        )
+
+        if boundary is not None:
+            contextual_headings = {
+                _normalize(heading) for heading in chunk.headings
+            }
+            content_before_boundary = any(
+                line.strip()
+                and _normalize(line) not in contextual_headings
+                for line in chunk.text.splitlines()[start_line + 1:boundary[1]]
+            )
+            if content_before_boundary and chunk.chunk_id not in result:
+                result.append(chunk.chunk_id)
+            break
+
+        if chunk.chunk_id not in result:
+            result.append(chunk.chunk_id)
+
+    return result
 
 
 class ContractReferenceResolver:
@@ -46,16 +184,41 @@ class ContractReferenceResolver:
                 results.append(
                     self._resolve_defined_term(index, reference, semantics)
                 )
-            else:
-                is_external = reference_type in _EXTERNAL_REFERENCE_TYPES
+            elif reference_type in _EXTERNAL_REFERENCE_TYPES:
+                term_resolution = self._resolve_defined_term(
+                    index,
+                    reference,
+                    semantics,
+                )
+                if term_resolution.status in {"resolved", "ambiguous"}:
+                    results.append(term_resolution)
+                    continue
+
                 results.append(
                     ReferenceResolution(
                         reference_index=index,
                         source_chunk_id=reference.source_chunk_id,
                         target=reference.target,
                         reference_type=reference.reference_type,
-                        status="external" if is_external else "unresolved",
-                        target_kind="external" if is_external else None,
+                        status="external",
+                        target_kind="external",
+                        source_text=reference.source_text,
+                        reason=(
+                            "No matching defined term was found; this reference "
+                            "is treated as external."
+                        ),
+                    )
+                )
+            else:
+                results.append(
+                    ReferenceResolution(
+                        reference_index=index,
+                        source_chunk_id=reference.source_chunk_id,
+                        target=reference.target,
+                        reference_type=reference.reference_type,
+                        status="unresolved",
+                        reason="Reference type is not supported by the resolver.",
+                        source_text=reference.source_text,
                     )
                 )
 
@@ -68,9 +231,10 @@ class ContractReferenceResolver:
         locators = list(dict.fromkeys(match.group(1) for match in number_matches))
         locator = locators[0] if len(locators) == 1 else normalized_target
 
-        requested_locators = {
-            _normalize(value) for value in locators
-        } if len(locators) > 1 else {_normalize(locator)}
+        if len(locators) > 1:
+            requested_locators = {_normalize(value) for value in locators}
+        else:
+            requested_locators = {_normalize(locator)}
 
         matches = [
             section
@@ -81,40 +245,29 @@ class ContractReferenceResolver:
         labels = [section.heading for section in matches]
 
         # Docling may expose only top-level headings in chunk metadata while
-        # subsection headings (for example, "9.2 Termination.") remain in the
-        # chunk text. Resolve those exact numbered headings to their chunks.
+        # subsection headings remain in chunk text. Recover each subsection's
+        # full chunk span, including continuation chunks before its next sibling.
         if not matches and len(locators) == 1:
             locator = locators[0]
-            heading_pattern = re.compile(
-                rf"^\s*{re.escape(locator)}(?:\.)?\s+(.+?)\s*$",
-                re.MULTILINE,
-            )
-            chunk_matches: list[tuple[int, str]] = []
+            events = _section_heading_events(structure)
+            matching_events = [
+                event for event in events if event[2] == locator
+            ]
 
-            for chunk in structure.chunks:
-                for line in chunk.text.splitlines():
-                    match = heading_pattern.match(line)
-                    if not match:
-                        continue
-
-                    title = re.split(r"[.!?]\s", match.group(1), maxsplit=1)[0]
-                    title = title.rstrip(". ")
-                    heading = (
-                        f"{locator} {title}"
-                        if title and len(title) <= 120
-                        else f"Section {locator}"
-                    )
-                    chunk_matches.append((chunk.chunk_id, heading))
-                    break
-
-            if chunk_matches:
+            if matching_events:
+                candidates = list(dict.fromkeys(event[3] for event in matching_events))
+                is_unique_heading = len(matching_events) == 1
                 target_chunk_ids = sorted(
-                    {chunk_id for chunk_id, _ in chunk_matches}
+                    {
+                        chunk_id
+                        for event in matching_events
+                        for chunk_id in _section_span_chunk_ids(
+                            start_event=event,
+                            events=events,
+                            structure=structure,
+                        )
+                    }
                 )
-                candidates = list(dict.fromkeys(
-                    heading for _, heading in chunk_matches
-                ))
-                is_unique_heading = len(candidates) == 1
 
                 return ReferenceResolution(
                     reference_index=index,
@@ -126,6 +279,12 @@ class ContractReferenceResolver:
                     resolved_target=candidates[0] if is_unique_heading else None,
                     target_chunk_ids=target_chunk_ids,
                     candidates=candidates,
+                    source_text=reference.source_text,
+                    reason=(
+                        None
+                        if is_unique_heading
+                        else "Multiple headings matched the referenced section locator."
+                    ),
                 )
 
         if len(matches) == 1 and len(locators) <= 1:
@@ -140,6 +299,7 @@ class ContractReferenceResolver:
                 resolved_target=section.heading,
                 target_chunk_ids=section.chunk_ids,
                 candidates=labels,
+                source_text=reference.source_text,
             )
 
         return ReferenceResolution(
@@ -153,15 +313,21 @@ class ContractReferenceResolver:
                 {chunk_id for section in matches for chunk_id in section.chunk_ids}
             ),
             candidates=labels,
+            source_text=reference.source_text,
+            reason=(
+                "Multiple sections matched the referenced locator."
+                if matches
+                else "No section heading or chunk heading matched the referenced locator."
+            ),
         )
 
     @staticmethod
     def _resolve_defined_term(index, reference, semantics) -> ReferenceResolution:
-        target = _normalize(reference.target)
+        target = _normalize_term(reference.target)
         matches = [
             term
             for term in semantics.defined_terms
-            if _normalize(term.term) == target
+            if _normalize_term(term.term) == target
         ]
         labels = [term.term for term in matches]
         chunk_ids = sorted(
@@ -192,4 +358,12 @@ class ContractReferenceResolver:
             resolved_target=resolved_target,
             target_chunk_ids=chunk_ids,
             candidates=labels,
+            source_text=reference.source_text,
+            reason=(
+                "Multiple extracted defined terms matched the reference target."
+                if len(matches) > 1
+                else "No extracted defined term matched the reference target."
+                if not matches
+                else None
+            ),
         )

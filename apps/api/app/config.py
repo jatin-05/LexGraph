@@ -13,8 +13,11 @@ class Settings(BaseSettings):
 
     graph_model: str = "qwen2.5:3b-instruct"
     extraction_model: str = "qwen2.5:3b"
+    answer_model: str | None = None
+    embedding_model: str = "nomic-embed-text"
     extraction_max_concurrency: int = Field(default=2, ge=1)
     ollama_base_url: str = "http://localhost:11434/v1"
+    groq_api_key: str | None = None
 
     model_config = SettingsConfigDict(
         env_file=".env",

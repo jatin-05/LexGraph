@@ -21,10 +21,11 @@ from app.services.extraction.models import (
     ContractChunkSemanticExtraction,
     ContractSemantics,
 )
-from app.services.structure.builder import build_document_structure
-from app.services.structure.models import DocumentStructure
+from app.services.relationships.graph_builder import ContractGraphBuilder
 from app.services.relationships.resolver import ContractReferenceResolver
 from app.config import get_settings
+from app.services.structure.builder import build_document_structure
+from app.services.structure.models import DocumentStructure
 
 from app.services.validation.semantic_validator import (
     ContractSemanticValidator,
@@ -41,9 +42,9 @@ class ContractProcessingPipeline:
     def __init__(self) -> None:
         self.converter = DocumentConverter()
         self.chunker = HybridChunker()
-        self.extractor = ContractExtractor()
         self.validator = ContractSemanticValidator()
         self.reference_resolver = ContractReferenceResolver()
+        self.graph_builder = ContractGraphBuilder()
         self.extraction_max_concurrency = (
             get_settings().extraction_max_concurrency
         )
@@ -83,6 +84,7 @@ class ContractProcessingPipeline:
         file_bytes: bytes,
         filename: str,
         chunk_id: int,
+        extractor: ContractExtractor,
     ) -> str:
         document_key = self._cache_key(
             file_bytes=file_bytes,
@@ -92,8 +94,8 @@ class ContractProcessingPipeline:
         raw_key = (
             f"{document_key}:"
             f"chunk:{chunk_id}:"
-            f"model:{self.extractor.model}:"
-            f"extraction_version:{self.extractor.EXTRACTION_VERSION}"
+            f"model:{extractor.model}:"
+            f"extraction_version:{extractor.EXTRACTION_VERSION}"
         )
 
         return hashlib.sha256(
@@ -106,6 +108,7 @@ class ContractProcessingPipeline:
         file_bytes: bytes,
         filename: str,
         chunk_id: int,
+        extractor: ContractExtractor,
     ) -> Path:
         document_key = self._cache_key(
             file_bytes=file_bytes,
@@ -121,6 +124,7 @@ class ContractProcessingPipeline:
             file_bytes=file_bytes,
             filename=filename,
             chunk_id=chunk_id,
+            extractor=extractor,
         )
         return document_dir / f"chunk_{chunk_id}_{semantic_key}.json"
 
@@ -130,11 +134,13 @@ class ContractProcessingPipeline:
         file_bytes: bytes,
         filename: str,
         chunk_id: int,
+        extractor: ContractExtractor,
     ):
         cache_path = self._semantic_cache_path(
             file_bytes=file_bytes,
             filename=filename,
             chunk_id=chunk_id,
+            extractor=extractor,
         )
 
         if not cache_path.exists():
@@ -148,13 +154,13 @@ class ContractProcessingPipeline:
                 payload = json.load(cache_file)
 
             expected_metadata = {
-                "cache_version": self.extractor.EXTRACTION_VERSION,
+                "cache_version": extractor.EXTRACTION_VERSION,
                 "document_cache_key": self._cache_key(
                     file_bytes=file_bytes,
                     filename=filename,
                 ),
                 "chunk_id": chunk_id,
-                "model": self.extractor.model,
+                "model": extractor.model,
             }
             if any(
                 payload.get(key) != value
@@ -175,7 +181,8 @@ class ContractProcessingPipeline:
                 )
 
             logger.info(
-                "[ContractPipeline] Semantic cache HIT: chunk=%d file=%s",
+                "[ContractPipeline] Semantic cache HIT: model=%s chunk=%d file=%s",
+                extractor.model,
                 chunk_id,
                 filename,
             )
@@ -204,22 +211,24 @@ class ContractProcessingPipeline:
         file_bytes: bytes,
         filename: str,
         chunk_id: int,
+        extractor: ContractExtractor,
         extraction: ContractChunkSemanticExtraction,
     ) -> None:
         cache_path = self._semantic_cache_path(
             file_bytes=file_bytes,
             filename=filename,
             chunk_id=chunk_id,
+            extractor=extractor,
         )
 
         payload = {
-            "cache_version": self.extractor.EXTRACTION_VERSION,
+            "cache_version": extractor.EXTRACTION_VERSION,
             "document_cache_key": self._cache_key(
                 file_bytes=file_bytes,
                 filename=filename,
             ),
             "chunk_id": chunk_id,
-            "model": self.extractor.model,
+            "model": extractor.model,
             "extraction": extraction.model_dump(),
         }
 
@@ -235,7 +244,8 @@ class ContractProcessingPipeline:
             )
 
         logger.info(
-            "[ContractPipeline] Semantic cache SAVED: chunk=%d file=%s",
+            "[ContractPipeline] Semantic cache SAVED: model=%s chunk=%d file=%s",
+            extractor.model,
             chunk_id,
             filename,
         )
@@ -246,6 +256,7 @@ class ContractProcessingPipeline:
         file_bytes: bytes,
         filename: str,
         chunk: dict[str, Any],
+        extractor: ContractExtractor,
         force_refresh: bool = False,
     ):
         chunk_id = chunk["chunk_id"]
@@ -256,6 +267,7 @@ class ContractProcessingPipeline:
                     file_bytes=file_bytes,
                     filename=filename,
                     chunk_id=chunk_id,
+                    extractor=extractor,
                 )
             )
 
@@ -264,11 +276,12 @@ class ContractProcessingPipeline:
 
         logger.info(
             "[ContractPipeline] Semantic cache MISS: "
-            "running Qwen for chunk=%d",
+            "running %s for chunk=%d",
+            extractor.model,
             chunk_id,
         )
 
-        extraction = self.extractor.extract(
+        extraction = extractor.extract(
             chunk_text=chunk["text"]
         )
 
@@ -276,6 +289,7 @@ class ContractProcessingPipeline:
             file_bytes=file_bytes,
             filename=filename,
             chunk_id=chunk_id,
+            extractor=extractor,
             extraction=extraction,
         )
 
@@ -287,6 +301,7 @@ class ContractProcessingPipeline:
         file_bytes: bytes,
         filename: str,
         chunk: dict[str, Any],
+        extractor: ContractExtractor,
         force_refresh: bool,
         position: int,
         total: int,
@@ -303,6 +318,7 @@ class ContractProcessingPipeline:
             file_bytes=file_bytes,
             filename=filename,
             chunk=chunk,
+            extractor=extractor,
             force_refresh=force_refresh,
         )
         logger.info(
@@ -475,6 +491,23 @@ class ContractProcessingPipeline:
         finally:
             temp_path.unlink(missing_ok=True)
 
+    def extract_structure(
+        self,
+        file_bytes: bytes,
+        filename: str,
+        force_refresh: bool = False,
+    ) -> DocumentStructure:
+        """Parse and chunk a document without running semantic extraction."""
+        chunks = self.get_chunks(
+            file_bytes=file_bytes,
+            filename=filename,
+            force_refresh=force_refresh,
+        )
+        if not chunks:
+            raise ValueError("Docling produced no chunks.")
+
+        return build_document_structure(filename=filename, chunks=chunks)
+
     def extract_contract(
         self,
         file_bytes: bytes,
@@ -482,21 +515,18 @@ class ContractProcessingPipeline:
         max_chunks: int | None = None,
         force_refresh: bool = False,
         validate: bool = True,
+        semantic_model: str = "local_qwen",
     ):
+        extractor = ContractExtractor(semantic_model)
         chunks = self.get_chunks(
             file_bytes=file_bytes,
             filename=filename,
             force_refresh=force_refresh,
         )
-
         if not chunks:
             raise ValueError("Docling produced no chunks.")
 
-        # Build the structural representation from Docling output.
-        structure = build_document_structure(
-            filename=filename,
-            chunks=chunks,
-        )
+        structure = build_document_structure(filename=filename, chunks=chunks)
 
         # Limit how many chunks are sent to Qwen.
         if max_chunks is not None:
@@ -537,6 +567,7 @@ class ContractProcessingPipeline:
                     file_bytes=file_bytes,
                     filename=filename,
                     chunk=chunk,
+                    extractor=extractor,
                     force_refresh=force_refresh,
                     position=position,
                     total=len(chunks_to_process),
@@ -670,15 +701,31 @@ class ContractProcessingPipeline:
             issues=validation_issues,
         )
 
-        # 7. Combine structure + semantics + validation.
+        # 7. Resolve extracted references, then build the evidence-backed
+        # graph from accepted semantics and document structure.
+        reference_resolutions = self.reference_resolver.resolve(
+            semantics=semantics,
+            structure=structure,
+        )
+        graph = self.graph_builder.build(
+            document_key=self._cache_key(file_bytes, filename),
+            structure=structure,
+            semantics=semantics,
+            reference_resolutions=reference_resolutions,
+        )
+        logger.info(
+            "[ContractPipeline] Built contract graph: entities=%d relationships=%d",
+            len(graph.entities),
+            len(graph.relationships),
+        )
+
+        # 8. Combine structure + semantics + validation + graph.
         return ContractRepresentation(
             structure=structure,
             semantics=semantics,
             validation=validation_report,
-            reference_resolutions=self.reference_resolver.resolve(
-                semantics=semantics,
-                structure=structure,
-            ),
+            reference_resolutions=reference_resolutions,
+            graph=graph,
         )
 
     @staticmethod

@@ -2,7 +2,7 @@
 
 A research-oriented legal contract intelligence system focused on **structure-aware and relationship-aware contract understanding**.
 
-The goal is to go beyond "chat with a PDF" or simple vector RAG. The system first converts a contract into a structured, evidence-linked representation containing document structure, semantic facts, provenance, and eventually relationships between contractual provisions.
+The goal is to go beyond "chat with a PDF" or simple vector RAG. The system converts a contract into a structured, evidence-linked representation containing document structure, semantic facts, provenance, and resolved relationships between contractual provisions.
 
 ---
 
@@ -65,15 +65,18 @@ PDF / DOCX
  Deterministic reference resolution (explicit section and defined-term references)
      |
      v
- Relationships
+ Evidence-linked contract graph
+     |
+     +---- vector-only retrieval baseline
+     |
+     +---- one-hop graph-assisted retrieval
      |
      v
- [Future]
- Structure-aware / relationship-aware retrieval
+ Retrieval evidence comparison
      |
      v
- [Future]
- Contract question answering + evidence
+ Cited answers from both retrieval contexts
+ Evaluation on curated questions
 ```
 
 ### Separation of responsibilities
@@ -298,14 +301,23 @@ SUPABASE_SECRET_KEY=your_supabase_secret_key
 ENVIRONMENT=development
 
 EXTRACTION_MODEL=qwen2.5:3b-instruct
+ANSWER_MODEL=qwen2.5:3b-instruct
 EXTRACTION_MAX_CONCURRENCY=2
+EMBEDDING_MODEL=nomic-embed-text
 
 OLLAMA_BASE_URL=http://localhost:11434/v1
+# Optional: set this to enable Groq Qwen in the workspace model selectors.
+GROQ_API_KEY=your_groq_api_key
 ```
 
 `EXTRACTION_MAX_CONCURRENCY` limits how many chunks the API submits at once. Keep
 it at or below Ollama's `OLLAMA_NUM_PARALLEL` setting to avoid building a queue
 inside Ollama.
+
+The workspace lets you choose local Qwen or Groq Qwen independently for
+semantic extraction and answer generation. Set `GROQ_API_KEY` in this backend
+environment file before selecting either Groq option. The key is never sent to
+the browser. Embeddings continue to use the configured Ollama embedding model.
 
 ## Important
 
@@ -523,6 +535,51 @@ Leaving `max_chunks` empty means all chunks are sent through semantic extraction
 
 This is intentional during development because we want the complete document structure even when only a subset of chunks is being tested with the LLM.
 
+## `/debug/retrieve-contract`
+
+Purpose:
+
+Compare vector-only retrieval with one-hop graph-assisted retrieval for a
+contract question. Submit `file` and `query` as form fields; `top_k` is optional
+and defaults to `5`.
+
+The response contains `baseline` (top chunks by embedding cosine similarity)
+and `graph_augmented` (the same results plus chunks reached through resolved
+section references or defined-term relationships). Added chunks include an
+`added_via` relationship label and the supporting reference quote in
+`graph_evidence`. By default, the endpoint also generates `baseline_answer` and
+`graph_answer` from those separate contexts using the configured extraction
+model. Each answer includes cited chunk IDs with page and heading metadata, plus
+an `insufficient_evidence` flag. Every citation includes a supporting quote;
+the API checks that the quote appears in the cited chunk before returning the
+answer. Set `include_answers=false` to return the retrieval comparison without
+generating answers.
+
+Answer generation makes two sequential Qwen calls, so it can take a while on a
+local model. This lets you compare vector and graph-assisted evidence under the
+same model and question. The first request may also perform contract extraction
+if no semantic cache exists.
+
+Install the default local embedding model with:
+
+```powershell
+ollama pull nomic-embed-text
+```
+
+Chunk embeddings are cached in
+`apps/api/.cache/embeddings/`, keyed by document, chunk text, model, and cache
+version.
+
+## `/ask-contract`
+
+The main workspace uses this single-answer endpoint. Send the optional form
+field `use_relationship_graph` as `true` to run semantic extraction and
+graph-assisted retrieval. By default (`false`), it retrieves directly from the
+Docling chunks and skips semantic extraction and graph construction. Both modes
+return one grounded answer with supporting quotes and retrieved passages. Keep
+`/debug/retrieve-contract` for research comparison between vector-only and
+graph-assisted results.
+
 ---
 
 # 11. Docling Cache
@@ -625,6 +682,9 @@ ContractRepresentation
 |
 ├── reference_resolutions
 |   └── resolved, ambiguous, unresolved, or external targets
+├── graph
+|   ├── document, section, and defined-term entities
+|   └── contains_section, defines, and resolved references
 |
 └── validation
     └── issues
@@ -771,24 +831,30 @@ Evaluation
 
 # 16. Next Development Phase
 
-The next planned component is **reference resolution and relationships**.
+The initial reference resolver and evidence-linked graph are implemented. The
+retrieval debug endpoint compares vector-only results with one-hop
+graph-assisted results and can generate a grounded answer from each result set.
+The next phase is to evaluate both approaches on a small, curated set of
+contract questions.
 
 For example:
 
 ```text
-Termination
+Section 8
     |
-    +---- references ----> Material Breach
-                              |
-                              +---- defined_in ----> Section 1.x
+    +---- references ----> Section 7
+
+Section 6
+    |
+    +---- references ----> defined term: Documentation
 ```
 
-Initial relationship types may include:
+The current relationship types are:
 
 ```text
 defines
 references
-applies_to
+applies_to (future)
 ```
 
 Later candidates include:
@@ -805,9 +871,13 @@ The first implementation is expected to use structured relational data rather th
 
 ---
 
-# 17. Future Retrieval Layer
+# 17. Retrieval and Question Answering
 
-The planned retrieval system will combine multiple signals:
+The current retrieval endpoint compares embedding similarity with one-hop
+expansion over resolved graph edges, then (by default) generates a separately
+cited answer from each retrieved context. The next step is to evaluate retrieval
+and answer quality on curated questions. The longer-term retrieval system can
+combine multiple signals:
 
 ```text
 semantic similarity
@@ -1027,7 +1097,9 @@ The following components are currently implemented:
 [completed] Pydantic structured output
 [completed] Structure / semantics separation
 [completed] Semantic Validator V1
-[in progress] Deterministic resolution of explicit section and defined-term references
+[completed] Deterministic resolution of explicit section and defined-term references
+[completed] Evidence-linked contract graph representation
+[in progress] Vector baseline and graph-assisted retrieval comparison
 ```
 
 Current / upcoming:
@@ -1036,8 +1108,8 @@ Current / upcoming:
 [in progress] Full-contract semantic processing
 [next]        Normalization
 [next]        Broader relationship representation
-[planned]     Structure-aware retrieval
-[planned]     Contract question answering
+[in progress] Structure-aware retrieval
+[in progress] Grounded contract question answering
 [planned]     Evidence / PDF highlighting
 [planned]     Evaluation against baseline vector RAG
 ```
