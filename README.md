@@ -1,1193 +1,210 @@
-# Contract Intelligence System
+# LexGraph
 
-A research-oriented legal contract intelligence system focused on **structure-aware and relationship-aware contract understanding**.
+LexGraph is a contract question-answering project. It turns a PDF contract into readable document chunks, optionally extracts structured contract information and links internal references, then retrieves evidence to answer questions with citations.
 
-The goal is to go beyond "chat with a PDF" or simple vector RAG. The system converts a contract into a structured, evidence-linked representation containing document structure, semantic facts, provenance, and resolved relationships between contractual provisions.
+## Set up on a new Windows machine
 
----
+These steps start the API and web app locally. Supabase is used for sign-in; uploaded contracts and processing caches remain local to the API machine.
 
-## 1. Project Goal
+### 1. Install prerequisites
 
-Legal contracts often contain information that is distributed across multiple sections.
+Install:
 
-For example, a termination provision may depend on:
+- [Git for Windows](https://git-scm.com/downloads/win)
+- [Python 3.13](https://www.python.org/downloads/) (enable **Add Python to PATH** in the installer)
+- [Node.js 20.9 or newer](https://nodejs.org/)
+- [Ollama for Windows](https://ollama.com/download)
 
-- a definition introduced earlier in the agreement
-- a cure period in another clause
-- a referenced payment or breach provision
-- exceptions or conditions defined elsewhere
+Docling, used to parse PDFs, supports Python 3.13 in current releases. Next.js 16 requires Node.js 20.9 or newer.
 
-The project is therefore being built around this idea:
-
-> **Understand the structure and relationships inside a contract before using retrieval and question answering.**
-
-The longer-term research goal is to compare conventional vector-based RAG with structure-aware / relationship-aware retrieval for contract question answering.
-
----
-
-## 2. Current Architecture
-
-```text
-PDF / DOCX
-     |
-     v
-  Docling
-     |
-     +---- document structure
-     |      - headings
-     |      - sections
-     |      - chunks
-     |      - pages
-     |      - bounding boxes
-     |      - provenance
-     |
-     v
- Cached Docling chunks
-     |
-     v
- Qwen2.5:3B-Instruct (local Ollama)
-     |
-     v
- Semantic extraction
-     - parties
-     - defined terms
-     - obligations
-     - rights
-     - references
-     |
-     v
- Deterministic Validator V1
-     |
-     v
- Contract Representation
-     |
-     v
- Deterministic reference resolution (explicit section and defined-term references)
-     |
-     v
- Evidence-linked contract graph
-     |
-     +---- vector-only retrieval baseline
-     |
-     +---- one-hop graph-assisted retrieval
-     |
-     v
- Retrieval evidence comparison
-     |
-     v
- Cited answers from both retrieval contexts
- Evaluation on curated questions
-```
-
-### Separation of responsibilities
-
-**Docling** is responsible for document understanding and structure.
-
-**Qwen2.5:3B-Instruct** is responsible for semantic extraction from individual chunks.
-
-**The validator** performs deterministic checks on the LLM output. It does not use another LLM.
-
-**The processing pipeline** combines the layers into the current contract representation.
-
----
-
-## 3. Repository Structure
-
-```text
-contract-intelligence/
-|
-├── apps/
-│   └── api/
-│       |
-│       ├── app/
-│       │   ├── __init__.py
-│       │   ├── main.py
-│       │   ├── config.py
-│       │   |
-│       │   ├── db/
-│       │   │   ├── __init__.py
-│       │   │   └── supabase.py
-│       │   |
-│       │   └── services/
-│       │       |
-│       │       ├── document/
-│       │       │   ├── __init__.py
-│       │       │   └── converter.py
-│       │       |
-│       │       ├── extraction/
-│       │       │   ├── __init__.py
-│       │       │   ├── models.py
-│       │       │   └── extractor.py
-│       │       |
-│       │       ├── processing/
-│       │       │   ├── __init__.py
-│       │       │   ├── models.py
-│       │       │   └── pipeline.py
-│       │       |
-│       │       ├── structure/
-│       │       │   ├── __init__.py
-│       │       │   ├── models.py
-│       │       │   └── builder.py
-│       │       |
-│       │       └── validation/
-│       │           ├── __init__.py
-│       │           ├── models.py
-│       │           └── semantic_validator.py
-│       |
-│       ├── .cache/
-│       │   └── docling/
-│       |
-│       ├── .env
-│       └── requirements.txt
-|
-└── README.md
-```
-
-### Old code that should not be required by the current architecture
-
-The current implementation does not use the old graph-based pipeline.
-
-Do not reintroduce old modules such as:
-
-- `process_contract`
-- `/debug/contract-graph`
-- Docling Graph integration
-- Neo4j
-- the old custom PDF parsing / clause segmentation path
-
-The current architecture deliberately keeps the implementation simpler until relationships demonstrate a need for a dedicated graph database.
-
----
-
-## 4. Prerequisites
-
-A new developer needs:
-
-- Python 3.11+ recommended
-- Git
-- Ollama
-- the Qwen model used by the project
-- a Supabase project/environment if database functionality is needed
-
-The current model is:
-
-```text
-qwen2.5:3b-instruct
-```
-
-The model runs locally through Ollama. No paid OpenAI, Gemini, or Mistral API key is required for the current extraction pipeline.
-
----
-
-# 5. Windows Setup
-
-These commands assume Windows PowerShell.
-
-## 5.1 Clone the repository
+Open PowerShell and clone the project:
 
 ```powershell
-git clone <REPOSITORY_URL>
-cd contract-intelligence
+git clone https://github.com/jatin-05/LexGraph.git
+cd LexGraph
 ```
 
-Replace `<REPOSITORY_URL>` with the repository URL.
+### 2. Create the Supabase project
 
----
+Create a project at [Supabase](https://supabase.com/) or use an existing one. In its project settings, find the project URL and API keys.
 
-## 5.2 Create and activate a virtual environment
+- The **URL** and **publishable/anon key** go in the web app environment file.
+- The backend needs `SUPABASE_URL` and `SUPABASE_SECRET_KEY`. Use the project’s secret key (or legacy `service_role` key if that is what the dashboard provides) in the API environment file only.
+- Do not put the secret/service-role key in a `NEXT_PUBLIC_...` variable or expose it to the browser.
+- No custom database table or Supabase Storage bucket is needed for this MVP. Supabase Auth manages its own user records.
 
-From the repository root:
+If you want sign-up to work without email verification, turn off email confirmation in the Supabase Auth email provider settings.
+
+### 3. Install API dependencies
+
+In PowerShell, from the project root:
 
 ```powershell
 cd apps\api
-python -m venv .venv
-```
-
-Activate it:
-
-```powershell
+py -3.13 -m venv .venv
 .\.venv\Scripts\Activate.ps1
-```
-
-If PowerShell blocks script execution, use the normal Windows Python launcher / terminal setup appropriate for your environment, or run the equivalent activation command from Command Prompt.
-
----
-
-## 5.3 Install Python dependencies
-
-```powershell
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Current requirements are expected to include:
-
-```text
-fastapi[standard]
-supabase
-pydantic-settings
-pymupdf
-python-multipart
-docling
-instructor
-```
-
-If requirements change, always use the repository's current `requirements.txt` as the source of truth.
-
----
-
-# 6. Install and prepare Ollama
-
-Install Ollama on the development machine and make sure the Ollama service is running.
-
-Pull the current project model:
+If PowerShell blocks activation, run this once in that PowerShell window, then activate the environment again:
 
 ```powershell
-ollama pull qwen2.5:3b-instruct
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-Verify that the model is available:
+### 4. Download and start the local models
+
+Ollama supplies semantic extraction, answer generation, and embeddings when the local model option is selected. The embedding model remains local even when Groq is selected for extraction or answers.
 
 ```powershell
+ollama pull qwen2.5:3b
+ollama pull nomic-embed-text
 ollama list
 ```
 
-You should see:
+Keep Ollama running while using the app. The default extraction concurrency is two requests. If Ollama struggles with concurrent requests on your machine, set `EXTRACTION_MAX_CONCURRENCY=1` in the API `.env` file.
 
-```text
-qwen2.5:3b-instruct
-```
+### 5. Configure and start the API
 
-The API expects Ollama to be available at:
+Create `apps/api/.env` with your values:
 
-```text
-http://localhost:11434
-```
-
-The OpenAI-compatible base URL used by the project is:
-
-```text
-http://localhost:11434/v1
-```
-
-For parallel semantic extraction, restart Ollama with `OLLAMA_NUM_PARALLEL=2`.
-On Windows, close the Ollama app from the system tray, then start it from a
-PowerShell window with:
-
-```powershell
-$env:OLLAMA_NUM_PARALLEL = "2"
-ollama serve
-```
-
-Keep that window open while the API is running. Parallel requests use additional
-memory; reduce this value to `1` if Ollama runs out of memory or performance
-gets worse.
-
----
-
-# 7. Environment Configuration
-
-Create:
-
-```text
-apps/api/.env
-```
-
-Example:
-
-```env
-SUPABASE_URL=your_supabase_url
-SUPABASE_SECRET_KEY=your_supabase_secret_key
-
-ENVIRONMENT=development
-
-EXTRACTION_MODEL=qwen2.5:3b-instruct
-ANSWER_MODEL=qwen2.5:3b-instruct
-EXTRACTION_MAX_CONCURRENCY=2
-EMBEDDING_MODEL=nomic-embed-text
+```dotenv
+SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+SUPABASE_SECRET_KEY=YOUR_SUPABASE_SECRET_OR_SERVICE_ROLE_KEY
 
 OLLAMA_BASE_URL=http://localhost:11434/v1
-# Optional: set this to enable Groq Qwen in the workspace model selectors.
-GROQ_API_KEY=your_groq_api_key
+EXTRACTION_MODEL=qwen2.5:3b
+ANSWER_MODEL=qwen2.5:3b
+EMBEDDING_MODEL=nomic-embed-text
+EXTRACTION_MAX_CONCURRENCY=2
+
+# Optional: needed only when selecting Groq models in the app
+# GROQ_API_KEY=your_groq_api_key
 ```
 
-`EXTRACTION_MAX_CONCURRENCY` limits how many chunks the API submits at once. Keep
-it at or below Ollama's `OLLAMA_NUM_PARALLEL` setting to avoid building a queue
-inside Ollama.
-
-The workspace lets you choose local Qwen or Groq Qwen independently for
-semantic extraction and answer generation. Set `GROQ_API_KEY` in this backend
-environment file before selecting either Groq option. The key is never sent to
-the browser. Embeddings continue to use the configured Ollama embedding model.
-
-## Important
-
-Do **not** commit `.env` to Git.
-
-The model name is configured through the environment:
-
-```env
-EXTRACTION_MODEL=qwen2.5:3b-instruct
-```
-
-`config.py` defines the application setting, while `.env` allows a developer to change the model without changing Python code.
-
-The flow is:
-
-```text
-.env
-  |
-  v
-config.py
-  |
-  v
-extractor.py
-  |
-  v
-Ollama
-```
-
----
-
-# 8. Start the API
-
-From:
-
-```text
-apps/api
-```
-
-with the virtual environment activated:
+Keep the virtual environment activated, and start the API from `apps/api`:
 
 ```powershell
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8000
 ```
 
-The API should be available at:
+Check that `http://localhost:8000/health` responds. Interactive API documentation is at `http://localhost:8000/docs`.
 
-```text
-http://127.0.0.1:8000
-```
+### 6. Configure and start the web app
 
-Swagger UI:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-OpenAPI JSON:
-
-```text
-http://127.0.0.1:8000/openapi.json
-```
-
----
-
-# 9. Health Checks
-
-### API health
-
-Open:
-
-```text
-GET /health
-```
-
-Expected response:
-
-```json
-{
-  "status": "ok",
-  "service": "Contract Intelligence API",
-  "environment": "development"
-}
-```
-
-### Supabase configuration
-
-Open:
-
-```text
-GET /health/supabase
-```
-
-This checks that the Supabase client is configured.
-
----
-
-# 10. Current Debug Endpoints
-
-## `/debug/docling`
-
-Purpose:
-
-Inspect the raw Docling conversion.
-
-This is useful for checking:
-
-- extracted Markdown
-- document structure
-- raw document elements
-- provenance information
-
----
-
-## `/debug/extract-chunk`
-
-Purpose:
-
-Run semantic extraction on a single chunk.
-
-Typical development test:
-
-```text
-chunk_index = 0
-validate = true
-force_refresh = false
-```
-
-This is useful for testing the Qwen prompt and schema without processing the entire contract.
-
-### Parameters
-
-`chunk_index`
-
-```text
-0, 1, 2, ...
-```
-
-Selects which chunk is sent to Qwen.
-
-`validate`
-
-```text
-true / false
-```
-
-When `true`:
-
-```text
-Qwen
-  |
-  v
-Validator V1
-  |
-  v
-validated extraction
-```
-
-When `false`:
-
-```text
-Qwen
-  |
-  v
-raw extraction
-```
-
-This toggle exists so model behavior and validator behavior can be inspected separately.
-
-`force_refresh`
-
-```text
-true / false
-```
-
-When `true`, the cached Docling result is ignored and the document is parsed again.
-
----
-
-## `/debug/extract-contract`
-
-Purpose:
-
-Process multiple or all semantic chunks.
-
-Example:
-
-```text
-max_chunks = 3
-validate = true
-force_refresh = false
-```
-
-### Important behavior of `max_chunks`
-
-`max_chunks` currently limits **semantic extraction**, not Docling parsing.
-
-For example:
-
-```text
-max_chunks = 1
-```
-
-means:
-
-```text
-Docling:
-    parse the entire document
-    build the full structural representation
-
-Qwen:
-    process chunk 0 only
-```
-
-Leaving `max_chunks` empty means all chunks are sent through semantic extraction.
-
-This is intentional during development because we want the complete document structure even when only a subset of chunks is being tested with the LLM.
-
-## `/debug/retrieve-contract`
-
-Purpose:
-
-Compare vector-only retrieval with one-hop graph-assisted retrieval for a
-contract question. Submit `file` and `query` as form fields; `top_k` is optional
-and defaults to `5`.
-
-The response contains `baseline` (top chunks by embedding cosine similarity)
-and `graph_augmented` (the same results plus chunks reached through resolved
-section references or defined-term relationships). Added chunks include an
-`added_via` relationship label and the supporting reference quote in
-`graph_evidence`. By default, the endpoint also generates `baseline_answer` and
-`graph_answer` from those separate contexts using the configured extraction
-model. Each answer includes cited chunk IDs with page and heading metadata, plus
-an `insufficient_evidence` flag. Every citation includes a supporting quote;
-the API checks that the quote appears in the cited chunk before returning the
-answer. Set `include_answers=false` to return the retrieval comparison without
-generating answers.
-
-Answer generation makes two sequential Qwen calls, so it can take a while on a
-local model. This lets you compare vector and graph-assisted evidence under the
-same model and question. The first request may also perform contract extraction
-if no semantic cache exists.
-
-Install the default local embedding model with:
+Open a **second** PowerShell window at the project root:
 
 ```powershell
-ollama pull nomic-embed-text
+cd web
+Copy-Item .env.example .env.local
 ```
 
-Chunk embeddings are cached in
-`apps/api/.cache/embeddings/`, keyed by document, chunk text, model, and cache
-version.
+Edit `web/.env.local` and set:
 
-## `/ask-contract`
-
-The main workspace uses this single-answer endpoint. Send the optional form
-field `use_relationship_graph` as `true` to run semantic extraction and
-graph-assisted retrieval. By default (`false`), it retrieves directly from the
-Docling chunks and skips semantic extraction and graph construction. Both modes
-return one grounded answer with supporting quotes and retrieved passages. Keep
-`/debug/retrieve-contract` for research comparison between vector-only and
-graph-assisted results.
-
----
-
-# 11. Docling Cache
-
-Docling output is cached locally under:
-
-```text
-apps/api/.cache/docling/
+```dotenv
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY
+CONTRACT_API_URL=http://localhost:8000
 ```
 
-A document-specific hash is used as the cache key.
-
-Conceptually:
-
-```text
-Contract A
-   |
-   v
-hash A
-   |
-   v
-.cache/docling/hashA.json
-```
-
-and:
-
-```text
-Contract B
-   |
-   v
-hash B
-   |
-   v
-.cache/docling/hashB.json
-```
-
-The same document can therefore be uploaded repeatedly without reparsing it with Docling.
-
-### Cache behavior
-
-First run:
-
-```text
-cache miss
-    |
-    v
-Docling conversion
-    |
-    v
-chunking
-    |
-    v
-cache saved
-```
-
-Later run:
-
-```text
-cache hit
-    |
-    v
-cached chunks loaded
-    |
-    v
-Docling conversion skipped
-```
-
-`force_refresh=true` bypasses the cache.
-
-### Cache version
-
-The pipeline contains a cache version such as:
-
-```python
-CACHE_VERSION = "v1"
-```
-
-If the Docling/chunking representation changes in a way that makes old cache files incompatible, increment the version.
-
----
-
-# 12. Current Contract Representation
-
-The current result separates structure and semantics.
-
-```text
-ContractRepresentation
-|
-├── structure
-|   ├── sections
-|   └── chunks
-|       └── provenance
-|
-     ├── semantics
-|   ├── parties
-|   ├── defined_terms
-|   ├── obligations
-|   ├── rights
-|   └── references
-|
-├── reference_resolutions
-|   └── resolved, ambiguous, unresolved, or external targets
-├── graph
-|   ├── document, section, and defined-term entities
-|   └── contains_section, defines, and resolved references
-|
-└── validation
-    └── issues
-```
-
-## Structure
-
-The structure layer is derived from Docling output.
-
-It contains information such as:
-
-- headings
-- section relationships to chunks
-- page numbers
-- bounding boxes
-- provenance
-
-## Semantics
-
-The semantic layer is generated by Qwen.
-
-It contains:
-
-- parties
-- defined terms
-- obligations
-- rights
-- references
-
-## Validation
-
-Validation V1 is deterministic Python logic.
-
-It does not use an LLM.
-
----
-
-# 13. Provenance
-
-Provenance answers:
-
-> Where did this information come from in the original document?
-
-A semantic fact can retain a `source_chunk_id`.
-
-The structural chunk retains information such as:
-
-```text
-page number
-bounding box
-document element reference
-```
-
-Conceptually:
-
-```text
-Fact
- |
- v
-source_chunk_id
- |
- v
-Chunk
- |
- v
-Provenance
- |
- +--> page
- |
- +--> bounding box
- |
- v
-Original PDF location
-```
-
-This is important for future evidence-grounded answers and PDF highlighting.
-
----
-
-# 14. Development Workflow
-
-Recommended development loop:
-
-```text
-1. Start Ollama
-2. Start FastAPI
-3. Open /docs
-4. Upload a test contract
-5. Inspect /debug/docling
-6. Test /debug/extract-chunk
-7. Compare validate=true vs validate=false
-8. Test /debug/extract-contract with a small max_chunks value
-9. Inspect structure + semantics + validation
-10. Run the full contract once the small tests are stable
-```
-
-A good first document for development is:
-
-```text
-master-saas-agreement.pdf
-```
-
-or another representative legal contract.
-
----
-
-# 15. Current Research Direction
-
-The current system is the foundation for a larger research question:
-
-> Can contract-aware retrieval outperform conventional vector-based RAG on questions that require evidence from multiple related clauses?
-
-The planned progression is:
-
-```text
-Document parsing
-      |
-      v
-Semantic extraction
-      |
-      v
-Validation
-      |
-      v
-Normalization
-      |
-      v
-Reference resolution
-      |
-      v
-Relationships
-      |
-      v
-Structure-aware retrieval
-      |
-      v
-Contract question answering
-      |
-      v
-Evaluation
-```
-
----
-
-# 16. Next Development Phase
-
-The initial reference resolver and evidence-linked graph are implemented. The
-retrieval debug endpoint compares vector-only results with one-hop
-graph-assisted results and can generate a grounded answer from each result set.
-The next phase is to evaluate both approaches on a small, curated set of
-contract questions.
-
-For example:
-
-```text
-Section 8
-    |
-    +---- references ----> Section 7
-
-Section 6
-    |
-    +---- references ----> defined term: Documentation
-```
-
-The current relationship types are:
-
-```text
-defines
-references
-applies_to (future)
-```
-
-Later candidates include:
-
-```text
-depends_on
-modifies
-exception_to
-grants
-imposes
-```
-
-The first implementation is expected to use structured relational data rather than immediately requiring Neo4j.
-
----
-
-# 17. Retrieval and Question Answering
-
-The current retrieval endpoint compares embedding similarity with one-hop
-expansion over resolved graph edges, then (by default) generates a separately
-cited answer from each retrieved context. The next step is to evaluate retrieval
-and answer quality on curated questions. The longer-term retrieval system can
-combine multiple signals:
-
-```text
-semantic similarity
-+
-keyword / lexical retrieval
-+
-document structure
-+
-contract relationships
-```
-
-Instead of only:
-
-```text
-question
-  |
-  v
-vector search
-  |
-  v
-answer
-```
-
-the goal is:
-
-```text
-question
-  |
-  v
-relevant clause
-  |
-  +--> related definition
-  |
-  +--> referenced section
-  |
-  +--> related obligation
-  |
-  v
-supporting evidence
-  |
-  v
-answer
-```
-
-The final system should be able to present both an answer and the evidence path supporting it.
-
----
-
-# 18. Testing Philosophy
-
-The project is intentionally being built in small layers.
-
-Do not assume that a correct final answer means the whole pipeline is correct.
-
-The following stages should be independently inspectable:
-
-```text
-PDF parsing quality
-        |
-        v
-chunking quality
-        |
-        v
-semantic extraction quality
-        |
-        v
-validation quality
-        |
-        v
-relationship quality
-        |
-        v
-retrieval quality
-        |
-        v
-answer quality
-```
-
-This separation is important for research and debugging.
-
----
-
-# 19. Git / Repository Hygiene
-
-Do not commit:
-
-```text
-.env
-.cache/
-__pycache__/
-*.pyc
-.venv/
-```
-
-A typical `.gitignore` should include:
-
-```gitignore
-.env
-.cache/
-.venv/
-__pycache__/
-*.pyc
-```
-
-Do not commit secrets, API credentials, or local model/cache artifacts.
-
----
-
-# 20. Troubleshooting
-
-## FastAPI starts but the endpoint is missing
-
-Confirm the server was started from:
-
-```text
-apps/api
-```
-
-with:
+Install the locked web dependencies and start Next.js:
 
 ```powershell
-uvicorn app.main:app --reload
+npm ci
+npm run dev
 ```
 
-Then open:
+Open `http://localhost:3000`, create an account, and sign in. Keep both the API and web terminal windows running.
+
+### 7. Optional Groq models
+
+The chat has **separate model selectors** for semantic extraction and answer generation. Each can independently use:
+
+- **Local Qwen 2.5 · 3B** through Ollama
+- **Groq Qwen 3.8 · 27B** through the Groq API
+
+To enable Groq, create an API key in your Groq account, put it in `GROQ_API_KEY` in `apps/api/.env`, and restart the API. The key belongs only on the backend; never add it to `web/.env.local` or a `NEXT_PUBLIC_...` variable. If Groq is selected without a configured key, the request returns a configuration error. Ollama is still required for `nomic-embed-text` embeddings, and for each selector left on local Qwen.
+
+### Quick troubleshooting
+
+- **Web cannot reach the API:** confirm the API is running on port 8000 and `CONTRACT_API_URL` is correct.
+- **Supabase URL/key error:** check the project URL and key; use the publishable/anon key in the web file and the secret/service-role key only in the API file.
+- **Ollama connection/model error:** make sure Ollama is running and `ollama list` shows both models.
+- **PowerShell says `npm` or `py` is not recognized:** reopen the terminal after installing Node.js or Python and verify that each was added to PATH.
+- **Sign-up asks for email verification:** disable email confirmation in the Supabase Auth settings for this project.
+
+## Project overview
+
+### Goal
+
+The research goal is to make contract question answering more reliable by representing contract structure, facts, evidence locations, and links between provisions. Retrieval can then use those signals to find supporting contract text and generate an answer with citations. The longer-term evaluation compares this approach with ordinary vector-search RAG.
+
+### Current processing flow
 
 ```text
-http://127.0.0.1:8000/docs
+PDF upload
+   ↓
+Docling parses document structure and text
+   ↓
+Document chunks retain headings, page numbers, and source provenance
+   ↓
+Optional semantic extraction with Qwen or Groq
+   ↓
+Reference resolution creates links between provisions
+   ↓
+Question → retrieve relevant evidence → answer with citations
 ```
 
----
+The workspace shows the PDF beside a single contract chat. The document and chat share the available workspace, with the chat history scrolling inside its pane. The chat offers two independent model selectors: one for semantic extraction and one for answer generation. The relationship-graph toggle is off by default. With it off, retrieval runs directly over Docling chunks and skips semantic extraction and graph construction. With it on, semantic extraction runs (or uses a compatible semantic cache), internal references are resolved, and graph links can add related chunks to retrieved evidence. The standard character-based naive RAG comparison is research scope and is not shown in the main chat UI.
 
-## `ContractProcessingPipeline` method errors
+### Main components
 
-If you see an error such as:
+- **Docling** parses the PDF and provides document structure and provenance.
+- **Qwen 2.5 · 3B through Ollama** can extract parties, definitions, obligations, rights, and references from chunks and generate answers.
+- **Groq Qwen 3.8 · 27B** is an optional hosted choice for semantic extraction and/or answers. The extraction and answer choices are configured independently in chat.
+- **Ollama `nomic-embed-text`** creates embeddings for vector retrieval.
+- **Vector retrieval** ranks parsed chunks using cosine similarity over cached embeddings. Graph mode can expand the initial vector results with chunks connected by resolved contract references.
+- **Local caches** store parsed documents, semantic results, and embeddings on the API machine.
+- **Supabase Auth** provides web sign-in. The API is local and is not independently authenticated in this MVP.
+
+The selected answer model is returned with each answer. The semantic model is used only when graph mode is enabled and semantic extraction is needed; changing it can produce a cache miss and make that processing run slower.
+
+### API routes
+
+- `POST /ask-contract` — retrieve contract evidence and answer a question.
+- `GET /health` and `GET /health/supabase` — basic service checks.
+- `/debug/*` — development endpoints for parsing, chunking, extraction, and retrieval. These are for local development, not a secured public deployment.
+
+## Cache and refresh behavior
+
+The API stores caches under `apps/api/.cache/`:
+
+- `docling/` — parsed document output
+- `semantic/` — semantic extraction results
+- `embeddings/` — embedding vectors
+
+Semantic cache entries are tied to the relevant input and extraction model, so changing the model or model version should cause a cache miss. Use the API’s force-refresh option when you need to rerun processing despite an existing compatible cache. These caches are machine-local and are not shared between users or deployments.
+
+## Repository layout
 
 ```text
-'ContractProcessingPipeline' object has no attribute 'extract_contract'
+apps/api/     FastAPI service, document processing, extraction, retrieval, local caches
+web/          Next.js application and Supabase sign-in
 ```
 
-check that `pipeline.py` contains the current method and that `main.py` imports:
-
-```python
-from app.services.processing.pipeline import ContractProcessingPipeline
-```
-
----
-
-## Pydantic validation errors
-
-These usually indicate that the Qwen output does not match the current extraction schema.
-
-Check:
-
-```text
-apps/api/app/services/extraction/models.py
-apps/api/app/services/extraction/extractor.py
-```
-
-The prompt and schema must agree on required fields.
-
----
-
-## Qwen is unavailable
-
-Check Ollama:
+Useful commands:
 
 ```powershell
-ollama list
+# API, from apps/api with its virtual environment active
+uvicorn app.main:app --reload --port 8000
+
+# Web, from web
+npm run dev
+npm run build
+npm run lint
 ```
 
-and make sure:
+## Current scope and next research steps
 
-```text
-qwen2.5:3b-instruct
-```
-
-is installed.
-
-Also verify that Ollama is running.
-
----
-
-## Extraction is slow
-
-The major components are:
-
-```text
-Docling conversion
-+
-Qwen inference
-```
-
-Docling results are cached locally, so repeated processing of the same document should skip the expensive Docling conversion.
-
-To intentionally re-run Docling:
-
-```text
-force_refresh = true
-```
-
----
-
-# 21. Current Status
-
-The following components are currently implemented:
-
-```text
-[completed] FastAPI backend
-[completed] Docling document conversion
-[completed] Hybrid chunking
-[completed] Docling caching
-[completed] Document structure representation
-[completed] Provenance tracking
-[completed] Local Ollama integration
-[completed] Qwen2.5:3B-Instruct extraction
-[completed] Pydantic structured output
-[completed] Structure / semantics separation
-[completed] Semantic Validator V1
-[completed] Deterministic resolution of explicit section and defined-term references
-[completed] Evidence-linked contract graph representation
-[in progress] Vector baseline and graph-assisted retrieval comparison
-```
-
-Current / upcoming:
-
-```text
-[in progress] Full-contract semantic processing
-[next]        Normalization
-[next]        Broader relationship representation
-[in progress] Structure-aware retrieval
-[in progress] Grounded contract question answering
-[planned]     Evidence / PDF highlighting
-[planned]     Evaluation against baseline vector RAG
-```
-
----
-
-# 22. For a New Contributor
-
-If you are setting up the project for the first time, the minimum path is:
-
-```text
-1. Clone repository
-2. Create Python virtual environment
-3. Install requirements
-4. Install/start Ollama
-5. Pull qwen2.5:3b-instruct
-6. Create apps/api/.env
-7. Start FastAPI
-8. Open /docs
-9. Test /debug/docling
-10. Test /debug/extract-chunk
-11. Test /debug/extract-contract
-```
-
-Start with a small semantic test:
-
-```text
-max_chunks = 1
-validate = true
-force_refresh = false
-```
-
-Then increase:
-
-```text
-max_chunks = 3
-```
-
-and eventually leave `max_chunks` empty to process all chunks.
-
----
-
-## 23. Important Design Principle
-
-The project is intentionally **not** built as:
-
-```text
-PDF
-  |
-  v
-embeddings
-  |
-  v
-vector database
-  |
-  v
-chatbot
-```
-
-Instead:
-
-```text
-PDF
-  |
-  v
-document understanding
-  |
-  v
-structure + semantics + provenance
-  |
-  v
-relationships
-  |
-  v
-retrieval
-  |
-  v
-evidence-grounded reasoning
-```
-
-This representation-first approach is the core technical direction of the project.
+The MVP supports PDF upload, contract questions, evidence-based answers, optional semantic processing, and reference-aware retrieval. Further work can improve reference resolution, evaluate how semantics and links affect answer quality, and build a controlled comparison against character-chunk vector RAG. The baseline comparison is for research rather than part of the professor-facing chat interface.
